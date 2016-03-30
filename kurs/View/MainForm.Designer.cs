@@ -36,7 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.ownertxtBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.resulttxtBox = new System.Windows.Forms.TextBox();
             this.findbtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -61,6 +60,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.startWorkUpDown = new System.Windows.Forms.NumericUpDown();
             this.endWorkUpDown = new System.Windows.Forms.NumericUpDown();
+            this.resultlistBox = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.startWorkUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.endWorkUpDown)).BeginInit();
@@ -70,7 +70,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(50, 68);
+            this.label1.Location = new System.Drawing.Point(45, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 17);
             this.label1.TabIndex = 0;
@@ -138,25 +138,16 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Собственность";
             // 
-            // resulttxtBox
-            // 
-            this.resulttxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.resulttxtBox.Location = new System.Drawing.Point(29, 225);
-            this.resulttxtBox.Multiline = true;
-            this.resulttxtBox.Name = "resulttxtBox";
-            this.resulttxtBox.Size = new System.Drawing.Size(557, 169);
-            this.resulttxtBox.TabIndex = 8;
-            this.resulttxtBox.Text = "Результат:";
-            // 
             // findbtn
             // 
             this.findbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.findbtn.Location = new System.Drawing.Point(473, 185);
+            this.findbtn.Location = new System.Drawing.Point(445, 185);
             this.findbtn.Name = "findbtn";
             this.findbtn.Size = new System.Drawing.Size(113, 23);
             this.findbtn.TabIndex = 9;
             this.findbtn.Text = "Найти";
             this.findbtn.UseVisualStyleBackColor = true;
+            this.findbtn.Click += new System.EventHandler(this.findbtn_Click);
             // 
             // label5
             // 
@@ -241,27 +232,29 @@
             // addTStrMenu
             // 
             this.addTStrMenu.Name = "addTStrMenu";
-            this.addTStrMenu.Size = new System.Drawing.Size(128, 22);
+            this.addTStrMenu.Size = new System.Drawing.Size(152, 22);
             this.addTStrMenu.Text = "Добавить";
             this.addTStrMenu.Click += new System.EventHandler(this.addTStrMenu_Click);
             // 
             // changeTStrMenu
             // 
             this.changeTStrMenu.Name = "changeTStrMenu";
-            this.changeTStrMenu.Size = new System.Drawing.Size(128, 22);
+            this.changeTStrMenu.Size = new System.Drawing.Size(152, 22);
             this.changeTStrMenu.Text = "Изменить";
+            this.changeTStrMenu.Click += new System.EventHandler(this.changeTStrMenu_Click);
             // 
             // deleteTStrMenu
             // 
             this.deleteTStrMenu.Name = "deleteTStrMenu";
-            this.deleteTStrMenu.Size = new System.Drawing.Size(128, 22);
+            this.deleteTStrMenu.Size = new System.Drawing.Size(152, 22);
             this.deleteTStrMenu.Text = "Удалить";
+            this.deleteTStrMenu.Click += new System.EventHandler(this.deleteTStrMenu_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label7.Location = new System.Drawing.Point(50, 93);
+            this.label7.Location = new System.Drawing.Point(45, 93);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 17);
             this.label7.TabIndex = 14;
@@ -291,7 +284,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label10.Location = new System.Drawing.Point(50, 120);
+            this.label10.Location = new System.Drawing.Point(45, 119);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(68, 17);
             this.label10.TabIndex = 17;
@@ -355,11 +348,20 @@
             this.endWorkUpDown.TabIndex = 24;
             this.endWorkUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // resultlistBox
+            // 
+            this.resultlistBox.FormattingEnabled = true;
+            this.resultlistBox.Location = new System.Drawing.Point(48, 224);
+            this.resultlistBox.Name = "resultlistBox";
+            this.resultlistBox.Size = new System.Drawing.Size(510, 173);
+            this.resultlistBox.TabIndex = 25;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(611, 406);
+            this.Controls.Add(this.resultlistBox);
             this.Controls.Add(this.endWorkUpDown);
             this.Controls.Add(this.startWorkUpDown);
             this.Controls.Add(this.label12);
@@ -375,7 +377,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.findbtn);
-            this.Controls.Add(this.resulttxtBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.ownertxtBox);
             this.Controls.Add(this.label3);
@@ -406,7 +407,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox ownertxtBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox resulttxtBox;
         private System.Windows.Forms.Button findbtn;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -419,7 +419,6 @@
         private System.Windows.Forms.ToolStripMenuItem предприятиеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addTStrMenu;
         private System.Windows.Forms.ToolStripMenuItem changeTStrMenu;
-        private System.Windows.Forms.ToolStripMenuItem deleteTStrMenu;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -431,6 +430,8 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.NumericUpDown startWorkUpDown;
         private System.Windows.Forms.NumericUpDown endWorkUpDown;
+        private System.Windows.Forms.ToolStripMenuItem deleteTStrMenu;
+        private System.Windows.Forms.ListBox resultlistBox;
     }
 }
 
