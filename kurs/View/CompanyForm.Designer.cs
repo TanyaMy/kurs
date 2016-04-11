@@ -264,6 +264,7 @@
             this.okbtn.TabIndex = 47;
             this.okbtn.Text = "OK";
             this.okbtn.UseVisualStyleBackColor = true;
+            this.okbtn.Click += new System.EventHandler(this.okbtn_Click);
             // 
             // resetbtn
             // 

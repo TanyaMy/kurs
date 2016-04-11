@@ -61,6 +61,7 @@
             this.startWorkUpDown = new System.Windows.Forms.NumericUpDown();
             this.endWorkUpDown = new System.Windows.Forms.NumericUpDown();
             this.resultlistBox = new System.Windows.Forms.ListBox();
+            this.infTStrMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.startWorkUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.endWorkUpDown)).BeginInit();
@@ -222,6 +223,7 @@
             // предприятиеToolStripMenuItem
             // 
             this.предприятиеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.infTStrMenu,
             this.addTStrMenu,
             this.changeTStrMenu,
             this.deleteTStrMenu});
@@ -356,6 +358,13 @@
             this.resultlistBox.Size = new System.Drawing.Size(510, 173);
             this.resultlistBox.TabIndex = 25;
             // 
+            // infTStrMenu
+            // 
+            this.infTStrMenu.Name = "infTStrMenu";
+            this.infTStrMenu.Size = new System.Drawing.Size(152, 22);
+            this.infTStrMenu.Text = "Информация";
+            this.infTStrMenu.Click += new System.EventHandler(this.infTStrMenu_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,6 +441,7 @@
         private System.Windows.Forms.NumericUpDown endWorkUpDown;
         private System.Windows.Forms.ToolStripMenuItem deleteTStrMenu;
         private System.Windows.Forms.ListBox resultlistBox;
+        private System.Windows.Forms.ToolStripMenuItem infTStrMenu;
     }
 }
 
