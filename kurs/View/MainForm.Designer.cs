@@ -29,23 +29,24 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.nametxtBox = new System.Windows.Forms.TextBox();
+            this.nameTBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.kindtxtBox = new System.Windows.Forms.TextBox();
-            this.servicetxtBox = new System.Windows.Forms.TextBox();
+            this.classTBox = new System.Windows.Forms.TextBox();
+            this.serviceTBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.ownertxtBox = new System.Windows.Forms.TextBox();
+            this.ownerTBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.findbtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.specialtxtBox = new System.Windows.Forms.TextBox();
+            this.specializationTBox = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileTStrMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.exitTStrMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.helpTStrMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutTStrMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.предприятиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.infTStrMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addTStrMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.changeTStrMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteTStrMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,18 +54,18 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.adresstxtBox = new System.Windows.Forms.TextBox();
-            this.phonetxtBox = new System.Windows.Forms.TextBox();
-            this.workDaystxtBox = new System.Windows.Forms.TextBox();
+            this.addressTBox = new System.Windows.Forms.TextBox();
+            this.phoneNumberTBox = new System.Windows.Forms.TextBox();
+            this.workDaysTBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.startWorkUpDown = new System.Windows.Forms.NumericUpDown();
-            this.endWorkUpDown = new System.Windows.Forms.NumericUpDown();
-            this.resultlistBox = new System.Windows.Forms.ListBox();
-            this.infTStrMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.startWorkNUD = new System.Windows.Forms.NumericUpDown();
+            this.endWorkNUD = new System.Windows.Forms.NumericUpDown();
+            this.dataGV = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.startWorkUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.endWorkUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.startWorkNUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.endWorkNUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGV)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -77,13 +78,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Название";
             // 
-            // nametxtBox
+            // nameTBox
             // 
-            this.nametxtBox.Location = new System.Drawing.Point(139, 70);
-            this.nametxtBox.Name = "nametxtBox";
-            this.nametxtBox.Size = new System.Drawing.Size(125, 20);
-            this.nametxtBox.TabIndex = 1;
-            this.nametxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nameTBox.Location = new System.Drawing.Point(139, 70);
+            this.nameTBox.Name = "nameTBox";
+            this.nameTBox.Size = new System.Drawing.Size(125, 20);
+            this.nameTBox.TabIndex = 1;
+            this.nameTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
             // 
@@ -95,21 +96,21 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Разряд";
             // 
-            // kindtxtBox
+            // classTBox
             // 
-            this.kindtxtBox.Location = new System.Drawing.Point(433, 93);
-            this.kindtxtBox.Name = "kindtxtBox";
-            this.kindtxtBox.Size = new System.Drawing.Size(125, 20);
-            this.kindtxtBox.TabIndex = 3;
-            this.kindtxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.classTBox.Location = new System.Drawing.Point(433, 93);
+            this.classTBox.Name = "classTBox";
+            this.classTBox.Size = new System.Drawing.Size(125, 20);
+            this.classTBox.TabIndex = 3;
+            this.classTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // servicetxtBox
+            // serviceTBox
             // 
-            this.servicetxtBox.Location = new System.Drawing.Point(433, 119);
-            this.servicetxtBox.Name = "servicetxtBox";
-            this.servicetxtBox.Size = new System.Drawing.Size(125, 20);
-            this.servicetxtBox.TabIndex = 4;
-            this.servicetxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.serviceTBox.Location = new System.Drawing.Point(433, 119);
+            this.serviceTBox.Name = "serviceTBox";
+            this.serviceTBox.Size = new System.Drawing.Size(125, 20);
+            this.serviceTBox.TabIndex = 4;
+            this.serviceTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
             // 
@@ -121,13 +122,13 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Услуга";
             // 
-            // ownertxtBox
+            // ownerTBox
             // 
-            this.ownertxtBox.Location = new System.Drawing.Point(433, 145);
-            this.ownertxtBox.Name = "ownertxtBox";
-            this.ownertxtBox.Size = new System.Drawing.Size(125, 20);
-            this.ownertxtBox.TabIndex = 6;
-            this.ownertxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ownerTBox.Location = new System.Drawing.Point(433, 145);
+            this.ownerTBox.Name = "ownerTBox";
+            this.ownerTBox.Size = new System.Drawing.Size(125, 20);
+            this.ownerTBox.TabIndex = 6;
+            this.ownerTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label4
             // 
@@ -170,13 +171,13 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Специализация";
             // 
-            // specialtxtBox
+            // specializationTBox
             // 
-            this.specialtxtBox.Location = new System.Drawing.Point(433, 67);
-            this.specialtxtBox.Name = "specialtxtBox";
-            this.specialtxtBox.Size = new System.Drawing.Size(125, 20);
-            this.specialtxtBox.TabIndex = 12;
-            this.specialtxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.specializationTBox.Location = new System.Drawing.Point(433, 67);
+            this.specializationTBox.Name = "specializationTBox";
+            this.specializationTBox.Size = new System.Drawing.Size(125, 20);
+            this.specializationTBox.TabIndex = 12;
+            this.specializationTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // menuStrip1
             // 
@@ -186,7 +187,7 @@
             this.предприятиеToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(611, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(607, 24);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -231,6 +232,13 @@
             this.предприятиеToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
             this.предприятиеToolStripMenuItem.Text = "Предприятие";
             // 
+            // infTStrMenu
+            // 
+            this.infTStrMenu.Name = "infTStrMenu";
+            this.infTStrMenu.Size = new System.Drawing.Size(152, 22);
+            this.infTStrMenu.Text = "Информация";
+            this.infTStrMenu.Click += new System.EventHandler(this.infTStrMenu_Click);
+            // 
             // addTStrMenu
             // 
             this.addTStrMenu.Name = "addTStrMenu";
@@ -243,14 +251,12 @@
             this.changeTStrMenu.Name = "changeTStrMenu";
             this.changeTStrMenu.Size = new System.Drawing.Size(152, 22);
             this.changeTStrMenu.Text = "Изменить";
-            this.changeTStrMenu.Click += new System.EventHandler(this.changeTStrMenu_Click);
             // 
             // deleteTStrMenu
             // 
             this.deleteTStrMenu.Name = "deleteTStrMenu";
             this.deleteTStrMenu.Size = new System.Drawing.Size(152, 22);
             this.deleteTStrMenu.Text = "Удалить";
-            this.deleteTStrMenu.Click += new System.EventHandler(this.deleteTStrMenu_Click);
             // 
             // label7
             // 
@@ -292,29 +298,29 @@
             this.label10.TabIndex = 17;
             this.label10.Text = "Телефон";
             // 
-            // adresstxtBox
+            // addressTBox
             // 
-            this.adresstxtBox.Location = new System.Drawing.Point(139, 96);
-            this.adresstxtBox.Name = "adresstxtBox";
-            this.adresstxtBox.Size = new System.Drawing.Size(125, 20);
-            this.adresstxtBox.TabIndex = 18;
-            this.adresstxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.addressTBox.Location = new System.Drawing.Point(139, 96);
+            this.addressTBox.Name = "addressTBox";
+            this.addressTBox.Size = new System.Drawing.Size(125, 20);
+            this.addressTBox.TabIndex = 18;
+            this.addressTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // phonetxtBox
+            // phoneNumberTBox
             // 
-            this.phonetxtBox.Location = new System.Drawing.Point(139, 122);
-            this.phonetxtBox.Name = "phonetxtBox";
-            this.phonetxtBox.Size = new System.Drawing.Size(125, 20);
-            this.phonetxtBox.TabIndex = 19;
-            this.phonetxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.phoneNumberTBox.Location = new System.Drawing.Point(139, 122);
+            this.phoneNumberTBox.Name = "phoneNumberTBox";
+            this.phoneNumberTBox.Size = new System.Drawing.Size(125, 20);
+            this.phoneNumberTBox.TabIndex = 19;
+            this.phoneNumberTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // workDaystxtBox
+            // workDaysTBox
             // 
-            this.workDaystxtBox.Location = new System.Drawing.Point(139, 148);
-            this.workDaystxtBox.Name = "workDaystxtBox";
-            this.workDaystxtBox.Size = new System.Drawing.Size(125, 20);
-            this.workDaystxtBox.TabIndex = 20;
-            this.workDaystxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.workDaysTBox.Location = new System.Drawing.Point(139, 148);
+            this.workDaysTBox.Name = "workDaysTBox";
+            this.workDaysTBox.Size = new System.Drawing.Size(125, 20);
+            this.workDaysTBox.TabIndex = 20;
+            this.workDaysTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label11
             // 
@@ -334,73 +340,73 @@
             this.label12.TabIndex = 22;
             this.label12.Text = "Конец";
             // 
-            // startWorkUpDown
+            // startWorkNUD
             // 
-            this.startWorkUpDown.Location = new System.Drawing.Point(213, 187);
-            this.startWorkUpDown.Name = "startWorkUpDown";
-            this.startWorkUpDown.Size = new System.Drawing.Size(51, 20);
-            this.startWorkUpDown.TabIndex = 23;
-            this.startWorkUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.startWorkNUD.Location = new System.Drawing.Point(213, 187);
+            this.startWorkNUD.Name = "startWorkNUD";
+            this.startWorkNUD.Size = new System.Drawing.Size(51, 20);
+            this.startWorkNUD.TabIndex = 23;
+            this.startWorkNUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // endWorkUpDown
+            // endWorkNUD
             // 
-            this.endWorkUpDown.Location = new System.Drawing.Point(359, 188);
-            this.endWorkUpDown.Name = "endWorkUpDown";
-            this.endWorkUpDown.Size = new System.Drawing.Size(51, 20);
-            this.endWorkUpDown.TabIndex = 24;
-            this.endWorkUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.endWorkNUD.Location = new System.Drawing.Point(359, 188);
+            this.endWorkNUD.Name = "endWorkNUD";
+            this.endWorkNUD.Size = new System.Drawing.Size(51, 20);
+            this.endWorkNUD.TabIndex = 24;
+            this.endWorkNUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // resultlistBox
+            // dataGV
             // 
-            this.resultlistBox.FormattingEnabled = true;
-            this.resultlistBox.Location = new System.Drawing.Point(48, 224);
-            this.resultlistBox.Name = "resultlistBox";
-            this.resultlistBox.Size = new System.Drawing.Size(510, 173);
-            this.resultlistBox.TabIndex = 25;
-            // 
-            // infTStrMenu
-            // 
-            this.infTStrMenu.Name = "infTStrMenu";
-            this.infTStrMenu.Size = new System.Drawing.Size(152, 22);
-            this.infTStrMenu.Text = "Информация";
-            this.infTStrMenu.Click += new System.EventHandler(this.infTStrMenu_Click);
+            this.dataGV.AllowUserToAddRows = false;
+            this.dataGV.AllowUserToDeleteRows = false;
+            this.dataGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGV.Location = new System.Drawing.Point(48, 224);
+            this.dataGV.MultiSelect = false;
+            this.dataGV.Name = "dataGV";
+            this.dataGV.Size = new System.Drawing.Size(510, 179);
+            this.dataGV.TabIndex = 26;
+            this.dataGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGV_CellDoubleClick);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(611, 406);
-            this.Controls.Add(this.resultlistBox);
-            this.Controls.Add(this.endWorkUpDown);
-            this.Controls.Add(this.startWorkUpDown);
+            this.ClientSize = new System.Drawing.Size(607, 439);
+            this.Controls.Add(this.dataGV);
+            this.Controls.Add(this.endWorkNUD);
+            this.Controls.Add(this.startWorkNUD);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.workDaystxtBox);
-            this.Controls.Add(this.phonetxtBox);
-            this.Controls.Add(this.adresstxtBox);
+            this.Controls.Add(this.workDaysTBox);
+            this.Controls.Add(this.phoneNumberTBox);
+            this.Controls.Add(this.addressTBox);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.specialtxtBox);
+            this.Controls.Add(this.specializationTBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.findbtn);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.ownertxtBox);
+            this.Controls.Add(this.ownerTBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.servicetxtBox);
-            this.Controls.Add(this.kindtxtBox);
+            this.Controls.Add(this.serviceTBox);
+            this.Controls.Add(this.classTBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.nametxtBox);
+            this.Controls.Add(this.nameTBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "MainForm";
             this.Text = "Services";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.startWorkUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.endWorkUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.startWorkNUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.endWorkNUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,18 +414,18 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox nametxtBox;
+        private System.Windows.Forms.TextBox nameTBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox kindtxtBox;
-        private System.Windows.Forms.TextBox servicetxtBox;
+        private System.Windows.Forms.TextBox classTBox;
+        private System.Windows.Forms.TextBox serviceTBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox ownertxtBox;
+        private System.Windows.Forms.TextBox ownerTBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button findbtn;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox specialtxtBox;
+        private System.Windows.Forms.TextBox specializationTBox;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileTStrMenu;
         private System.Windows.Forms.ToolStripMenuItem exitTStrMenu;
@@ -432,16 +438,16 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox adresstxtBox;
-        private System.Windows.Forms.TextBox phonetxtBox;
-        private System.Windows.Forms.TextBox workDaystxtBox;
+        private System.Windows.Forms.TextBox addressTBox;
+        private System.Windows.Forms.TextBox phoneNumberTBox;
+        private System.Windows.Forms.TextBox workDaysTBox;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.NumericUpDown startWorkUpDown;
-        private System.Windows.Forms.NumericUpDown endWorkUpDown;
+        private System.Windows.Forms.NumericUpDown startWorkNUD;
+        private System.Windows.Forms.NumericUpDown endWorkNUD;
         private System.Windows.Forms.ToolStripMenuItem deleteTStrMenu;
-        private System.Windows.Forms.ListBox resultlistBox;
         private System.Windows.Forms.ToolStripMenuItem infTStrMenu;
+        private System.Windows.Forms.DataGridView dataGV;
     }
 }
 

@@ -28,50 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.endWorkUpDown = new System.Windows.Forms.NumericUpDown();
-            this.startWorkUpDown = new System.Windows.Forms.NumericUpDown();
+            this.endWorkNUD = new System.Windows.Forms.NumericUpDown();
+            this.startWorkNUD = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.workDaystxtBox = new System.Windows.Forms.TextBox();
-            this.phonetxtBox = new System.Windows.Forms.TextBox();
-            this.adresstxtBox = new System.Windows.Forms.TextBox();
+            this.workDaysTBox = new System.Windows.Forms.TextBox();
+            this.phoneNumberTBox = new System.Windows.Forms.TextBox();
+            this.addressTBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.specialtxtBox = new System.Windows.Forms.TextBox();
+            this.specializationTBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.ownertxtBox = new System.Windows.Forms.TextBox();
+            this.ownerTBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.servicetxtBox = new System.Windows.Forms.TextBox();
-            this.kindtxtBox = new System.Windows.Forms.TextBox();
+            this.serviceTBox = new System.Windows.Forms.TextBox();
+            this.classTBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.nametxtBox = new System.Windows.Forms.TextBox();
+            this.nameTBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.okbtn = new System.Windows.Forms.Button();
             this.resetbtn = new System.Windows.Forms.Button();
             this.cancelbtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.endWorkUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.startWorkUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.endWorkNUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.startWorkNUD)).BeginInit();
             this.SuspendLayout();
             // 
-            // endWorkUpDown
+            // endWorkNUD
             // 
-            this.endWorkUpDown.Location = new System.Drawing.Point(326, 174);
-            this.endWorkUpDown.Name = "endWorkUpDown";
-            this.endWorkUpDown.Size = new System.Drawing.Size(51, 20);
-            this.endWorkUpDown.TabIndex = 46;
-            this.endWorkUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.endWorkNUD.Location = new System.Drawing.Point(326, 174);
+            this.endWorkNUD.Name = "endWorkNUD";
+            this.endWorkNUD.Size = new System.Drawing.Size(51, 20);
+            this.endWorkNUD.TabIndex = 46;
+            this.endWorkNUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // startWorkUpDown
+            // startWorkNUD
             // 
-            this.startWorkUpDown.Location = new System.Drawing.Point(180, 173);
-            this.startWorkUpDown.Name = "startWorkUpDown";
-            this.startWorkUpDown.Size = new System.Drawing.Size(51, 20);
-            this.startWorkUpDown.TabIndex = 45;
-            this.startWorkUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.startWorkNUD.Location = new System.Drawing.Point(180, 173);
+            this.startWorkNUD.Name = "startWorkNUD";
+            this.startWorkNUD.Size = new System.Drawing.Size(51, 20);
+            this.startWorkNUD.TabIndex = 45;
+            this.startWorkNUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label12
             // 
@@ -91,29 +91,29 @@
             this.label11.TabIndex = 43;
             this.label11.Text = "Начало";
             // 
-            // workDaystxtBox
+            // workDaysTBox
             // 
-            this.workDaystxtBox.Location = new System.Drawing.Point(106, 134);
-            this.workDaystxtBox.Name = "workDaystxtBox";
-            this.workDaystxtBox.Size = new System.Drawing.Size(125, 20);
-            this.workDaystxtBox.TabIndex = 42;
-            this.workDaystxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.workDaysTBox.Location = new System.Drawing.Point(106, 134);
+            this.workDaysTBox.Name = "workDaysTBox";
+            this.workDaysTBox.Size = new System.Drawing.Size(125, 20);
+            this.workDaysTBox.TabIndex = 42;
+            this.workDaysTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // phonetxtBox
+            // phoneNumberTBox
             // 
-            this.phonetxtBox.Location = new System.Drawing.Point(106, 108);
-            this.phonetxtBox.Name = "phonetxtBox";
-            this.phonetxtBox.Size = new System.Drawing.Size(125, 20);
-            this.phonetxtBox.TabIndex = 41;
-            this.phonetxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.phoneNumberTBox.Location = new System.Drawing.Point(106, 108);
+            this.phoneNumberTBox.Name = "phoneNumberTBox";
+            this.phoneNumberTBox.Size = new System.Drawing.Size(125, 20);
+            this.phoneNumberTBox.TabIndex = 41;
+            this.phoneNumberTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // adresstxtBox
+            // addressTBox
             // 
-            this.adresstxtBox.Location = new System.Drawing.Point(106, 82);
-            this.adresstxtBox.Name = "adresstxtBox";
-            this.adresstxtBox.Size = new System.Drawing.Size(125, 20);
-            this.adresstxtBox.TabIndex = 40;
-            this.adresstxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.addressTBox.Location = new System.Drawing.Point(106, 82);
+            this.addressTBox.Name = "addressTBox";
+            this.addressTBox.Size = new System.Drawing.Size(125, 20);
+            this.addressTBox.TabIndex = 40;
+            this.addressTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label10
             // 
@@ -155,13 +155,13 @@
             this.label7.TabIndex = 36;
             this.label7.Text = "Адрес";
             // 
-            // specialtxtBox
+            // specializationTBox
             // 
-            this.specialtxtBox.Location = new System.Drawing.Point(400, 53);
-            this.specialtxtBox.Name = "specialtxtBox";
-            this.specialtxtBox.Size = new System.Drawing.Size(125, 20);
-            this.specialtxtBox.TabIndex = 35;
-            this.specialtxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.specializationTBox.Location = new System.Drawing.Point(400, 53);
+            this.specializationTBox.Name = "specializationTBox";
+            this.specializationTBox.Size = new System.Drawing.Size(125, 20);
+            this.specializationTBox.TabIndex = 35;
+            this.specializationTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label6
             // 
@@ -193,13 +193,13 @@
             this.label4.TabIndex = 32;
             this.label4.Text = "Собственность";
             // 
-            // ownertxtBox
+            // ownerTBox
             // 
-            this.ownertxtBox.Location = new System.Drawing.Point(400, 131);
-            this.ownertxtBox.Name = "ownertxtBox";
-            this.ownertxtBox.Size = new System.Drawing.Size(125, 20);
-            this.ownertxtBox.TabIndex = 31;
-            this.ownertxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ownerTBox.Location = new System.Drawing.Point(400, 131);
+            this.ownerTBox.Name = "ownerTBox";
+            this.ownerTBox.Size = new System.Drawing.Size(125, 20);
+            this.ownerTBox.TabIndex = 31;
+            this.ownerTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
             // 
@@ -211,21 +211,21 @@
             this.label3.TabIndex = 30;
             this.label3.Text = "Услуга";
             // 
-            // servicetxtBox
+            // serviceTBox
             // 
-            this.servicetxtBox.Location = new System.Drawing.Point(400, 105);
-            this.servicetxtBox.Name = "servicetxtBox";
-            this.servicetxtBox.Size = new System.Drawing.Size(125, 20);
-            this.servicetxtBox.TabIndex = 29;
-            this.servicetxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.serviceTBox.Location = new System.Drawing.Point(400, 105);
+            this.serviceTBox.Name = "serviceTBox";
+            this.serviceTBox.Size = new System.Drawing.Size(125, 20);
+            this.serviceTBox.TabIndex = 29;
+            this.serviceTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // kindtxtBox
+            // classTBox
             // 
-            this.kindtxtBox.Location = new System.Drawing.Point(400, 79);
-            this.kindtxtBox.Name = "kindtxtBox";
-            this.kindtxtBox.Size = new System.Drawing.Size(125, 20);
-            this.kindtxtBox.TabIndex = 28;
-            this.kindtxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.classTBox.Location = new System.Drawing.Point(400, 79);
+            this.classTBox.Name = "classTBox";
+            this.classTBox.Size = new System.Drawing.Size(125, 20);
+            this.classTBox.TabIndex = 28;
+            this.classTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
             // 
@@ -237,13 +237,13 @@
             this.label2.TabIndex = 27;
             this.label2.Text = "Разряд";
             // 
-            // nametxtBox
+            // nameTBox
             // 
-            this.nametxtBox.Location = new System.Drawing.Point(106, 56);
-            this.nametxtBox.Name = "nametxtBox";
-            this.nametxtBox.Size = new System.Drawing.Size(125, 20);
-            this.nametxtBox.TabIndex = 26;
-            this.nametxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nameTBox.Location = new System.Drawing.Point(106, 56);
+            this.nameTBox.Name = "nameTBox";
+            this.nameTBox.Size = new System.Drawing.Size(125, 20);
+            this.nameTBox.TabIndex = 26;
+            this.nameTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label1
             // 
@@ -274,7 +274,6 @@
             this.resetbtn.TabIndex = 48;
             this.resetbtn.Text = "Reset";
             this.resetbtn.UseVisualStyleBackColor = true;
-            this.resetbtn.Click += new System.EventHandler(this.resetbtn_Click);
             // 
             // cancelbtn
             // 
@@ -294,33 +293,31 @@
             this.Controls.Add(this.cancelbtn);
             this.Controls.Add(this.resetbtn);
             this.Controls.Add(this.okbtn);
-            this.Controls.Add(this.endWorkUpDown);
-            this.Controls.Add(this.startWorkUpDown);
+            this.Controls.Add(this.endWorkNUD);
+            this.Controls.Add(this.startWorkNUD);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.workDaystxtBox);
-            this.Controls.Add(this.phonetxtBox);
-            this.Controls.Add(this.adresstxtBox);
+            this.Controls.Add(this.workDaysTBox);
+            this.Controls.Add(this.phoneNumberTBox);
+            this.Controls.Add(this.addressTBox);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.specialtxtBox);
+            this.Controls.Add(this.specializationTBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.ownertxtBox);
+            this.Controls.Add(this.ownerTBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.servicetxtBox);
-            this.Controls.Add(this.kindtxtBox);
+            this.Controls.Add(this.serviceTBox);
+            this.Controls.Add(this.classTBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.nametxtBox);
+            this.Controls.Add(this.nameTBox);
             this.Controls.Add(this.label1);
             this.Name = "CompanyForm";
-            this.Text = "Add company";
-            this.Load += new System.EventHandler(this.AddForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.endWorkUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.startWorkUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.endWorkNUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.startWorkNUD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,27 +325,27 @@
 
         #endregion
 
-        private System.Windows.Forms.NumericUpDown endWorkUpDown;
-        private System.Windows.Forms.NumericUpDown startWorkUpDown;
+        private System.Windows.Forms.NumericUpDown endWorkNUD;
+        private System.Windows.Forms.NumericUpDown startWorkNUD;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox workDaystxtBox;
-        private System.Windows.Forms.TextBox phonetxtBox;
-        private System.Windows.Forms.TextBox adresstxtBox;
+        private System.Windows.Forms.TextBox workDaysTBox;
+        private System.Windows.Forms.TextBox phoneNumberTBox;
+        private System.Windows.Forms.TextBox addressTBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox specialtxtBox;
+        private System.Windows.Forms.TextBox specializationTBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox ownertxtBox;
+        private System.Windows.Forms.TextBox ownerTBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox servicetxtBox;
-        private System.Windows.Forms.TextBox kindtxtBox;
+        private System.Windows.Forms.TextBox serviceTBox;
+        private System.Windows.Forms.TextBox classTBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox nametxtBox;
+        private System.Windows.Forms.TextBox nameTBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button okbtn;
         private System.Windows.Forms.Button resetbtn;
