@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.endWorkNUD = new System.Windows.Forms.NumericUpDown();
-            this.startWorkNUD = new System.Windows.Forms.NumericUpDown();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.workDaysTBox = new System.Windows.Forms.TextBox();
             this.phoneNumberTBox = new System.Windows.Forms.TextBox();
             this.addressTBox = new System.Windows.Forms.TextBox();
@@ -60,50 +56,26 @@
             this.servTStrMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addTStrMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGV = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.endWorkNUD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.startWorkNUD)).BeginInit();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.startDTPicker = new System.Windows.Forms.DateTimePicker();
+            this.endDTPicker = new System.Windows.Forms.DateTimePicker();
+            this.nameCheck = new System.Windows.Forms.CheckBox();
+            this.numberCheck = new System.Windows.Forms.CheckBox();
+            this.addressCheck = new System.Windows.Forms.CheckBox();
+            this.daysCheck = new System.Windows.Forms.CheckBox();
+            this.classCheck = new System.Windows.Forms.CheckBox();
+            this.specCheck = new System.Windows.Forms.CheckBox();
+            this.servicesCheck = new System.Windows.Forms.CheckBox();
+            this.ownCheck = new System.Windows.Forms.CheckBox();
+            this.timeCheck = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGV)).BeginInit();
             this.SuspendLayout();
             // 
-            // endWorkNUD
-            // 
-            this.endWorkNUD.Location = new System.Drawing.Point(366, 254);
-            this.endWorkNUD.Name = "endWorkNUD";
-            this.endWorkNUD.Size = new System.Drawing.Size(51, 20);
-            this.endWorkNUD.TabIndex = 49;
-            this.endWorkNUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // startWorkNUD
-            // 
-            this.startWorkNUD.Location = new System.Drawing.Point(220, 253);
-            this.startWorkNUD.Name = "startWorkNUD";
-            this.startWorkNUD.Size = new System.Drawing.Size(51, 20);
-            this.startWorkNUD.TabIndex = 48;
-            this.startWorkNUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label12.Location = new System.Drawing.Point(322, 256);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(38, 13);
-            this.label12.TabIndex = 47;
-            this.label12.Text = "Конец";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label11.Location = new System.Drawing.Point(169, 256);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(44, 13);
-            this.label11.TabIndex = 46;
-            this.label11.Text = "Начало";
-            // 
             // workDaysTBox
             // 
+            this.workDaysTBox.Enabled = false;
             this.workDaysTBox.Location = new System.Drawing.Point(140, 217);
             this.workDaysTBox.Name = "workDaysTBox";
             this.workDaysTBox.Size = new System.Drawing.Size(143, 20);
@@ -112,6 +84,7 @@
             // 
             // phoneNumberTBox
             // 
+            this.phoneNumberTBox.Enabled = false;
             this.phoneNumberTBox.Location = new System.Drawing.Point(140, 177);
             this.phoneNumberTBox.Name = "phoneNumberTBox";
             this.phoneNumberTBox.Size = new System.Drawing.Size(143, 20);
@@ -120,6 +93,7 @@
             // 
             // addressTBox
             // 
+            this.addressTBox.Enabled = false;
             this.addressTBox.Location = new System.Drawing.Point(140, 112);
             this.addressTBox.Name = "addressTBox";
             this.addressTBox.Size = new System.Drawing.Size(143, 20);
@@ -172,9 +146,10 @@
             // 
             // specializationTBox
             // 
+            this.specializationTBox.Enabled = false;
             this.specializationTBox.Location = new System.Drawing.Point(458, 77);
             this.specializationTBox.Name = "specializationTBox";
-            this.specializationTBox.Size = new System.Drawing.Size(165, 20);
+            this.specializationTBox.Size = new System.Drawing.Size(179, 20);
             this.specializationTBox.TabIndex = 38;
             this.specializationTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -203,7 +178,7 @@
             // findbtn
             // 
             this.findbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.findbtn.Location = new System.Drawing.Point(510, 237);
+            this.findbtn.Location = new System.Drawing.Point(524, 237);
             this.findbtn.Name = "findbtn";
             this.findbtn.Size = new System.Drawing.Size(113, 23);
             this.findbtn.TabIndex = 35;
@@ -224,9 +199,10 @@
             // 
             // ownerTBox
             // 
+            this.ownerTBox.Enabled = false;
             this.ownerTBox.Location = new System.Drawing.Point(458, 192);
             this.ownerTBox.Name = "ownerTBox";
-            this.ownerTBox.Size = new System.Drawing.Size(165, 20);
+            this.ownerTBox.Size = new System.Drawing.Size(179, 20);
             this.ownerTBox.TabIndex = 33;
             this.ownerTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -243,15 +219,17 @@
             // 
             // serviceTBox
             // 
+            this.serviceTBox.Enabled = false;
             this.serviceTBox.Location = new System.Drawing.Point(458, 118);
             this.serviceTBox.Multiline = true;
             this.serviceTBox.Name = "serviceTBox";
-            this.serviceTBox.Size = new System.Drawing.Size(165, 48);
+            this.serviceTBox.Size = new System.Drawing.Size(179, 48);
             this.serviceTBox.TabIndex = 31;
             this.serviceTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // classTBox
             // 
+            this.classTBox.Enabled = false;
             this.classTBox.Location = new System.Drawing.Point(140, 146);
             this.classTBox.Name = "classTBox";
             this.classTBox.Size = new System.Drawing.Size(143, 20);
@@ -271,6 +249,7 @@
             // 
             // nameTBox
             // 
+            this.nameTBox.Enabled = false;
             this.nameTBox.Location = new System.Drawing.Point(140, 74);
             this.nameTBox.Name = "nameTBox";
             this.nameTBox.Size = new System.Drawing.Size(143, 20);
@@ -356,21 +335,161 @@
             this.dataGV.Location = new System.Drawing.Point(39, 280);
             this.dataGV.MultiSelect = false;
             this.dataGV.Name = "dataGV";
-            this.dataGV.Size = new System.Drawing.Size(586, 186);
+            this.dataGV.Size = new System.Drawing.Size(598, 186);
             this.dataGV.TabIndex = 50;
             this.dataGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGV_CellDoubleClick);
             // 
-            // MainForm
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label12.Location = new System.Drawing.Point(312, 256);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(38, 13);
+            this.label12.TabIndex = 98;
+            this.label12.Text = "Конец";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label11.Location = new System.Drawing.Point(159, 256);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(44, 13);
+            this.label11.TabIndex = 97;
+            this.label11.Text = "Начало";
+            // 
+            // startDTPicker
+            // 
+            this.startDTPicker.Enabled = false;
+            this.startDTPicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.startDTPicker.Location = new System.Drawing.Point(209, 251);
+            this.startDTPicker.Name = "startDTPicker";
+            this.startDTPicker.ShowUpDown = true;
+            this.startDTPicker.Size = new System.Drawing.Size(76, 20);
+            this.startDTPicker.TabIndex = 101;
+            this.startDTPicker.Value = new System.DateTime(2016, 4, 29, 0, 0, 0, 0);
+            // 
+            // endDTPicker
+            // 
+            this.endDTPicker.Enabled = false;
+            this.endDTPicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.endDTPicker.Location = new System.Drawing.Point(356, 251);
+            this.endDTPicker.Name = "endDTPicker";
+            this.endDTPicker.ShowUpDown = true;
+            this.endDTPicker.Size = new System.Drawing.Size(76, 20);
+            this.endDTPicker.TabIndex = 102;
+            this.endDTPicker.Value = new System.DateTime(2016, 4, 29, 0, 0, 0, 0);
+            // 
+            // nameCheck
+            // 
+            this.nameCheck.AutoSize = true;
+            this.nameCheck.Location = new System.Drawing.Point(15, 71);
+            this.nameCheck.Name = "nameCheck";
+            this.nameCheck.Size = new System.Drawing.Size(15, 14);
+            this.nameCheck.TabIndex = 104;
+            this.nameCheck.UseVisualStyleBackColor = true;
+            this.nameCheck.CheckedChanged += new System.EventHandler(this.nameCheck_CheckedChanged);
+            // 
+            // numberCheck
+            // 
+            this.numberCheck.AutoSize = true;
+            this.numberCheck.Location = new System.Drawing.Point(15, 183);
+            this.numberCheck.Name = "numberCheck";
+            this.numberCheck.Size = new System.Drawing.Size(15, 14);
+            this.numberCheck.TabIndex = 105;
+            this.numberCheck.UseVisualStyleBackColor = true;
+            this.numberCheck.CheckedChanged += new System.EventHandler(this.numberCheck_CheckedChanged);
+            // 
+            // addressCheck
+            // 
+            this.addressCheck.AutoSize = true;
+            this.addressCheck.Location = new System.Drawing.Point(15, 112);
+            this.addressCheck.Name = "addressCheck";
+            this.addressCheck.Size = new System.Drawing.Size(15, 14);
+            this.addressCheck.TabIndex = 105;
+            this.addressCheck.UseVisualStyleBackColor = true;
+            this.addressCheck.CheckedChanged += new System.EventHandler(this.addressCheck_CheckedChanged);
+            // 
+            // daysCheck
+            // 
+            this.daysCheck.AutoSize = true;
+            this.daysCheck.Location = new System.Drawing.Point(15, 221);
+            this.daysCheck.Name = "daysCheck";
+            this.daysCheck.Size = new System.Drawing.Size(15, 14);
+            this.daysCheck.TabIndex = 106;
+            this.daysCheck.UseVisualStyleBackColor = true;
+            this.daysCheck.CheckedChanged += new System.EventHandler(this.daysCheck_CheckedChanged);
+            // 
+            // classCheck
+            // 
+            this.classCheck.AutoSize = true;
+            this.classCheck.Location = new System.Drawing.Point(15, 148);
+            this.classCheck.Name = "classCheck";
+            this.classCheck.Size = new System.Drawing.Size(15, 14);
+            this.classCheck.TabIndex = 106;
+            this.classCheck.UseVisualStyleBackColor = true;
+            this.classCheck.CheckedChanged += new System.EventHandler(this.classCheck_CheckedChanged);
+            // 
+            // specCheck
+            // 
+            this.specCheck.AutoSize = true;
+            this.specCheck.Location = new System.Drawing.Point(314, 80);
+            this.specCheck.Name = "specCheck";
+            this.specCheck.Size = new System.Drawing.Size(15, 14);
+            this.specCheck.TabIndex = 107;
+            this.specCheck.UseVisualStyleBackColor = true;
+            this.specCheck.CheckedChanged += new System.EventHandler(this.specCheck_CheckedChanged);
+            // 
+            // servicesCheck
+            // 
+            this.servicesCheck.AutoSize = true;
+            this.servicesCheck.Location = new System.Drawing.Point(374, 122);
+            this.servicesCheck.Name = "servicesCheck";
+            this.servicesCheck.Size = new System.Drawing.Size(15, 14);
+            this.servicesCheck.TabIndex = 108;
+            this.servicesCheck.UseVisualStyleBackColor = true;
+            this.servicesCheck.CheckedChanged += new System.EventHandler(this.servicesCheck_CheckedChanged);
+            // 
+            // ownCheck
+            // 
+            this.ownCheck.AutoSize = true;
+            this.ownCheck.Location = new System.Drawing.Point(319, 194);
+            this.ownCheck.Name = "ownCheck";
+            this.ownCheck.Size = new System.Drawing.Size(15, 14);
+            this.ownCheck.TabIndex = 109;
+            this.ownCheck.UseVisualStyleBackColor = true;
+            this.ownCheck.CheckedChanged += new System.EventHandler(this.ownCheck_CheckedChanged);
+            // 
+            // timeCheck
+            // 
+            this.timeCheck.AutoSize = true;
+            this.timeCheck.Location = new System.Drawing.Point(15, 257);
+            this.timeCheck.Name = "timeCheck";
+            this.timeCheck.Size = new System.Drawing.Size(15, 14);
+            this.timeCheck.TabIndex = 110;
+            this.timeCheck.UseVisualStyleBackColor = true;
+            this.timeCheck.CheckedChanged += new System.EventHandler(this.timeCheck_CheckedChanged);
+            // 
+            // startDtp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(666, 478);
-            this.Controls.Add(this.dataGV);
-            this.Controls.Add(this.endWorkNUD);
-            this.Controls.Add(this.startWorkNUD);
+            this.Controls.Add(this.timeCheck);
+            this.Controls.Add(this.ownCheck);
+            this.Controls.Add(this.servicesCheck);
+            this.Controls.Add(this.specCheck);
+            this.Controls.Add(this.classCheck);
+            this.Controls.Add(this.daysCheck);
+            this.Controls.Add(this.addressCheck);
+            this.Controls.Add(this.numberCheck);
+            this.Controls.Add(this.nameCheck);
+            this.Controls.Add(this.endDTPicker);
+            this.Controls.Add(this.startDTPicker);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
+            this.Controls.Add(this.dataGV);
             this.Controls.Add(this.workDaysTBox);
             this.Controls.Add(this.phoneNumberTBox);
             this.Controls.Add(this.addressTBox);
@@ -393,10 +512,8 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "MainForm";
+            this.Name = "startDtp";
             this.Text = "Предприятия";
-            ((System.ComponentModel.ISupportInitialize)(this.endWorkNUD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.startWorkNUD)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGV)).EndInit();
@@ -406,10 +523,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.NumericUpDown endWorkNUD;
-        private System.Windows.Forms.NumericUpDown startWorkNUD;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox workDaysTBox;
         private System.Windows.Forms.TextBox phoneNumberTBox;
         private System.Windows.Forms.TextBox addressTBox;
@@ -437,5 +550,18 @@
         private System.Windows.Forms.ToolStripMenuItem servTStrMenu;
         private System.Windows.Forms.ToolStripMenuItem addTStrMenu;
         private System.Windows.Forms.DataGridView dataGV;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DateTimePicker startDTPicker;
+        private System.Windows.Forms.DateTimePicker endDTPicker;
+        private System.Windows.Forms.CheckBox nameCheck;
+        private System.Windows.Forms.CheckBox numberCheck;
+        private System.Windows.Forms.CheckBox addressCheck;
+        private System.Windows.Forms.CheckBox daysCheck;
+        private System.Windows.Forms.CheckBox classCheck;
+        private System.Windows.Forms.CheckBox specCheck;
+        private System.Windows.Forms.CheckBox servicesCheck;
+        private System.Windows.Forms.CheckBox ownCheck;
+        private System.Windows.Forms.CheckBox timeCheck;
     }
 }

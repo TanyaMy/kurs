@@ -33,6 +33,7 @@ namespace kurs.View
             classTBox.Text = comp.Class;
             ownerTBox.Text = comp.Ownership;
             specializationTBox.Text = comp.Specialization;
+
         }
 
         private void cancelbtn_Click(object sender, EventArgs e)
@@ -40,39 +41,24 @@ namespace kurs.View
             this.Close();
         }
 
-       
-
-        private void deletebtn_Click(object sender, EventArgs e)
+        private Company SetInformationFromForm(Company comp)
         {
-            Company company = new Company()
-            {
-                Name = nameTBox.Text,
-                Address = addressTBox.Text,
-                PhoneNumber = phoneNumberTBox.Text,
-                Class = classTBox.Text,
-                Specialization = specializationTBox.Text,
-                Ownership = ownerTBox.Text,
-                Services = serviceTBox.Text.Trim().Split(' '),
-                WorkDays = workDaysTBox.Text.Trim().Split(' ')
-            };
-            DataBase.Delete(company);
-            this.Close();
+                comp.Name = nameTBox.Text;
+                comp.Address = addressTBox.Text;
+                comp.PhoneNumber = phoneNumberTBox.Text;
+                comp.Class = classTBox.Text;
+                comp.Specialization = specializationTBox.Text;
+                comp.Ownership = ownerTBox.Text;
+                comp.Services = serviceTBox.Text.Trim().Split(' ');
+                comp.WorkDays = workDaysTBox.Text.Trim().Split(' ');
+                return comp;
         }
 
         private void okbtn_Click(object sender, EventArgs e)
         {
-            Company company = new Company()
-            {
-                Id = -1,
-                Name = nameTBox.Text,
-                Address = addressTBox.Text,
-                PhoneNumber = phoneNumberTBox.Text,
-                Class = classTBox.Text,
-                Specialization = specializationTBox.Text,
-                Ownership = ownerTBox.Text,
-                Services = serviceTBox.Text.Trim().Split(' '),
-                WorkDays = workDaysTBox.Text.Trim().Split(' ')
-            };
+            Company company = new Company();
+            company.Id = -1;
+            SetInformationFromForm(company);
             DataBase.Add(company);
         }
 
@@ -81,8 +67,6 @@ namespace kurs.View
             foreach (Control c in Controls)
                 if (c is TextBox)
                     ((TextBox)c).Text = null;
-            startWorkNUD.Value = 0;
-            endWorkNUD.Value = 0;
         }
     }
 }

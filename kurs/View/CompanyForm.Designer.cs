@@ -35,10 +35,6 @@
             this.deletebtn = new System.Windows.Forms.Button();
             this.IDlbl = new System.Windows.Forms.Label();
             this.Changebtn = new System.Windows.Forms.Button();
-            this.endWorkNUD = new System.Windows.Forms.NumericUpDown();
-            this.startWorkNUD = new System.Windows.Forms.NumericUpDown();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.workDaysTBox = new System.Windows.Forms.TextBox();
             this.phoneNumberTBox = new System.Windows.Forms.TextBox();
             this.addressTBox = new System.Windows.Forms.TextBox();
@@ -56,8 +52,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.nameTBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.endWorkNUD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.startWorkNUD)).BeginInit();
+            this.endDT = new System.Windows.Forms.DateTimePicker();
+            this.startDT = new System.Windows.Forms.DateTimePicker();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label5
@@ -118,40 +116,6 @@
             this.Changebtn.Text = "Изменить";
             this.Changebtn.UseVisualStyleBackColor = true;
             this.Changebtn.Click += new System.EventHandler(this.Changebtn_Click);
-            // 
-            // endWorkNUD
-            // 
-            this.endWorkNUD.Location = new System.Drawing.Point(343, 244);
-            this.endWorkNUD.Name = "endWorkNUD";
-            this.endWorkNUD.Size = new System.Drawing.Size(51, 20);
-            this.endWorkNUD.TabIndex = 73;
-            this.endWorkNUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // startWorkNUD
-            // 
-            this.startWorkNUD.Location = new System.Drawing.Point(197, 243);
-            this.startWorkNUD.Name = "startWorkNUD";
-            this.startWorkNUD.Size = new System.Drawing.Size(51, 20);
-            this.startWorkNUD.TabIndex = 72;
-            this.startWorkNUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(299, 246);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(38, 13);
-            this.label12.TabIndex = 71;
-            this.label12.Text = "Конец";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(146, 246);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(44, 13);
-            this.label11.TabIndex = 70;
-            this.label11.Text = "Начало";
             // 
             // workDaysTBox
             // 
@@ -308,13 +272,53 @@
             this.label1.TabIndex = 53;
             this.label1.Text = "Название";
             // 
+            // endDT
+            // 
+            this.endDT.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.endDT.Location = new System.Drawing.Point(346, 246);
+            this.endDT.Name = "endDT";
+            this.endDT.ShowUpDown = true;
+            this.endDT.Size = new System.Drawing.Size(76, 20);
+            this.endDT.TabIndex = 106;
+            this.endDT.Value = new System.DateTime(2016, 4, 29, 0, 0, 1, 0);
+            // 
+            // startDT
+            // 
+            this.startDT.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.startDT.Location = new System.Drawing.Point(199, 246);
+            this.startDT.Name = "startDT";
+            this.startDT.ShowUpDown = true;
+            this.startDT.Size = new System.Drawing.Size(76, 20);
+            this.startDT.TabIndex = 105;
+            this.startDT.Value = new System.DateTime(2016, 4, 29, 0, 0, 0, 0);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label12.Location = new System.Drawing.Point(302, 251);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(38, 13);
+            this.label12.TabIndex = 104;
+            this.label12.Text = "Конец";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label11.Location = new System.Drawing.Point(149, 251);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(44, 13);
+            this.label11.TabIndex = 103;
+            this.label11.Text = "Начало";
+            // 
             // CompanyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 381);
-            this.Controls.Add(this.endWorkNUD);
-            this.Controls.Add(this.startWorkNUD);
+            this.Controls.Add(this.endDT);
+            this.Controls.Add(this.startDT);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.workDaysTBox);
@@ -343,8 +347,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CompanyForm";
             this.Text = "Удалить/Изменить";
-            ((System.ComponentModel.ISupportInitialize)(this.endWorkNUD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.startWorkNUD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,10 +359,6 @@
         private System.Windows.Forms.Button deletebtn;
         private System.Windows.Forms.Label IDlbl;
         private System.Windows.Forms.Button Changebtn;
-        private System.Windows.Forms.NumericUpDown endWorkNUD;
-        private System.Windows.Forms.NumericUpDown startWorkNUD;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox workDaysTBox;
         private System.Windows.Forms.TextBox phoneNumberTBox;
         private System.Windows.Forms.TextBox addressTBox;
@@ -378,5 +376,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox nameTBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker endDT;
+        private System.Windows.Forms.DateTimePicker startDT;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
     }
 }
