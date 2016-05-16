@@ -35,27 +35,35 @@
             this.deletebtn = new System.Windows.Forms.Button();
             this.IDlbl = new System.Windows.Forms.Label();
             this.Changebtn = new System.Windows.Forms.Button();
-            this.workDaysTBox = new System.Windows.Forms.TextBox();
             this.phoneNumberTBox = new System.Windows.Forms.TextBox();
             this.addressTBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.specializationTBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.ownerTBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.serviceTBox = new System.Windows.Forms.TextBox();
-            this.classTBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.nameTBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.endDT = new System.Windows.Forms.DateTimePicker();
-            this.startDT = new System.Windows.Forms.DateTimePicker();
+            this.endDTPicker = new System.Windows.Forms.DateTimePicker();
+            this.startDTPicker = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.classCBox = new System.Windows.Forms.ComboBox();
+            this.specializationCBox = new System.Windows.Forms.ComboBox();
+            this.ownershipCBox = new System.Windows.Forms.ComboBox();
+            this.servicesChLB = new System.Windows.Forms.CheckedListBox();
+            this.workdaysGB = new System.Windows.Forms.GroupBox();
+            this.suncb = new System.Windows.Forms.CheckBox();
+            this.satcb = new System.Windows.Forms.CheckBox();
+            this.fricb = new System.Windows.Forms.CheckBox();
+            this.thicb = new System.Windows.Forms.CheckBox();
+            this.wedcb = new System.Windows.Forms.CheckBox();
+            this.tuecb = new System.Windows.Forms.CheckBox();
+            this.moncb = new System.Windows.Forms.CheckBox();
+            this.workdaysGB.SuspendLayout();
             this.SuspendLayout();
             // 
             // label5
@@ -91,7 +99,7 @@
             // 
             // deletebtn
             // 
-            this.deletebtn.Location = new System.Drawing.Point(48, 291);
+            this.deletebtn.Location = new System.Drawing.Point(49, 252);
             this.deletebtn.Name = "deletebtn";
             this.deletebtn.Size = new System.Drawing.Size(75, 23);
             this.deletebtn.TabIndex = 50;
@@ -109,21 +117,13 @@
             // 
             // Changebtn
             // 
-            this.Changebtn.Location = new System.Drawing.Point(149, 290);
+            this.Changebtn.Location = new System.Drawing.Point(150, 251);
             this.Changebtn.Name = "Changebtn";
             this.Changebtn.Size = new System.Drawing.Size(75, 23);
             this.Changebtn.TabIndex = 52;
             this.Changebtn.Text = "Изменить";
             this.Changebtn.UseVisualStyleBackColor = true;
             this.Changebtn.Click += new System.EventHandler(this.Changebtn_Click);
-            // 
-            // workDaysTBox
-            // 
-            this.workDaysTBox.Location = new System.Drawing.Point(123, 209);
-            this.workDaysTBox.Name = "workDaysTBox";
-            this.workDaysTBox.Size = new System.Drawing.Size(143, 20);
-            this.workDaysTBox.TabIndex = 69;
-            this.workDaysTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // phoneNumberTBox
             // 
@@ -155,7 +155,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label9.Location = new System.Drawing.Point(19, 210);
+            this.label9.Location = new System.Drawing.Point(3, 303);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(88, 17);
             this.label9.TabIndex = 65;
@@ -165,7 +165,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label8.Location = new System.Drawing.Point(19, 246);
+            this.label8.Location = new System.Drawing.Point(20, 207);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 17);
             this.label8.TabIndex = 64;
@@ -180,14 +180,6 @@
             this.label7.Size = new System.Drawing.Size(48, 17);
             this.label7.TabIndex = 63;
             this.label7.Text = "Адрес";
-            // 
-            // specializationTBox
-            // 
-            this.specializationTBox.Location = new System.Drawing.Point(441, 69);
-            this.specializationTBox.Name = "specializationTBox";
-            this.specializationTBox.Size = new System.Drawing.Size(165, 20);
-            this.specializationTBox.TabIndex = 62;
-            this.specializationTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label6
             // 
@@ -209,14 +201,6 @@
             this.label4.TabIndex = 60;
             this.label4.Text = "Собственность";
             // 
-            // ownerTBox
-            // 
-            this.ownerTBox.Location = new System.Drawing.Point(441, 184);
-            this.ownerTBox.Name = "ownerTBox";
-            this.ownerTBox.Size = new System.Drawing.Size(165, 20);
-            this.ownerTBox.TabIndex = 59;
-            this.ownerTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -226,23 +210,6 @@
             this.label3.Size = new System.Drawing.Size(52, 17);
             this.label3.TabIndex = 58;
             this.label3.Text = "Услуги";
-            // 
-            // serviceTBox
-            // 
-            this.serviceTBox.Location = new System.Drawing.Point(441, 110);
-            this.serviceTBox.Multiline = true;
-            this.serviceTBox.Name = "serviceTBox";
-            this.serviceTBox.Size = new System.Drawing.Size(165, 48);
-            this.serviceTBox.TabIndex = 57;
-            this.serviceTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // classTBox
-            // 
-            this.classTBox.Location = new System.Drawing.Point(123, 138);
-            this.classTBox.Name = "classTBox";
-            this.classTBox.Size = new System.Drawing.Size(143, 20);
-            this.classTBox.TabIndex = 56;
-            this.classTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
             // 
@@ -272,31 +239,39 @@
             this.label1.TabIndex = 53;
             this.label1.Text = "Название";
             // 
-            // endDT
+            // endDTPicker
             // 
-            this.endDT.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.endDT.Location = new System.Drawing.Point(346, 246);
-            this.endDT.Name = "endDT";
-            this.endDT.ShowUpDown = true;
-            this.endDT.Size = new System.Drawing.Size(76, 20);
-            this.endDT.TabIndex = 106;
-            this.endDT.Value = new System.DateTime(2016, 4, 29, 0, 0, 1, 0);
+            this.endDTPicker.CustomFormat = "HH:mm";
+            this.endDTPicker.Enabled = false;
+            this.endDTPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.endDTPicker.Location = new System.Drawing.Point(356, 218);
+            this.endDTPicker.MinDate = new System.DateTime(1800, 1, 1, 0, 1, 0, 0);
+            this.endDTPicker.Name = "endDTPicker";
+            this.endDTPicker.ShowUpDown = true;
+            this.endDTPicker.Size = new System.Drawing.Size(76, 20);
+            this.endDTPicker.TabIndex = 102;
+            this.endDTPicker.Value = new System.DateTime(1800, 1, 1, 0, 1, 0, 0);
+            this.endDTPicker.ValueChanged += new System.EventHandler(this.endDTPicker_ValueChanged);
             // 
-            // startDT
+            // startDTPicker
             // 
-            this.startDT.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.startDT.Location = new System.Drawing.Point(199, 246);
-            this.startDT.Name = "startDT";
-            this.startDT.ShowUpDown = true;
-            this.startDT.Size = new System.Drawing.Size(76, 20);
-            this.startDT.TabIndex = 105;
-            this.startDT.Value = new System.DateTime(2016, 4, 29, 0, 0, 0, 0);
+            this.startDTPicker.CustomFormat = "HH:mm";
+            this.startDTPicker.Enabled = false;
+            this.startDTPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.startDTPicker.Location = new System.Drawing.Point(209, 218);
+            this.startDTPicker.MaxDate = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
+            this.startDTPicker.MinDate = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
+            this.startDTPicker.Name = "startDTPicker";
+            this.startDTPicker.ShowUpDown = true;
+            this.startDTPicker.Size = new System.Drawing.Size(76, 20);
+            this.startDTPicker.TabIndex = 101;
+            this.startDTPicker.Value = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label12.Location = new System.Drawing.Point(302, 251);
+            this.label12.Location = new System.Drawing.Point(312, 218);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(38, 13);
             this.label12.TabIndex = 104;
@@ -306,35 +281,185 @@
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label11.Location = new System.Drawing.Point(149, 251);
+            this.label11.Location = new System.Drawing.Point(159, 218);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(44, 13);
             this.label11.TabIndex = 103;
             this.label11.Text = "Начало";
+            // 
+            // classCBox
+            // 
+            this.classCBox.FormattingEnabled = true;
+            this.classCBox.Items.AddRange(new object[] {
+            "Коммунальное"});
+            this.classCBox.Location = new System.Drawing.Point(123, 137);
+            this.classCBox.Name = "classCBox";
+            this.classCBox.Size = new System.Drawing.Size(143, 21);
+            this.classCBox.TabIndex = 114;
+            // 
+            // specializationCBox
+            // 
+            this.specializationCBox.FormattingEnabled = true;
+            this.specializationCBox.Location = new System.Drawing.Point(441, 66);
+            this.specializationCBox.Name = "specializationCBox";
+            this.specializationCBox.Size = new System.Drawing.Size(165, 21);
+            this.specializationCBox.TabIndex = 115;
+            // 
+            // ownershipCBox
+            // 
+            this.ownershipCBox.FormattingEnabled = true;
+            this.ownershipCBox.Items.AddRange(new object[] {
+            "Государственная",
+            "Частная"});
+            this.ownershipCBox.Location = new System.Drawing.Point(441, 184);
+            this.ownershipCBox.Name = "ownershipCBox";
+            this.ownershipCBox.Size = new System.Drawing.Size(165, 21);
+            this.ownershipCBox.TabIndex = 116;
+            // 
+            // servicesChLB
+            // 
+            this.servicesChLB.Enabled = false;
+            this.servicesChLB.FormattingEnabled = true;
+            this.servicesChLB.Items.AddRange(new object[] {
+            "qwer",
+            "lol",
+            "kek",
+            "bogdan",
+            "loh",
+            "poidr",
+            "hey",
+            "gey",
+            "ritka",
+            "tozhe",
+            "samoe",
+            "vse",
+            "oni",
+            "lohi",
+            "huzhie",
+            "laby",
+            "skiduvayut",
+            "scuko",
+            "kefir"});
+            this.servicesChLB.Location = new System.Drawing.Point(441, 111);
+            this.servicesChLB.Name = "servicesChLB";
+            this.servicesChLB.Size = new System.Drawing.Size(165, 64);
+            this.servicesChLB.TabIndex = 138;
+            // 
+            // workdaysGB
+            // 
+            this.workdaysGB.Controls.Add(this.suncb);
+            this.workdaysGB.Controls.Add(this.satcb);
+            this.workdaysGB.Controls.Add(this.fricb);
+            this.workdaysGB.Controls.Add(this.thicb);
+            this.workdaysGB.Controls.Add(this.wedcb);
+            this.workdaysGB.Controls.Add(this.tuecb);
+            this.workdaysGB.Controls.Add(this.moncb);
+            this.workdaysGB.Location = new System.Drawing.Point(32, 323);
+            this.workdaysGB.Name = "workdaysGB";
+            this.workdaysGB.Size = new System.Drawing.Size(334, 46);
+            this.workdaysGB.TabIndex = 142;
+            this.workdaysGB.TabStop = false;
+            // 
+            // suncb
+            // 
+            this.suncb.AutoSize = true;
+            this.suncb.Enabled = false;
+            this.suncb.Location = new System.Drawing.Point(283, 19);
+            this.suncb.Name = "suncb";
+            this.suncb.Size = new System.Drawing.Size(39, 17);
+            this.suncb.TabIndex = 144;
+            this.suncb.Text = "Вс";
+            this.suncb.UseVisualStyleBackColor = true;
+            // 
+            // satcb
+            // 
+            this.satcb.AutoSize = true;
+            this.satcb.Enabled = false;
+            this.satcb.Location = new System.Drawing.Point(237, 19);
+            this.satcb.Name = "satcb";
+            this.satcb.Size = new System.Drawing.Size(39, 17);
+            this.satcb.TabIndex = 143;
+            this.satcb.Text = "Сб";
+            this.satcb.UseVisualStyleBackColor = true;
+            // 
+            // fricb
+            // 
+            this.fricb.AutoSize = true;
+            this.fricb.Enabled = false;
+            this.fricb.Location = new System.Drawing.Point(191, 19);
+            this.fricb.Name = "fricb";
+            this.fricb.Size = new System.Drawing.Size(39, 17);
+            this.fricb.TabIndex = 142;
+            this.fricb.Text = "Пт";
+            this.fricb.UseVisualStyleBackColor = true;
+            // 
+            // thicb
+            // 
+            this.thicb.AutoSize = true;
+            this.thicb.Enabled = false;
+            this.thicb.Location = new System.Drawing.Point(145, 19);
+            this.thicb.Name = "thicb";
+            this.thicb.Size = new System.Drawing.Size(39, 17);
+            this.thicb.TabIndex = 141;
+            this.thicb.Text = "Чт";
+            this.thicb.UseVisualStyleBackColor = true;
+            // 
+            // wedcb
+            // 
+            this.wedcb.AutoSize = true;
+            this.wedcb.Enabled = false;
+            this.wedcb.Location = new System.Drawing.Point(97, 17);
+            this.wedcb.Name = "wedcb";
+            this.wedcb.Size = new System.Drawing.Size(39, 17);
+            this.wedcb.TabIndex = 140;
+            this.wedcb.Text = "Ср";
+            this.wedcb.UseVisualStyleBackColor = true;
+            // 
+            // tuecb
+            // 
+            this.tuecb.AutoSize = true;
+            this.tuecb.Enabled = false;
+            this.tuecb.Location = new System.Drawing.Point(53, 17);
+            this.tuecb.Name = "tuecb";
+            this.tuecb.Size = new System.Drawing.Size(38, 17);
+            this.tuecb.TabIndex = 139;
+            this.tuecb.Text = "Вт";
+            this.tuecb.UseVisualStyleBackColor = true;
+            // 
+            // moncb
+            // 
+            this.moncb.AutoSize = true;
+            this.moncb.Enabled = false;
+            this.moncb.Location = new System.Drawing.Point(7, 19);
+            this.moncb.Name = "moncb";
+            this.moncb.Size = new System.Drawing.Size(40, 17);
+            this.moncb.TabIndex = 138;
+            this.moncb.Text = "Пн";
+            this.moncb.UseVisualStyleBackColor = true;
             // 
             // CompanyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 381);
-            this.Controls.Add(this.endDT);
-            this.Controls.Add(this.startDT);
+            this.Controls.Add(this.workdaysGB);
+            this.Controls.Add(this.servicesChLB);
+            this.Controls.Add(this.ownershipCBox);
+            this.Controls.Add(this.specializationCBox);
+            this.Controls.Add(this.classCBox);
+            this.Controls.Add(this.endDTPicker);
+            this.Controls.Add(this.startDTPicker);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.workDaysTBox);
             this.Controls.Add(this.phoneNumberTBox);
             this.Controls.Add(this.addressTBox);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.specializationTBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.ownerTBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.serviceTBox);
-            this.Controls.Add(this.classTBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.nameTBox);
             this.Controls.Add(this.label1);
@@ -347,6 +472,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CompanyForm";
             this.Text = "Удалить/Изменить";
+            this.workdaysGB.ResumeLayout(false);
+            this.workdaysGB.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,26 +486,33 @@
         private System.Windows.Forms.Button deletebtn;
         private System.Windows.Forms.Label IDlbl;
         private System.Windows.Forms.Button Changebtn;
-        private System.Windows.Forms.TextBox workDaysTBox;
         private System.Windows.Forms.TextBox phoneNumberTBox;
         private System.Windows.Forms.TextBox addressTBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox specializationTBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox ownerTBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox serviceTBox;
-        private System.Windows.Forms.TextBox classTBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox nameTBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker endDT;
-        private System.Windows.Forms.DateTimePicker startDT;
+        private System.Windows.Forms.DateTimePicker endDTPicker;
+        private System.Windows.Forms.DateTimePicker startDTPicker;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox classCBox;
+        private System.Windows.Forms.ComboBox specializationCBox;
+        private System.Windows.Forms.ComboBox ownershipCBox;
+        private System.Windows.Forms.CheckedListBox servicesChLB;
+        private System.Windows.Forms.GroupBox workdaysGB;
+        private System.Windows.Forms.CheckBox suncb;
+        private System.Windows.Forms.CheckBox satcb;
+        private System.Windows.Forms.CheckBox fricb;
+        private System.Windows.Forms.CheckBox thicb;
+        private System.Windows.Forms.CheckBox wedcb;
+        private System.Windows.Forms.CheckBox tuecb;
+        private System.Windows.Forms.CheckBox moncb;
     }
 }

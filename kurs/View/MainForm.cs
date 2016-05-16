@@ -32,43 +32,76 @@ namespace kurs.View
         {
             AddForm form = new AddForm();
             form.ShowDialog();
-            DataBase.Read(ref dataGV);
+            
         }
 
         private void findbtn_Click(object sender, EventArgs e)
         {
             IDictionary<string, string> dict = new Dictionary<string, string>();
-            bool kefir = false;
 
-            foreach (Control control in Controls)
+            foreach (var control in Controls)
             {
-                TextBox tb = control as TextBox;
-                if (tb != null && tb.Enabled == true)
-                {
-                    dict.Add(tb.Name.Substring(0, tb.Name.Length - 4), tb.Text);
-                    kefir = true;
-                }
+                TextBox tb = null;
+                ComboBox cb = null;
+
+                if (control as TextBox != null)
+                    tb = control as TextBox;
+                else if (control as ComboBox != null)
+                    cb = control as ComboBox;
+
+                if (tb != null && tb.Enabled)
+                    dict.Add(tb.Name.Substring(0, tb.Name.Length - 4), tb.Text.ToLower());
+                else if (cb != null && cb.Enabled)
+                    dict.Add(cb.Name.Substring(0, cb.Name.Length - 4), cb.SelectedItem.ToString().ToLower());
             }
-            if (kefir)
+
+            if (workdaysGB.Enabled)
+            {
+                dict.Add("workDays", "");
+                foreach (var tmp in workdaysGB.Controls)
+                {
+                    var ch = (CheckBox)tmp;
+                    if (ch.Checked)
+                        dict["workDays"] += ch.Text + " ";
+                }
+                if (dict["workDays"].Trim().Length == 0)
+                    dict.Remove("workDays");
+            }
+
+            if (servicesChLB.Enabled)
+            {
+                dict.Add("services", "");
+                foreach (var ch in servicesChLB.CheckedItems)
+                    dict["services"] += ch + " ";
+                if (dict["services"].Trim().Length == 0)
+                    dict.Remove("services");
+            }
+
+            if (startDTPicker.Enabled)
+                dict.Add("workTime", startDTPicker.Value.Hour + ":" + startDTPicker.Value.Minute + 
+                    " " + endDTPicker.Value.Hour + ":" + endDTPicker.Value.Minute);
+
+            if (dict.Any())
                 DataBase.Search(dict, ref dataGV);
-            else 
+            else
                 DataBase.Read(ref dataGV);
         }
 
         private void dataGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) return;
             int ID = Convert.ToInt32(dataGV[0, e.RowIndex].Value);
             CompanyForm form = new CompanyForm(DataBase.FindById((string)dataGV[0, e.RowIndex].Value));
             form.readableFields();
             form.ShowDialog();
-            DataBase.Read(ref dataGV);
+            
         }
 
         private void deleteTStrMenu_Click(object sender, EventArgs e)
         {
             CompanyForm form = new CompanyForm();
             form.ShowDialog();
-            DataBase.Read(ref dataGV);
+          
         }
 
         private void nameCheck_CheckedChanged(object sender, EventArgs e)
@@ -90,9 +123,9 @@ namespace kurs.View
         private void classCheck_CheckedChanged(object sender, EventArgs e)
         {
             if (classCheck.Checked == true)
-                classTBox.Enabled = true;
+                classCBox.Enabled = true;
             else
-                classTBox.Enabled = false;
+                classCBox.Enabled = false;
         }
 
         private void numberCheck_CheckedChanged(object sender, EventArgs e)
@@ -103,36 +136,50 @@ namespace kurs.View
                 phoneNumberTBox.Enabled = false;
         }
 
-        private void daysCheck_CheckedChanged(object sender, EventArgs e)
-        {
-            if (daysCheck.Checked == true)
-                workDaysTBox.Enabled = true;
-            else
-                workDaysTBox.Enabled = false;
-        }
-
         private void specCheck_CheckedChanged(object sender, EventArgs e)
         {
             if (specCheck.Checked == true)
-                specializationTBox.Enabled = true;
+                specializationCBox.Enabled = true;
             else
-                specializationTBox.Enabled = false;
-        }
-
-        private void servicesCheck_CheckedChanged(object sender, EventArgs e)
-        {
-            if (servicesCheck.Checked == true)
-                serviceTBox.Enabled = true;
-            else
-                serviceTBox.Enabled = false;
+                specializationCBox.Enabled = false;
         }
 
         private void ownCheck_CheckedChanged(object sender, EventArgs e)
         {
             if (ownCheck.Checked == true)
-                ownerTBox.Enabled = true;
+                ownershipCBox.Enabled = true;
             else
-                ownerTBox.Enabled = false;
+                ownershipCBox.Enabled = false;
+        }
+
+       
+        private void workDaysCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            
+            if (workDaysCheck.Checked == true)
+            {
+                foreach (var tmp in workdaysGB.Controls)
+                {
+                    var ch = (CheckBox)tmp;
+                    ch.Enabled = true;
+                }
+            }
+            else {
+                foreach (var tmp in workdaysGB.Controls)
+                {
+                    var ch = (CheckBox)tmp;
+                    ch.Enabled = false;
+                }
+            }
+        }
+
+        private void servicesCheck_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (servicesCheck.Checked)
+                servicesChLB.Enabled = true;
+            else
+                servicesChLB.Enabled = false;
         }
 
         private void timeCheck_CheckedChanged(object sender, EventArgs e)
@@ -149,5 +196,35 @@ namespace kurs.View
             }
 
         }
+
+        private void endDTPicker_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime endValue = endDTPicker.Value;
+            if (startDTPicker.MaxDate >= endDTPicker.Value)
+            {
+                if (endValue.Minute > 0)
+                    endValue.AddMinutes(-1);
+                else {
+                    endValue.AddMinutes(59);
+                    endValue.AddHours(-1);
+                }
+            }
+            else 
+                endValue.AddMinutes(-1);
+
+            startDTPicker.MaxDate = endValue;
+        }
+
+        private void startDTPicker_ValueChanged(object sender, EventArgs e)
+        {
+        }
+
+
+        private void updatepBox_Click(object sender, EventArgs e)
+        {
+            findbtn_Click(sender, e);
+        }
+
+       
     }
 }
