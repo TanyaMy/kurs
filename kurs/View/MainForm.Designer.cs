@@ -88,7 +88,7 @@ namespace kurs.View
             // phoneNumberTBox
             // 
             this.phoneNumberTBox.Enabled = false;
-            this.phoneNumberTBox.Location = new System.Drawing.Point(140, 177);
+            this.phoneNumberTBox.Location = new System.Drawing.Point(140, 156);
             this.phoneNumberTBox.Name = "phoneNumberTBox";
             this.phoneNumberTBox.Size = new System.Drawing.Size(143, 20);
             this.phoneNumberTBox.TabIndex = 44;
@@ -97,7 +97,7 @@ namespace kurs.View
             // addressTBox
             // 
             this.addressTBox.Enabled = false;
-            this.addressTBox.Location = new System.Drawing.Point(140, 112);
+            this.addressTBox.Location = new System.Drawing.Point(140, 94);
             this.addressTBox.Name = "addressTBox";
             this.addressTBox.Size = new System.Drawing.Size(143, 20);
             this.addressTBox.TabIndex = 43;
@@ -108,7 +108,7 @@ namespace kurs.View
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label10.Location = new System.Drawing.Point(36, 180);
+            this.label10.Location = new System.Drawing.Point(38, 162);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(68, 17);
             this.label10.TabIndex = 42;
@@ -119,7 +119,7 @@ namespace kurs.View
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label9.Location = new System.Drawing.Point(36, 261);
+            this.label9.Location = new System.Drawing.Point(38, 211);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(88, 17);
             this.label9.TabIndex = 41;
@@ -130,7 +130,7 @@ namespace kurs.View
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label8.Location = new System.Drawing.Point(36, 221);
+            this.label8.Location = new System.Drawing.Point(34, 248);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 17);
             this.label8.TabIndex = 40;
@@ -141,7 +141,7 @@ namespace kurs.View
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label7.Location = new System.Drawing.Point(36, 110);
+            this.label7.Location = new System.Drawing.Point(38, 95);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 17);
             this.label7.TabIndex = 39;
@@ -152,7 +152,7 @@ namespace kurs.View
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label6.Location = new System.Drawing.Point(335, 77);
+            this.label6.Location = new System.Drawing.Point(340, 69);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(112, 17);
             this.label6.TabIndex = 37;
@@ -171,10 +171,10 @@ namespace kurs.View
             // 
             // findbtn
             // 
-            this.findbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.findbtn.Location = new System.Drawing.Point(524, 237);
+            this.findbtn.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.findbtn.Location = new System.Drawing.Point(511, 250);
             this.findbtn.Name = "findbtn";
-            this.findbtn.Size = new System.Drawing.Size(113, 23);
+            this.findbtn.Size = new System.Drawing.Size(126, 34);
             this.findbtn.TabIndex = 35;
             this.findbtn.Text = "Найти";
             this.findbtn.UseVisualStyleBackColor = true;
@@ -185,7 +185,7 @@ namespace kurs.View
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(340, 192);
+            this.label4.Location = new System.Drawing.Point(340, 169);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 17);
             this.label4.TabIndex = 34;
@@ -207,7 +207,7 @@ namespace kurs.View
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(36, 146);
+            this.label2.Location = new System.Drawing.Point(36, 125);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 17);
             this.label2.TabIndex = 29;
@@ -216,7 +216,7 @@ namespace kurs.View
             // nameTBox
             // 
             this.nameTBox.Enabled = false;
-            this.nameTBox.Location = new System.Drawing.Point(140, 74);
+            this.nameTBox.Location = new System.Drawing.Point(140, 68);
             this.nameTBox.Name = "nameTBox";
             this.nameTBox.Size = new System.Drawing.Size(143, 20);
             this.nameTBox.TabIndex = 28;
@@ -227,7 +227,7 @@ namespace kurs.View
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(36, 71);
+            this.label1.Location = new System.Drawing.Point(38, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 17);
             this.label1.TabIndex = 27;
@@ -298,12 +298,12 @@ namespace kurs.View
             this.dataGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGV.Location = new System.Drawing.Point(15, 314);
+            this.dataGV.Location = new System.Drawing.Point(12, 290);
             this.dataGV.MultiSelect = false;
             this.dataGV.Name = "dataGV";
             this.dataGV.ReadOnly = true;
             this.dataGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGV.Size = new System.Drawing.Size(622, 186);
+            this.dataGV.Size = new System.Drawing.Size(622, 210);
             this.dataGV.TabIndex = 50;
             this.dataGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGV_CellDoubleClick);
             // 
@@ -311,7 +311,7 @@ namespace kurs.View
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label12.Location = new System.Drawing.Point(312, 223);
+            this.label12.Location = new System.Drawing.Point(306, 253);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(38, 13);
             this.label12.TabIndex = 98;
@@ -321,7 +321,7 @@ namespace kurs.View
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label11.Location = new System.Drawing.Point(159, 223);
+            this.label11.Location = new System.Drawing.Point(157, 253);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(44, 13);
             this.label11.TabIndex = 97;
@@ -330,7 +330,7 @@ namespace kurs.View
             // nameCheck
             // 
             this.nameCheck.AutoSize = true;
-            this.nameCheck.Location = new System.Drawing.Point(15, 71);
+            this.nameCheck.Location = new System.Drawing.Point(15, 68);
             this.nameCheck.Name = "nameCheck";
             this.nameCheck.Size = new System.Drawing.Size(15, 14);
             this.nameCheck.TabIndex = 104;
@@ -340,7 +340,7 @@ namespace kurs.View
             // numberCheck
             // 
             this.numberCheck.AutoSize = true;
-            this.numberCheck.Location = new System.Drawing.Point(15, 183);
+            this.numberCheck.Location = new System.Drawing.Point(15, 164);
             this.numberCheck.Name = "numberCheck";
             this.numberCheck.Size = new System.Drawing.Size(15, 14);
             this.numberCheck.TabIndex = 105;
@@ -350,7 +350,7 @@ namespace kurs.View
             // addressCheck
             // 
             this.addressCheck.AutoSize = true;
-            this.addressCheck.Location = new System.Drawing.Point(15, 112);
+            this.addressCheck.Location = new System.Drawing.Point(15, 95);
             this.addressCheck.Name = "addressCheck";
             this.addressCheck.Size = new System.Drawing.Size(15, 14);
             this.addressCheck.TabIndex = 105;
@@ -360,7 +360,7 @@ namespace kurs.View
             // workDaysCheck
             // 
             this.workDaysCheck.AutoSize = true;
-            this.workDaysCheck.Location = new System.Drawing.Point(15, 264);
+            this.workDaysCheck.Location = new System.Drawing.Point(15, 213);
             this.workDaysCheck.Name = "workDaysCheck";
             this.workDaysCheck.Size = new System.Drawing.Size(15, 14);
             this.workDaysCheck.TabIndex = 106;
@@ -370,7 +370,7 @@ namespace kurs.View
             // classCheck
             // 
             this.classCheck.AutoSize = true;
-            this.classCheck.Location = new System.Drawing.Point(15, 148);
+            this.classCheck.Location = new System.Drawing.Point(15, 127);
             this.classCheck.Name = "classCheck";
             this.classCheck.Size = new System.Drawing.Size(15, 14);
             this.classCheck.TabIndex = 106;
@@ -380,7 +380,7 @@ namespace kurs.View
             // specCheck
             // 
             this.specCheck.AutoSize = true;
-            this.specCheck.Location = new System.Drawing.Point(314, 80);
+            this.specCheck.Location = new System.Drawing.Point(319, 70);
             this.specCheck.Name = "specCheck";
             this.specCheck.Size = new System.Drawing.Size(15, 14);
             this.specCheck.TabIndex = 107;
@@ -400,7 +400,7 @@ namespace kurs.View
             // ownCheck
             // 
             this.ownCheck.AutoSize = true;
-            this.ownCheck.Location = new System.Drawing.Point(319, 194);
+            this.ownCheck.Location = new System.Drawing.Point(319, 172);
             this.ownCheck.Name = "ownCheck";
             this.ownCheck.Size = new System.Drawing.Size(15, 14);
             this.ownCheck.TabIndex = 109;
@@ -410,7 +410,7 @@ namespace kurs.View
             // timeCheck
             // 
             this.timeCheck.AutoSize = true;
-            this.timeCheck.Location = new System.Drawing.Point(15, 224);
+            this.timeCheck.Location = new System.Drawing.Point(15, 248);
             this.timeCheck.Name = "timeCheck";
             this.timeCheck.Size = new System.Drawing.Size(15, 14);
             this.timeCheck.TabIndex = 110;
@@ -423,7 +423,7 @@ namespace kurs.View
             this.ownershipCBox.Items.AddRange(new object[] {
             "Государственная",
             "Частная"});
-            this.ownershipCBox.Location = new System.Drawing.Point(458, 191);
+            this.ownershipCBox.Location = new System.Drawing.Point(458, 165);
             this.ownershipCBox.Name = "ownershipCBox";
             this.ownershipCBox.Size = new System.Drawing.Size(179, 21);
             this.ownershipCBox.TabIndex = 111;
@@ -438,7 +438,7 @@ namespace kurs.View
             "канализация",
             "строительство",
             "электроэнергия"});
-            this.specializationCBox.Location = new System.Drawing.Point(458, 77);
+            this.specializationCBox.Location = new System.Drawing.Point(458, 68);
             this.specializationCBox.Name = "specializationCBox";
             this.specializationCBox.Size = new System.Drawing.Size(179, 21);
             this.specializationCBox.TabIndex = 112;
@@ -449,7 +449,7 @@ namespace kurs.View
             this.classCBox.FormattingEnabled = true;
             this.classCBox.Items.AddRange(new object[] {
             "Коммунальное"});
-            this.classCBox.Location = new System.Drawing.Point(140, 146);
+            this.classCBox.Location = new System.Drawing.Point(140, 125);
             this.classCBox.Name = "classCBox";
             this.classCBox.Size = new System.Drawing.Size(143, 21);
             this.classCBox.TabIndex = 113;
@@ -463,7 +463,7 @@ namespace kurs.View
             this.workdaysGB.Controls.Add(this.wedcb);
             this.workdaysGB.Controls.Add(this.tuecb);
             this.workdaysGB.Controls.Add(this.moncb);
-            this.workdaysGB.Location = new System.Drawing.Point(130, 261);
+            this.workdaysGB.Location = new System.Drawing.Point(140, 194);
             this.workdaysGB.Name = "workdaysGB";
             this.workdaysGB.Size = new System.Drawing.Size(338, 47);
             this.workdaysGB.TabIndex = 141;
@@ -551,7 +551,7 @@ namespace kurs.View
             this.endDTPicker.CustomFormat = "HH:mm";
             this.endDTPicker.Enabled = false;
             this.endDTPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.endDTPicker.Location = new System.Drawing.Point(356, 218);
+            this.endDTPicker.Location = new System.Drawing.Point(367, 246);
             this.endDTPicker.MinDate = new System.DateTime(1800, 1, 1, 0, 1, 0, 0);
             this.endDTPicker.Name = "endDTPicker";
             this.endDTPicker.ShowUpDown = true;
@@ -565,7 +565,7 @@ namespace kurs.View
             this.startDTPicker.CustomFormat = "HH:mm";
             this.startDTPicker.Enabled = false;
             this.startDTPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.startDTPicker.Location = new System.Drawing.Point(209, 218);
+            this.startDTPicker.Location = new System.Drawing.Point(207, 246);
             this.startDTPicker.MaxDate = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
             this.startDTPicker.MinDate = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
             this.startDTPicker.Name = "startDTPicker";
@@ -573,12 +573,12 @@ namespace kurs.View
             this.startDTPicker.Size = new System.Drawing.Size(76, 20);
             this.startDTPicker.TabIndex = 101;
             this.startDTPicker.Value = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
-            this.startDTPicker.ValueChanged += new System.EventHandler(this.startDTPicker_ValueChanged);
+           
             // 
             // updatepBox
             // 
             this.updatepBox.Image = global::kurs.Properties.Resources.refresh_converted;
-            this.updatepBox.Location = new System.Drawing.Point(583, 278);
+            this.updatepBox.Location = new System.Drawing.Point(461, 254);
             this.updatepBox.Name = "updatepBox";
             this.updatepBox.Size = new System.Drawing.Size(30, 30);
             this.updatepBox.TabIndex = 143;
@@ -609,9 +609,9 @@ namespace kurs.View
             "skiduvayut",
             "scuko",
             "kefir"});
-            this.servicesChLB.Location = new System.Drawing.Point(458, 112);
+            this.servicesChLB.Location = new System.Drawing.Point(458, 95);
             this.servicesChLB.Name = "servicesChLB";
-            this.servicesChLB.Size = new System.Drawing.Size(165, 64);
+            this.servicesChLB.Size = new System.Drawing.Size(179, 64);
             this.servicesChLB.TabIndex = 144;
             // 
             // MainForm

@@ -11,17 +11,17 @@ using System.Windows.Forms;
 
 namespace kurs.View
 {
-    public partial class AddForm : Form
+    public partial class AddForm : Form// Форма для добавления компании
     {
-        public AddForm()
+        public AddForm()//Конструктор без параметров
         {
             InitializeComponent();
         }
-        private void cancelbtn_Click(object sender, EventArgs e)
+        private void cancelbtn_Click(object sender, EventArgs e)// Закрытие окна по нажатию кнопки "Отмена"
         {
             Close();
         }
-        private Company SetInformationFromForm()
+        private Company SetInformationFromForm()//Создание новой компании и записьв нее информации, введенной в форме.
         {
             Company comp = new Company();
             comp.Id = -1;
@@ -51,12 +51,12 @@ namespace kurs.View
             return comp;
         }
 
-        private void okbtn_Click(object sender, EventArgs e)
+        private void okbtn_Click(object sender, EventArgs e)// Добавление компаниии по нажатию кнопки "ОК"
         {
             DataBase.Add(SetInformationFromForm());
         }
 
-        private void resetbtn_Click(object sender, EventArgs e)
+        private void resetbtn_Click(object sender, EventArgs e)//Сброс введенной информации
         {
             foreach (Control c in Controls)
                 if (c is TextBox)
@@ -71,7 +71,7 @@ namespace kurs.View
                         servicesChLB.SetItemChecked(i, false);
         }
 
-        private void endDTPicker_ValueChanged(object sender, EventArgs e)
+        private void endDTPicker_ValueChanged(object sender, EventArgs e)// Проверка, чтоб начало рабочего дня не было позже, чем конец
         {
             DateTime endValue = endDTPicker.Value;
             if (startDTPicker.MaxDate >= endDTPicker.Value)
@@ -88,12 +88,6 @@ namespace kurs.View
 
             startDTPicker.MaxDate = endValue.AddMinutes(-1);
         }
-
-        private void startDTPicker_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-       
+        
     }
 }

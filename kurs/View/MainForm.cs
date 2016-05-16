@@ -11,9 +11,10 @@ using System.Windows.Forms;
 
 namespace kurs.View
 {
-    public partial class MainForm : Form
+    public partial class MainForm : Form// Форма для поиска по различным параметрам, для вызова форм
+                                        //для изменения, удаления и добавления компании.
     {
-        public MainForm()
+        public MainForm()// Конструктор без параметров
         {
             InitializeComponent();
         }
@@ -23,22 +24,20 @@ namespace kurs.View
             MessageBox.Show("Курсовая работа\nПрограмма \"Справочник потребителя\" содержит базу предприятий бытового обслуживания города. Возможен поиск предприятий по заданным параметрам. \nВыполнила: Михневич Т.К.\nст.гр ПИ-15-1\n2016", "О программе");
         }
 
-        private void exitTStrMenu_Click(object sender, EventArgs e)
+        private void exitTStrMenu_Click(object sender, EventArgs e)// Зактрытие формы по нажатию "Выход"
         {
-            this.Close();
+            Close();
         }
 
-        private void addTStrMenu_Click(object sender, EventArgs e)
+        private void addTStrMenu_Click(object sender, EventArgs e)// Открытие формы для добавления компании по нажатию "Добавить"
         {
             AddForm form = new AddForm();
-            form.ShowDialog();
-            
+            form.ShowDialog();            
         }
 
-        private void findbtn_Click(object sender, EventArgs e)
+        private void findbtn_Click(object sender, EventArgs e)// Формирования словаря "ключ" - "значение" по нажатию кнопки "Найти" для поиска в XML-документе 
         {
             IDictionary<string, string> dict = new Dictionary<string, string>();
-
             foreach (var control in Controls)
             {
                 TextBox tb = null;
@@ -87,22 +86,17 @@ namespace kurs.View
                 DataBase.Read(ref dataGV);
         }
 
-        private void dataGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)// Вызов формы с информацией по выбранной компании по двойному щелчку по строке в DataGridView
         {
             if (e.RowIndex < 0) return;
             int ID = Convert.ToInt32(dataGV[0, e.RowIndex].Value);
             CompanyForm form = new CompanyForm(DataBase.FindById((string)dataGV[0, e.RowIndex].Value));
             form.readableFields();
-            form.ShowDialog();
-            
+            form.ShowDialog();            
         }
 
-        private void deleteTStrMenu_Click(object sender, EventArgs e)
-        {
-            CompanyForm form = new CompanyForm();
-            form.ShowDialog();
-          
-        }
+
+        #region// Проверка, был ли выбран Чекбокс для параметра поиска. Если да, то поле становится активным. Надо бы все это сделать одним методом
 
         private void nameCheck_CheckedChanged(object sender, EventArgs e)
         {
@@ -214,17 +208,13 @@ namespace kurs.View
 
             startDTPicker.MaxDate = endValue;
         }
-
-        private void startDTPicker_ValueChanged(object sender, EventArgs e)
-        {
-        }
+        #endregion
 
 
-        private void updatepBox_Click(object sender, EventArgs e)
+        private void updatepBox_Click(object sender, EventArgs e)// Обновление DataGridView по нажатию кнопки
         {
             findbtn_Click(sender, e);
         }
 
-       
     }
 }

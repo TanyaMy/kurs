@@ -66,7 +66,7 @@
             // 
             // cancelbtn
             // 
-            this.cancelbtn.Location = new System.Drawing.Point(521, 332);
+            this.cancelbtn.Location = new System.Drawing.Point(534, 332);
             this.cancelbtn.Name = "cancelbtn";
             this.cancelbtn.Size = new System.Drawing.Size(75, 23);
             this.cancelbtn.TabIndex = 75;
@@ -76,7 +76,7 @@
             // 
             // resetbtn
             // 
-            this.resetbtn.Location = new System.Drawing.Point(423, 332);
+            this.resetbtn.Location = new System.Drawing.Point(444, 332);
             this.resetbtn.Name = "resetbtn";
             this.resetbtn.Size = new System.Drawing.Size(75, 23);
             this.resetbtn.TabIndex = 74;
@@ -87,7 +87,7 @@
             // okbtn
             // 
             this.okbtn.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.okbtn.Location = new System.Drawing.Point(322, 332);
+            this.okbtn.Location = new System.Drawing.Point(356, 332);
             this.okbtn.Name = "okbtn";
             this.okbtn.Size = new System.Drawing.Size(75, 23);
             this.okbtn.TabIndex = 73;
@@ -125,7 +125,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label9.Location = new System.Drawing.Point(26, 253);
+            this.label9.Location = new System.Drawing.Point(22, 235);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(88, 17);
             this.label9.TabIndex = 88;
@@ -135,7 +135,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label8.Location = new System.Drawing.Point(18, 222);
+            this.label8.Location = new System.Drawing.Point(22, 274);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 17);
             this.label8.TabIndex = 87;
@@ -155,7 +155,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(326, 201);
+            this.label4.Location = new System.Drawing.Point(321, 183);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 17);
             this.label4.TabIndex = 84;
@@ -223,7 +223,7 @@
             // 
             this.endDTPicker.CustomFormat = "HH:mm";
             this.endDTPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.endDTPicker.Location = new System.Drawing.Point(356, 218);
+            this.endDTPicker.Location = new System.Drawing.Point(337, 274);
             this.endDTPicker.MinDate = new System.DateTime(1800, 1, 1, 0, 1, 0, 0);
             this.endDTPicker.Name = "endDTPicker";
             this.endDTPicker.ShowUpDown = true;
@@ -236,7 +236,7 @@
             // 
             this.startDTPicker.CustomFormat = "HH:mm";
             this.startDTPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.startDTPicker.Location = new System.Drawing.Point(209, 218);
+            this.startDTPicker.Location = new System.Drawing.Point(190, 274);
             this.startDTPicker.MaxDate = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
             this.startDTPicker.MinDate = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
             this.startDTPicker.Name = "startDTPicker";
@@ -244,13 +244,13 @@
             this.startDTPicker.Size = new System.Drawing.Size(76, 20);
             this.startDTPicker.TabIndex = 101;
             this.startDTPicker.Value = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
-            this.startDTPicker.ValueChanged += new System.EventHandler(this.startDTPicker_ValueChanged);
+            
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label12.Location = new System.Drawing.Point(302, 226);
+            this.label12.Location = new System.Drawing.Point(293, 276);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(38, 13);
             this.label12.TabIndex = 104;
@@ -260,7 +260,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label11.Location = new System.Drawing.Point(149, 226);
+            this.label11.Location = new System.Drawing.Point(140, 278);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(44, 13);
             this.label11.TabIndex = 103;
@@ -280,7 +280,7 @@
             this.ownershipCBox.Items.AddRange(new object[] {
             "Государственная",
             "Частная"});
-            this.ownershipCBox.Location = new System.Drawing.Point(444, 198);
+            this.ownershipCBox.Location = new System.Drawing.Point(444, 179);
             this.ownershipCBox.Name = "ownershipCBox";
             this.ownershipCBox.Size = new System.Drawing.Size(165, 21);
             this.ownershipCBox.TabIndex = 114;
@@ -318,7 +318,7 @@
             "skiduvayut",
             "scuko",
             "kefir"});
-            this.servicesChLB.Location = new System.Drawing.Point(444, 114);
+            this.servicesChLB.Location = new System.Drawing.Point(439, 103);
             this.servicesChLB.Name = "servicesChLB";
             this.servicesChLB.Size = new System.Drawing.Size(165, 64);
             this.servicesChLB.TabIndex = 139;
@@ -332,7 +332,7 @@
             this.workdaysGB.Controls.Add(this.wedcb);
             this.workdaysGB.Controls.Add(this.tuecb);
             this.workdaysGB.Controls.Add(this.moncb);
-            this.workdaysGB.Location = new System.Drawing.Point(29, 273);
+            this.workdaysGB.Location = new System.Drawing.Point(126, 220);
             this.workdaysGB.Name = "workdaysGB";
             this.workdaysGB.Size = new System.Drawing.Size(338, 47);
             this.workdaysGB.TabIndex = 142;

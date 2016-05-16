@@ -79,7 +79,7 @@
             // okbtn
             // 
             this.okbtn.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.okbtn.Location = new System.Drawing.Point(412, 336);
+            this.okbtn.Location = new System.Drawing.Point(422, 336);
             this.okbtn.Name = "okbtn";
             this.okbtn.Size = new System.Drawing.Size(75, 23);
             this.okbtn.TabIndex = 47;
@@ -89,7 +89,7 @@
             // 
             // cancelbtn
             // 
-            this.cancelbtn.Location = new System.Drawing.Point(520, 336);
+            this.cancelbtn.Location = new System.Drawing.Point(531, 336);
             this.cancelbtn.Name = "cancelbtn";
             this.cancelbtn.Size = new System.Drawing.Size(75, 23);
             this.cancelbtn.TabIndex = 49;
@@ -99,7 +99,7 @@
             // 
             // deletebtn
             // 
-            this.deletebtn.Location = new System.Drawing.Point(49, 252);
+            this.deletebtn.Location = new System.Drawing.Point(33, 336);
             this.deletebtn.Name = "deletebtn";
             this.deletebtn.Size = new System.Drawing.Size(75, 23);
             this.deletebtn.TabIndex = 50;
@@ -117,7 +117,7 @@
             // 
             // Changebtn
             // 
-            this.Changebtn.Location = new System.Drawing.Point(150, 251);
+            this.Changebtn.Location = new System.Drawing.Point(123, 336);
             this.Changebtn.Name = "Changebtn";
             this.Changebtn.Size = new System.Drawing.Size(75, 23);
             this.Changebtn.TabIndex = 52;
@@ -135,7 +135,7 @@
             // 
             // addressTBox
             // 
-            this.addressTBox.Location = new System.Drawing.Point(123, 104);
+            this.addressTBox.Location = new System.Drawing.Point(123, 99);
             this.addressTBox.Name = "addressTBox";
             this.addressTBox.Size = new System.Drawing.Size(143, 20);
             this.addressTBox.TabIndex = 67;
@@ -145,7 +145,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label10.Location = new System.Drawing.Point(19, 172);
+            this.label10.Location = new System.Drawing.Point(20, 170);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(68, 17);
             this.label10.TabIndex = 66;
@@ -155,7 +155,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label9.Location = new System.Drawing.Point(3, 303);
+            this.label9.Location = new System.Drawing.Point(20, 226);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(88, 17);
             this.label9.TabIndex = 65;
@@ -165,7 +165,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label8.Location = new System.Drawing.Point(20, 207);
+            this.label8.Location = new System.Drawing.Point(20, 272);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 17);
             this.label8.TabIndex = 64;
@@ -195,7 +195,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(323, 184);
+            this.label4.Location = new System.Drawing.Point(328, 180);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 17);
             this.label4.TabIndex = 60;
@@ -215,7 +215,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(19, 138);
+            this.label2.Location = new System.Drawing.Point(20, 134);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 17);
             this.label2.TabIndex = 55;
@@ -244,7 +244,7 @@
             this.endDTPicker.CustomFormat = "HH:mm";
             this.endDTPicker.Enabled = false;
             this.endDTPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.endDTPicker.Location = new System.Drawing.Point(356, 218);
+            this.endDTPicker.Location = new System.Drawing.Point(331, 272);
             this.endDTPicker.MinDate = new System.DateTime(1800, 1, 1, 0, 1, 0, 0);
             this.endDTPicker.Name = "endDTPicker";
             this.endDTPicker.ShowUpDown = true;
@@ -258,7 +258,7 @@
             this.startDTPicker.CustomFormat = "HH:mm";
             this.startDTPicker.Enabled = false;
             this.startDTPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.startDTPicker.Location = new System.Drawing.Point(209, 218);
+            this.startDTPicker.Location = new System.Drawing.Point(184, 272);
             this.startDTPicker.MaxDate = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
             this.startDTPicker.MinDate = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
             this.startDTPicker.Name = "startDTPicker";
@@ -271,7 +271,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label12.Location = new System.Drawing.Point(312, 218);
+            this.label12.Location = new System.Drawing.Point(287, 272);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(38, 13);
             this.label12.TabIndex = 104;
@@ -281,7 +281,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label11.Location = new System.Drawing.Point(159, 218);
+            this.label11.Location = new System.Drawing.Point(134, 272);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(44, 13);
             this.label11.TabIndex = 103;
@@ -292,7 +292,7 @@
             this.classCBox.FormattingEnabled = true;
             this.classCBox.Items.AddRange(new object[] {
             "Коммунальное"});
-            this.classCBox.Location = new System.Drawing.Point(123, 137);
+            this.classCBox.Location = new System.Drawing.Point(123, 134);
             this.classCBox.Name = "classCBox";
             this.classCBox.Size = new System.Drawing.Size(143, 21);
             this.classCBox.TabIndex = 114;
@@ -311,7 +311,7 @@
             this.ownershipCBox.Items.AddRange(new object[] {
             "Государственная",
             "Частная"});
-            this.ownershipCBox.Location = new System.Drawing.Point(441, 184);
+            this.ownershipCBox.Location = new System.Drawing.Point(441, 180);
             this.ownershipCBox.Name = "ownershipCBox";
             this.ownershipCBox.Size = new System.Drawing.Size(165, 21);
             this.ownershipCBox.TabIndex = 116;
@@ -340,7 +340,7 @@
             "skiduvayut",
             "scuko",
             "kefir"});
-            this.servicesChLB.Location = new System.Drawing.Point(441, 111);
+            this.servicesChLB.Location = new System.Drawing.Point(441, 99);
             this.servicesChLB.Name = "servicesChLB";
             this.servicesChLB.Size = new System.Drawing.Size(165, 64);
             this.servicesChLB.TabIndex = 138;
@@ -354,7 +354,7 @@
             this.workdaysGB.Controls.Add(this.wedcb);
             this.workdaysGB.Controls.Add(this.tuecb);
             this.workdaysGB.Controls.Add(this.moncb);
-            this.workdaysGB.Location = new System.Drawing.Point(32, 323);
+            this.workdaysGB.Location = new System.Drawing.Point(114, 207);
             this.workdaysGB.Name = "workdaysGB";
             this.workdaysGB.Size = new System.Drawing.Size(334, 46);
             this.workdaysGB.TabIndex = 142;
