@@ -2,11 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace kurs.View
@@ -19,6 +14,16 @@ namespace kurs.View
             InitializeComponent();
         }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            BindListToDataGridView(CompanyCollection.CompaniesList);
+        }
+
+        /// <summary>
+        /// Информация о программе
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void aboutTStrMenu_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Курсовая работа\nПрограмма \"Справочник потребителя\" содержит базу предприятий бытового обслуживания города. Возможен поиск предприятий по заданным параметрам. \nВыполнила: Михневич Т.К.\nст.гр ПИ-15-1\n2016", "О программе");
@@ -37,184 +42,115 @@ namespace kurs.View
 
         private void findbtn_Click(object sender, EventArgs e)// Формирования словаря "ключ" - "значение" по нажатию кнопки "Найти" для поиска в XML-документе 
         {
-            IDictionary<string, string> dict = new Dictionary<string, string>();
-            foreach (var control in Controls)
-            {
-                TextBox tb = null;
-                ComboBox cb = null;
-
-                if (control as TextBox != null)
-                    tb = control as TextBox;
-                else if (control as ComboBox != null)
-                    cb = control as ComboBox;
-
-                if (tb != null && tb.Enabled)
-                    dict.Add(tb.Name.Substring(0, tb.Name.Length - 4), tb.Text.ToLower());
-                else if (cb != null && cb.Enabled)
-                    dict.Add(cb.Name.Substring(0, cb.Name.Length - 4), cb.SelectedItem.ToString().ToLower());
-            }
-
-            if (workdaysGB.Enabled)
-            {
-                dict.Add("workDays", "");
-                foreach (var tmp in workdaysGB.Controls)
-                {
-                    var ch = (CheckBox)tmp;
-                    if (ch.Checked)
-                        dict["workDays"] += ch.Text + " ";
-                }
-                if (dict["workDays"].Trim().Length == 0)
-                    dict.Remove("workDays");
-            }
-
-            if (servicesChLB.Enabled)
-            {
-                dict.Add("services", "");
-                foreach (var ch in servicesChLB.CheckedItems)
-                    dict["services"] += ch + " ";
-                if (dict["services"].Trim().Length == 0)
-                    dict.Remove("services");
-            }
-
-            if (startDTPicker.Enabled)
-                dict.Add("workTime", startDTPicker.Value.Hour + ":" + startDTPicker.Value.Minute + 
-                    " " + endDTPicker.Value.Hour + ":" + endDTPicker.Value.Minute);
-
-            if (dict.Any())
-                DataBase.Search(dict, ref dataGV);
-            else
-                DataBase.Read(ref dataGV);
+            var comp = GetCompanyForSearch();
+            var collection = CompanyCollection.Search(comp);
+            BindListToDataGridView(collection);
+        }
+        public int ToInt(dynamic num)
+        {
+            return Convert.ToInt32(num);
         }
 
         private void dataGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)// Вызов формы с информацией по выбранной компании по двойному щелчку по строке в DataGridView
         {
             if (e.RowIndex < 0) return;
             int ID = Convert.ToInt32(dataGV[0, e.RowIndex].Value);
-            CompanyForm form = new CompanyForm(DataBase.FindById((string)dataGV[0, e.RowIndex].Value));
-            form.readableFields();
+            CompanyForm form = new CompanyForm(CompanyCollection.GetCompanyById(Convert.ToInt32(dataGV[0, e.RowIndex].Value)));
+            form.Writable(false);
             form.ShowDialog();            
         }
 
-
-        #region// Проверка, был ли выбран Чекбокс для параметра поиска. Если да, то поле становится активным. Надо бы все это сделать одним методом
-
-        private void nameCheck_CheckedChanged(object sender, EventArgs e)
-        {
-            if (nameCheck.Checked == true)
-                nameTBox.Enabled = true;
-            else
-                nameTBox.Enabled = false;
-        }
-
-        private void addressCheck_CheckedChanged(object sender, EventArgs e)
-        {
-            if (addressCheck.Checked == true)
-                addressTBox.Enabled = true;
-            else
-                addressTBox.Enabled = false;
-        }
-
-        private void classCheck_CheckedChanged(object sender, EventArgs e)
-        {
-            if (classCheck.Checked == true)
-                classCBox.Enabled = true;
-            else
-                classCBox.Enabled = false;
-        }
-
-        private void numberCheck_CheckedChanged(object sender, EventArgs e)
-        {
-            if (numberCheck.Checked == true)
-                phoneNumberTBox.Enabled = true;
-            else
-                phoneNumberTBox.Enabled = false;
-        }
-
-        private void specCheck_CheckedChanged(object sender, EventArgs e)
-        {
-            if (specCheck.Checked == true)
-                specializationCBox.Enabled = true;
-            else
-                specializationCBox.Enabled = false;
-        }
-
-        private void ownCheck_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ownCheck.Checked == true)
-                ownershipCBox.Enabled = true;
-            else
-                ownershipCBox.Enabled = false;
-        }
-
-       
-        private void workDaysCheck_CheckedChanged(object sender, EventArgs e)
-        {
-            
-            if (workDaysCheck.Checked == true)
-            {
-                foreach (var tmp in workdaysGB.Controls)
-                {
-                    var ch = (CheckBox)tmp;
-                    ch.Enabled = true;
-                }
-            }
-            else {
-                foreach (var tmp in workdaysGB.Controls)
-                {
-                    var ch = (CheckBox)tmp;
-                    ch.Enabled = false;
-                }
-            }
-        }
-
-        private void servicesCheck_CheckedChanged(object sender, EventArgs e)
-        {
-
-            if (servicesCheck.Checked)
-                servicesChLB.Enabled = true;
-            else
-                servicesChLB.Enabled = false;
-        }
-
-        private void timeCheck_CheckedChanged(object sender, EventArgs e)
-        {
-            if(timeCheck.Checked == true)
-            {
-                startDTPicker.Enabled = true;
-                endDTPicker.Enabled = true;
-            }
-            else
-            {
-                startDTPicker.Enabled = false;
-                endDTPicker.Enabled = false;
-            }
-
-        }
-
-        private void endDTPicker_ValueChanged(object sender, EventArgs e)
-        {
-            DateTime endValue = endDTPicker.Value;
-            if (startDTPicker.MaxDate >= endDTPicker.Value)
-            {
-                if (endValue.Minute > 0)
-                    endValue.AddMinutes(-1);
-                else {
-                    endValue.AddMinutes(59);
-                    endValue.AddHours(-1);
-                }
-            }
-            else 
-                endValue.AddMinutes(-1);
-
-            startDTPicker.MaxDate = endValue;
-        }
-        #endregion
-
-
         private void updatepBox_Click(object sender, EventArgs e)// Обновление DataGridView по нажатию кнопки
         {
-            findbtn_Click(sender, e);
+            BindListToDataGridView(CompanyCollection.CompaniesList);
         }
 
+        private void saveTStrMenu_Click(object sender, EventArgs e)
+        {
+            DataBase.SaveToFile(CompanyCollection.CompaniesList);
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DataBase.SaveToFile(CompanyCollection.CompaniesList);
+        }
+
+        private void dataGV_CellContextMenuStripNeeded(object sender, DataGridViewCellContextMenuStripNeededEventArgs e)
+        {
+            if (e.ColumnIndex < 0 || e.RowIndex < 0) return;
+
+            dataGV[e.ColumnIndex, e.RowIndex].Selected = true;
+            dataGV.ContextMenuStrip.Show(new System.Drawing.Point());
+
+        }
+
+        private void deleteTSM_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Вы уверены?", "Удаление компании", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                CompanyCollection.DeleteCompany(Convert.ToInt32(dataGV[0, dataGV.SelectedRows[0].Index].Value));
+            }
+        }
+
+        private void changeTSM_Click(object sender, EventArgs e)
+        {
+            int ID = Convert.ToInt32(dataGV[0, dataGV.SelectedRows[0].Index].Value);
+
+            CompanyForm form = new CompanyForm
+                (CompanyCollection.GetCompanyById
+                    (Convert.ToInt32(dataGV[0, dataGV.SelectedCells[0].ColumnIndex].Value)));
+
+            form.Writable(false);
+            form.ShowDialog();
+        }
+
+        private void showTSM_Click(object sender, EventArgs e)
+        {
+            int ID = Convert.ToInt32(dataGV[0, dataGV.SelectedRows[0].Index].Value);
+
+            CompanyForm form = new CompanyForm
+                (CompanyCollection.GetCompanyById
+                    (Convert.ToInt32(dataGV[0, dataGV.SelectedRows[0].Index].Value)));
+
+            form.Writable(false);
+            form.ShowDialog();
+        }
+
+        private Company GetCompanyForSearch()
+        {
+            var company = new Company()
+            {
+                Name = nameTBox.Text,
+                Address = addressTBox.Text,
+                PhoneNumber = phoneNumberTBox.Text,
+                Kind = (Kind)Enum.Parse(typeof(Kind), kindCBox.Text, true),
+                Specialization = (Specialization)Enum.Parse(typeof(Specialization), specializationCBox.Text, true),
+                Ownership = (Ownership)Enum.Parse(typeof(Ownership), ownershipCBox.Text, true),
+                StartWork = startDTPicker.Value,
+                EndWork = endDTPicker.Value
+            };
+
+            string days = "";
+            foreach (var ch in workdaysGB.Controls)
+            {
+                CheckBox TB = (CheckBox)ch;
+                if (TB.Checked)
+                    days += TB.Text + " ";
+            }
+            company.WorkDays = days.Trim().Split(' ');
+            string serv = "";
+            foreach (var ch in servicesChLB.CheckedItems)
+                serv += ch + " ";
+            company.Services = serv.Trim().Split(' ');
+            return company;
+        }
+
+        private void BindListToDataGridView(BindingList<Company> list)
+        {
+            var bindingList = list;
+            var source = new BindingSource(bindingList, null);
+            dataGV.DataSource = source;
+        }
     }
 }

@@ -49,9 +49,8 @@
             this.startDTPicker = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.specializationCBox = new System.Windows.Forms.ComboBox();
             this.ownershipCBox = new System.Windows.Forms.ComboBox();
-            this.classCBox = new System.Windows.Forms.ComboBox();
+            this.kindCBox = new System.Windows.Forms.ComboBox();
             this.servicesChLB = new System.Windows.Forms.CheckedListBox();
             this.workdaysGB = new System.Windows.Forms.GroupBox();
             this.suncb = new System.Windows.Forms.CheckBox();
@@ -61,6 +60,7 @@
             this.wedcb = new System.Windows.Forms.CheckBox();
             this.tuecb = new System.Windows.Forms.CheckBox();
             this.moncb = new System.Windows.Forms.CheckBox();
+            this.specializationCBox = new System.Windows.Forms.ComboBox();
             this.workdaysGB.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,7 +97,7 @@
             // 
             // phoneNumberTBox
             // 
-            this.phoneNumberTBox.Location = new System.Drawing.Point(126, 176);
+            this.phoneNumberTBox.Location = new System.Drawing.Point(109, 163);
             this.phoneNumberTBox.Name = "phoneNumberTBox";
             this.phoneNumberTBox.Size = new System.Drawing.Size(143, 20);
             this.phoneNumberTBox.TabIndex = 91;
@@ -105,7 +105,7 @@
             // 
             // addressTBox
             // 
-            this.addressTBox.Location = new System.Drawing.Point(126, 111);
+            this.addressTBox.Location = new System.Drawing.Point(109, 88);
             this.addressTBox.Name = "addressTBox";
             this.addressTBox.Size = new System.Drawing.Size(143, 20);
             this.addressTBox.TabIndex = 90;
@@ -115,7 +115,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label10.Location = new System.Drawing.Point(22, 179);
+            this.label10.Location = new System.Drawing.Point(22, 164);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(68, 17);
             this.label10.TabIndex = 89;
@@ -125,7 +125,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label9.Location = new System.Drawing.Point(22, 235);
+            this.label9.Location = new System.Drawing.Point(22, 221);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(88, 17);
             this.label9.TabIndex = 88;
@@ -145,7 +145,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label6.Location = new System.Drawing.Point(321, 76);
+            this.label6.Location = new System.Drawing.Point(319, 56);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(112, 17);
             this.label6.TabIndex = 85;
@@ -155,7 +155,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(321, 183);
+            this.label4.Location = new System.Drawing.Point(324, 89);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 17);
             this.label4.TabIndex = 84;
@@ -165,7 +165,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(381, 118);
+            this.label3.Location = new System.Drawing.Point(370, 128);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 17);
             this.label3.TabIndex = 82;
@@ -175,7 +175,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(22, 145);
+            this.label2.Location = new System.Drawing.Point(22, 128);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 17);
             this.label2.TabIndex = 79;
@@ -183,7 +183,7 @@
             // 
             // nameTBox
             // 
-            this.nameTBox.Location = new System.Drawing.Point(126, 73);
+            this.nameTBox.Location = new System.Drawing.Point(109, 55);
             this.nameTBox.Name = "nameTBox";
             this.nameTBox.Size = new System.Drawing.Size(143, 20);
             this.nameTBox.TabIndex = 78;
@@ -193,7 +193,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(22, 70);
+            this.label1.Location = new System.Drawing.Point(22, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 17);
             this.label1.TabIndex = 77;
@@ -203,7 +203,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label5.Location = new System.Drawing.Point(148, 26);
+            this.label5.Location = new System.Drawing.Point(139, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(305, 20);
             this.label5.TabIndex = 76;
@@ -213,7 +213,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label7.Location = new System.Drawing.Point(22, 112);
+            this.label7.Location = new System.Drawing.Point(22, 91);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 17);
             this.label7.TabIndex = 97;
@@ -224,32 +224,28 @@
             this.endDTPicker.CustomFormat = "HH:mm";
             this.endDTPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.endDTPicker.Location = new System.Drawing.Point(337, 274);
-            this.endDTPicker.MinDate = new System.DateTime(1800, 1, 1, 0, 1, 0, 0);
+            this.endDTPicker.MinDate = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
             this.endDTPicker.Name = "endDTPicker";
             this.endDTPicker.ShowUpDown = true;
-            this.endDTPicker.Size = new System.Drawing.Size(76, 20);
+            this.endDTPicker.Size = new System.Drawing.Size(58, 20);
             this.endDTPicker.TabIndex = 102;
             this.endDTPicker.Value = new System.DateTime(1800, 1, 1, 0, 1, 0, 0);
-            this.endDTPicker.ValueChanged += new System.EventHandler(this.endDTPicker_ValueChanged);
             // 
             // startDTPicker
             // 
             this.startDTPicker.CustomFormat = "HH:mm";
             this.startDTPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.startDTPicker.Location = new System.Drawing.Point(190, 274);
-            this.startDTPicker.MaxDate = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
             this.startDTPicker.MinDate = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
             this.startDTPicker.Name = "startDTPicker";
             this.startDTPicker.ShowUpDown = true;
-            this.startDTPicker.Size = new System.Drawing.Size(76, 20);
+            this.startDTPicker.Size = new System.Drawing.Size(62, 20);
             this.startDTPicker.TabIndex = 101;
             this.startDTPicker.Value = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
-            
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label12.Location = new System.Drawing.Point(293, 276);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(38, 13);
@@ -259,68 +255,62 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label11.Location = new System.Drawing.Point(140, 278);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(44, 13);
             this.label11.TabIndex = 103;
             this.label11.Text = "Начало";
             // 
-            // specializationCBox
-            // 
-            this.specializationCBox.FormattingEnabled = true;
-            this.specializationCBox.Location = new System.Drawing.Point(444, 76);
-            this.specializationCBox.Name = "specializationCBox";
-            this.specializationCBox.Size = new System.Drawing.Size(165, 21);
-            this.specializationCBox.TabIndex = 113;
-            // 
             // ownershipCBox
             // 
+            this.ownershipCBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ownershipCBox.FormattingEnabled = true;
             this.ownershipCBox.Items.AddRange(new object[] {
             "Государственная",
+            "Муниципальная",
             "Частная"});
-            this.ownershipCBox.Location = new System.Drawing.Point(444, 179);
+            this.ownershipCBox.Location = new System.Drawing.Point(444, 88);
             this.ownershipCBox.Name = "ownershipCBox";
             this.ownershipCBox.Size = new System.Drawing.Size(165, 21);
             this.ownershipCBox.TabIndex = 114;
             // 
-            // classCBox
+            // kindCBox
             // 
-            this.classCBox.FormattingEnabled = true;
-            this.classCBox.Items.AddRange(new object[] {
-            "Коммунальное"});
-            this.classCBox.Location = new System.Drawing.Point(126, 145);
-            this.classCBox.Name = "classCBox";
-            this.classCBox.Size = new System.Drawing.Size(143, 21);
-            this.classCBox.TabIndex = 115;
+            this.kindCBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.kindCBox.FormattingEnabled = true;
+            this.kindCBox.Items.AddRange(new object[] {
+            "коммунальное",
+            "промышленное",
+            "производственное",
+            "коммерческое"});
+            this.kindCBox.Location = new System.Drawing.Point(109, 124);
+            this.kindCBox.Name = "kindCBox";
+            this.kindCBox.Size = new System.Drawing.Size(143, 21);
+            this.kindCBox.TabIndex = 115;
             // 
             // servicesChLB
             // 
             this.servicesChLB.FormattingEnabled = true;
             this.servicesChLB.Items.AddRange(new object[] {
-            "qwer",
-            "lol",
-            "kek",
-            "bogdan",
-            "loh",
-            "poidr",
-            "hey",
-            "gey",
-            "ritka",
-            "tozhe",
-            "samoe",
-            "vse",
-            "oni",
-            "lohi",
-            "huzhie",
-            "laby",
-            "skiduvayut",
-            "scuko",
-            "kefir"});
-            this.servicesChLB.Location = new System.Drawing.Point(439, 103);
+            "водоснабжение",
+            "ремонт",
+            "отопление",
+            "строительство",
+            "ритуальные",
+            "почтовые",
+            "прачечные",
+            "парикмахерские",
+            "питание",
+            "прокат",
+            "перевозка",
+            "гостинницы",
+            "одежда",
+            "обувь",
+            "другое",
+            "лифты"});
+            this.servicesChLB.Location = new System.Drawing.Point(444, 124);
             this.servicesChLB.Name = "servicesChLB";
-            this.servicesChLB.Size = new System.Drawing.Size(165, 64);
+            this.servicesChLB.Size = new System.Drawing.Size(165, 154);
             this.servicesChLB.TabIndex = 139;
             // 
             // workdaysGB
@@ -332,9 +322,9 @@
             this.workdaysGB.Controls.Add(this.wedcb);
             this.workdaysGB.Controls.Add(this.tuecb);
             this.workdaysGB.Controls.Add(this.moncb);
-            this.workdaysGB.Location = new System.Drawing.Point(126, 220);
+            this.workdaysGB.Location = new System.Drawing.Point(109, 205);
             this.workdaysGB.Name = "workdaysGB";
-            this.workdaysGB.Size = new System.Drawing.Size(338, 47);
+            this.workdaysGB.Size = new System.Drawing.Size(324, 47);
             this.workdaysGB.TabIndex = 142;
             this.workdaysGB.TabStop = false;
             // 
@@ -381,7 +371,7 @@
             // wedcb
             // 
             this.wedcb.AutoSize = true;
-            this.wedcb.Location = new System.Drawing.Point(99, 19);
+            this.wedcb.Location = new System.Drawing.Point(97, 19);
             this.wedcb.Name = "wedcb";
             this.wedcb.Size = new System.Drawing.Size(39, 17);
             this.wedcb.TabIndex = 140;
@@ -408,16 +398,34 @@
             this.moncb.Text = "Пн";
             this.moncb.UseVisualStyleBackColor = true;
             // 
+            // specializationCBox
+            // 
+            this.specializationCBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.specializationCBox.FormattingEnabled = true;
+            this.specializationCBox.Items.AddRange(new object[] {
+            "отопление",
+            "вода",
+            "канализация",
+            "строительство",
+            "электроэнергия",
+            "ремонт",
+            "связь",
+            "другое"});
+            this.specializationCBox.Location = new System.Drawing.Point(444, 54);
+            this.specializationCBox.Name = "specializationCBox";
+            this.specializationCBox.Size = new System.Drawing.Size(165, 21);
+            this.specializationCBox.TabIndex = 143;
+            // 
             // AddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 381);
+            this.Controls.Add(this.specializationCBox);
             this.Controls.Add(this.workdaysGB);
             this.Controls.Add(this.servicesChLB);
-            this.Controls.Add(this.classCBox);
+            this.Controls.Add(this.kindCBox);
             this.Controls.Add(this.ownershipCBox);
-            this.Controls.Add(this.specializationCBox);
             this.Controls.Add(this.endDTPicker);
             this.Controls.Add(this.startDTPicker);
             this.Controls.Add(this.label12);
@@ -438,7 +446,9 @@
             this.Controls.Add(this.cancelbtn);
             this.Controls.Add(this.resetbtn);
             this.Controls.Add(this.okbtn);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "AddForm";
             this.Text = "Добавить";
             this.workdaysGB.ResumeLayout(false);
@@ -470,9 +480,8 @@
         private System.Windows.Forms.DateTimePicker startDTPicker;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox specializationCBox;
         private System.Windows.Forms.ComboBox ownershipCBox;
-        private System.Windows.Forms.ComboBox classCBox;
+        private System.Windows.Forms.ComboBox kindCBox;
         private System.Windows.Forms.CheckedListBox servicesChLB;
         private System.Windows.Forms.GroupBox workdaysGB;
         private System.Windows.Forms.CheckBox suncb;
@@ -482,5 +491,6 @@
         private System.Windows.Forms.CheckBox wedcb;
         private System.Windows.Forms.CheckBox tuecb;
         private System.Windows.Forms.CheckBox moncb;
+        private System.Windows.Forms.ComboBox specializationCBox;
     }
 }
