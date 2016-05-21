@@ -78,6 +78,7 @@ namespace kurs.View
             this.изменитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.resetbtn = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kindDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -109,12 +110,12 @@ namespace kurs.View
             this.dataGV.ContextMenuStrip = this.cellDataGridViewCMS;
             this.dataGV.DataSource = this.companyBindingSource;
             this.dataGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGV.Location = new System.Drawing.Point(16, 293);
+            this.dataGV.Location = new System.Drawing.Point(16, 310);
             this.dataGV.MultiSelect = false;
             this.dataGV.Name = "dataGV";
             this.dataGV.ReadOnly = true;
             this.dataGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGV.Size = new System.Drawing.Size(638, 239);
+            this.dataGV.Size = new System.Drawing.Size(638, 255);
             this.dataGV.TabIndex = 50;
             this.dataGV.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dataGV_CellContextMenuStripNeeded);
             this.dataGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGV_CellDoubleClick);
@@ -152,7 +153,7 @@ namespace kurs.View
             // updatepBox
             // 
             this.updatepBox.Image = global::kurs.Properties.Resources.refresh_converted;
-            this.updatepBox.Location = new System.Drawing.Point(475, 257);
+            this.updatepBox.Location = new System.Drawing.Point(475, 274);
             this.updatepBox.Name = "updatepBox";
             this.updatepBox.Size = new System.Drawing.Size(30, 30);
             this.updatepBox.TabIndex = 143;
@@ -243,7 +244,7 @@ namespace kurs.View
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label8.Location = new System.Drawing.Point(34, 248);
+            this.label8.Location = new System.Drawing.Point(36, 236);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 17);
             this.label8.TabIndex = 40;
@@ -288,7 +289,7 @@ namespace kurs.View
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(147, 250);
+            this.label11.Location = new System.Drawing.Point(149, 238);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(44, 13);
             this.label11.TabIndex = 97;
@@ -297,7 +298,7 @@ namespace kurs.View
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(292, 250);
+            this.label12.Location = new System.Drawing.Point(294, 238);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(38, 13);
             this.label12.TabIndex = 98;
@@ -307,20 +308,21 @@ namespace kurs.View
             // 
             this.startDTPicker.CustomFormat = "HH:mm";
             this.startDTPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.startDTPicker.Location = new System.Drawing.Point(197, 246);
+            this.startDTPicker.Location = new System.Drawing.Point(199, 234);
             this.startDTPicker.MinDate = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
             this.startDTPicker.Name = "startDTPicker";
             this.startDTPicker.ShowUpDown = true;
             this.startDTPicker.Size = new System.Drawing.Size(54, 20);
             this.startDTPicker.TabIndex = 101;
             this.startDTPicker.Value = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
+            this.startDTPicker.ValueChanged += new System.EventHandler(this.startDTPicker_ValueChanged);
             // 
             // endDTPicker
             // 
             this.endDTPicker.CustomFormat = "HH:mm";
             this.endDTPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.endDTPicker.Location = new System.Drawing.Point(336, 246);
-            this.endDTPicker.MinDate = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
+            this.endDTPicker.Location = new System.Drawing.Point(338, 234);
+            this.endDTPicker.MinDate = new System.DateTime(1800, 1, 1, 0, 1, 0, 0);
             this.endDTPicker.Name = "endDTPicker";
             this.endDTPicker.ShowUpDown = true;
             this.endDTPicker.Size = new System.Drawing.Size(50, 20);
@@ -331,7 +333,7 @@ namespace kurs.View
             // 
             this.ownershipCBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ownershipCBox.Items.AddRange(new object[] {
-            "empty",
+            "любая",
             "государственная",
             "частная",
             "муниципальная"});
@@ -346,7 +348,7 @@ namespace kurs.View
             this.specializationCBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.specializationCBox.FormattingEnabled = true;
             this.specializationCBox.Items.AddRange(new object[] {
-            "empty",
+            "любая",
             "отопление",
             "вода",
             "канализация",
@@ -475,11 +477,11 @@ namespace kurs.View
             this.kindCBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.kindCBox.FormattingEnabled = true;
             this.kindCBox.Items.AddRange(new object[] {
+            "любой",
             "коммунальное",
             "промышленное",
             "производственное",
-            "коммерческое",
-            "empty"});
+            "коммерческое"});
             this.kindCBox.Location = new System.Drawing.Point(119, 127);
             this.kindCBox.Name = "kindCBox";
             this.kindCBox.Size = new System.Drawing.Size(143, 21);
@@ -488,7 +490,7 @@ namespace kurs.View
             // findbtn
             // 
             this.findbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.findbtn.Location = new System.Drawing.Point(529, 257);
+            this.findbtn.Location = new System.Drawing.Point(529, 274);
             this.findbtn.Name = "findbtn";
             this.findbtn.Size = new System.Drawing.Size(125, 30);
             this.findbtn.TabIndex = 146;
@@ -556,12 +558,14 @@ namespace kurs.View
             this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
             this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.изменитьToolStripMenuItem.Text = "Изменить";
+            this.изменитьToolStripMenuItem.Click += new System.EventHandler(this.changeTSM_Click);
             // 
             // удалитьToolStripMenuItem
             // 
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
             this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.удалитьToolStripMenuItem.Text = "Удалить";
+            this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.deleteTSM_Click);
             // 
             // menuStrip1
             // 
@@ -575,6 +579,16 @@ namespace kurs.View
             this.menuStrip1.Size = new System.Drawing.Size(666, 24);
             this.menuStrip1.TabIndex = 51;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // resetbtn
+            // 
+            this.resetbtn.Location = new System.Drawing.Point(40, 280);
+            this.resetbtn.Name = "resetbtn";
+            this.resetbtn.Size = new System.Drawing.Size(82, 23);
+            this.resetbtn.TabIndex = 147;
+            this.resetbtn.Text = "Сброс";
+            this.resetbtn.UseVisualStyleBackColor = true;
+            this.resetbtn.Click += new System.EventHandler(this.resetbtn_Click);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -619,7 +633,8 @@ namespace kurs.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(666, 544);
+            this.ClientSize = new System.Drawing.Size(666, 577);
+            this.Controls.Add(this.resetbtn);
             this.Controls.Add(this.findbtn);
             this.Controls.Add(this.kindCBox);
             this.Controls.Add(this.servicesChLB);
@@ -720,5 +735,6 @@ namespace kurs.View
         private ToolStripMenuItem showTSM;
         private ToolStripMenuItem changeTSM;
         private ToolStripMenuItem deleteTSM;
+        private Button resetbtn;
     }
 }

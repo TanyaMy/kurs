@@ -229,7 +229,7 @@
             this.endDTPicker.ShowUpDown = true;
             this.endDTPicker.Size = new System.Drawing.Size(58, 20);
             this.endDTPicker.TabIndex = 102;
-            this.endDTPicker.Value = new System.DateTime(1800, 1, 1, 0, 1, 0, 0);
+            this.endDTPicker.Value = new System.DateTime(1800, 1, 1, 23, 59, 0, 0);
             // 
             // startDTPicker
             // 
@@ -242,6 +242,7 @@
             this.startDTPicker.Size = new System.Drawing.Size(62, 20);
             this.startDTPicker.TabIndex = 101;
             this.startDTPicker.Value = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
+            this.startDTPicker.ValueChanged += new System.EventHandler(this.startDTPicker_ValueChanged);
             // 
             // label12
             // 
@@ -266,9 +267,10 @@
             this.ownershipCBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ownershipCBox.FormattingEnabled = true;
             this.ownershipCBox.Items.AddRange(new object[] {
-            "Государственная",
-            "Муниципальная",
-            "Частная"});
+            "любая",
+            "государственная",
+            "муниципальная",
+            "частная"});
             this.ownershipCBox.Location = new System.Drawing.Point(444, 88);
             this.ownershipCBox.Name = "ownershipCBox";
             this.ownershipCBox.Size = new System.Drawing.Size(165, 21);
@@ -279,6 +281,7 @@
             this.kindCBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.kindCBox.FormattingEnabled = true;
             this.kindCBox.Items.AddRange(new object[] {
+            "любой",
             "коммунальное",
             "промышленное",
             "производственное",
@@ -403,6 +406,7 @@
             this.specializationCBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.specializationCBox.FormattingEnabled = true;
             this.specializationCBox.Items.AddRange(new object[] {
+            "любая",
             "отопление",
             "вода",
             "канализация",
@@ -451,6 +455,7 @@
             this.MaximizeBox = false;
             this.Name = "AddForm";
             this.Text = "Добавить";
+            this.Load += new System.EventHandler(this.AddForm_Load);
             this.workdaysGB.ResumeLayout(false);
             this.workdaysGB.PerformLayout();
             this.ResumeLayout(false);

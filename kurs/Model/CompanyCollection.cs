@@ -1,23 +1,34 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 namespace kurs.Model
 {
+    /// <summary>
+    /// Данный класс содержит коллекцию объектов Company и методы для работы с
+    /// этой коллекцией, такие как удаление, добавление, изменение, поиск
+    /// компании по заданным параметрам.
+    /// </summary>
+
     public static class CompanyCollection
     {
+        //Список компаний, поддерживающий привязку данных.
         public static BindingList<Company> CompaniesList = new BindingList<Company>();
+
+        //Конструктор без параметров.
         static CompanyCollection()
         {
             CompaniesList = DataBase.GetCollectionFromFile();
         }
+
+        //Добавление компании в список.
         public static void AddCompany(Company comp)
         {
             comp.Id = CompaniesList.LastOrDefault()?.Id + 1 ?? 1;
             CompaniesList.Add(comp);
         }
 
+        //Удаление компании по Id.
         public static void DeleteCompany(int id)
         {
             var foundComp = CompaniesList.SingleOrDefault(x => x.Id == id);
@@ -27,6 +38,7 @@ namespace kurs.Model
                 throw new KeyNotFoundException("Ooops... Id was not found!");
         }
 
+        //Замена компании с указанным Id друой компанией.
         public static void ChangeCompany(int id, Company company)
         {
             var foundComp = CompaniesList.SingleOrDefault(x => id == x.Id);
@@ -56,15 +68,17 @@ namespace kurs.Model
 
 
             collection.RemoveAll(x => !(x.Address.Contains(company.Address) && 
-            (company.Kind.ToString() != "empty") ? x.Kind.Equals(company.Kind) : true &&
+            (company.Kind.ToString() != "любой") ? x.Kind.Equals(company.Kind) : true &&
             x.Name.Contains(company.Name) &&
-            (company.Ownership.ToString() != "empty") ? x.Ownership.Equals(company.Ownership) : true &&
-            (company.Specialization.ToString() != "empty") ? x.Specialization.Equals(company.Specialization) : true && 
+            (company.Ownership.ToString() != "любая") ? x.Ownership.Equals(company.Ownership) : true &&
+            (company.Specialization.ToString() != "любая") ? x.Specialization.Equals(company.Specialization) : true && 
             x.StartWork.TimeOfDay <= company.StartWork.TimeOfDay &&
             x.EndWork.TimeOfDay >= company.EndWork.TimeOfDay &&
             x.PhoneNumber.Contains(company.PhoneNumber) &&
             x.Services.Except(company.Services).Count() == (x.Services.Count() - company.Services.Count()) &&
             x.WorkDays.Except(company.WorkDays).Count() == (x.WorkDays.Count() - company.WorkDays.Count())));
+            /* (company.StartWork.ToString().Substring(11, 4) == "0:00" && company.EndWork.ToString().Substring(11, 5) == "23:59") ? true : x.StartWork.TimeOfDay <= company.StartWork.TimeOfDay &&
+          (company.StartWork.ToString().Substring(11, 4) == "0:00" && company.EndWork.ToString().Substring(11, 5) == "23:59") ? true : x.EndWork.TimeOfDay >= company.EndWork.TimeOfDay);*/
 
             var qwe = new BindingList<Company>();
             foreach (var z in collection)
@@ -72,6 +86,8 @@ namespace kurs.Model
             return qwe;
         }
 
+
+        //получение объекта Company по указанному Id.
         public static Company GetCompanyById(int id)
         {
             return CompaniesList.SingleOrDefault(x => x.Id == id);

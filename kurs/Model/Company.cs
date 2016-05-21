@@ -6,16 +6,22 @@ using System.Threading.Tasks;
 
 namespace kurs.Model
 {
+    //перечисления 
+
+    //Разряд
     public enum Kind
     {
+        любой,
         коммунальное,
         промышленное,
         производственное,
-        коммерческое, 
-        empty
+        коммерческое       
     }
+
+    //Специализация
     public enum Specialization
     {
+        любая,
         отопление,
         вода,
         канализация,
@@ -23,15 +29,16 @@ namespace kurs.Model
         электроэнергия,
         ремонт,
         связь,
-        другое,
-        empty
+        другое       
     }
+
+    //Собственность
     public enum Ownership
     {
+        любая,
         частная,
         государственная,
-        муниципальная,
-        empty
+        муниципальная       
     }
 
     public class Company
@@ -42,10 +49,16 @@ namespace kurs.Model
         public string Address { get; set; }
         public string PhoneNumber { get; set; }
         public Specialization Specialization { get; set; }
-        public string[] Services { get; set; }
+        public string[] Services { get; set; }        
         public Ownership Ownership { get; set; }
+
+        //Рабочии дни компании
         public string[] WorkDays { get; set; }
+
+        //Время начала рабочего дня
         public DateTime StartWork { get; set; }
+
+        //Время окончания рабочего дня
         public DateTime EndWork { get; set; }
         
     }

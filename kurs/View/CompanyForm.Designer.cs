@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompanyForm));
             this.okbtn = new System.Windows.Forms.Button();
             this.cancelbtn = new System.Windows.Forms.Button();
-            this.deletebtn = new System.Windows.Forms.Button();
             this.IDlbl = new System.Windows.Forms.Label();
             this.Changebtn = new System.Windows.Forms.Button();
             this.specializationCBox = new System.Windows.Forms.ComboBox();
@@ -87,16 +86,6 @@
             this.cancelbtn.UseVisualStyleBackColor = true;
             this.cancelbtn.Click += new System.EventHandler(this.cancelbtn_Click);
             // 
-            // deletebtn
-            // 
-            this.deletebtn.Location = new System.Drawing.Point(33, 336);
-            this.deletebtn.Name = "deletebtn";
-            this.deletebtn.Size = new System.Drawing.Size(75, 23);
-            this.deletebtn.TabIndex = 50;
-            this.deletebtn.Text = "Удалить";
-            this.deletebtn.UseVisualStyleBackColor = true;
-            this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
-            // 
             // IDlbl
             // 
             this.IDlbl.AutoSize = true;
@@ -107,7 +96,7 @@
             // 
             // Changebtn
             // 
-            this.Changebtn.Location = new System.Drawing.Point(135, 336);
+            this.Changebtn.Location = new System.Drawing.Point(27, 336);
             this.Changebtn.Name = "Changebtn";
             this.Changebtn.Size = new System.Drawing.Size(75, 23);
             this.Changebtn.TabIndex = 52;
@@ -120,6 +109,7 @@
             this.specializationCBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.specializationCBox.FormattingEnabled = true;
             this.specializationCBox.Items.AddRange(new object[] {
+            "любая",
             "отопление",
             "вода",
             "канализация",
@@ -248,6 +238,7 @@
             this.kindCBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.kindCBox.FormattingEnabled = true;
             this.kindCBox.Items.AddRange(new object[] {
+            "любой",
             "коммунальное",
             "промышленное",
             "производственное",
@@ -262,6 +253,7 @@
             this.ownershipCBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ownershipCBox.FormattingEnabled = true;
             this.ownershipCBox.Items.AddRange(new object[] {
+            "любая",
             "государственная",
             "муниципальная",
             "частная"});
@@ -280,7 +272,7 @@
             this.endDTPicker.ShowUpDown = true;
             this.endDTPicker.Size = new System.Drawing.Size(58, 20);
             this.endDTPicker.TabIndex = 158;
-            this.endDTPicker.Value = new System.DateTime(1800, 1, 1, 0, 1, 0, 0);
+            this.endDTPicker.Value = new System.DateTime(1800, 1, 1, 23, 59, 0, 0);
             // 
             // startDTPicker
             // 
@@ -293,6 +285,7 @@
             this.startDTPicker.Size = new System.Drawing.Size(62, 20);
             this.startDTPicker.TabIndex = 157;
             this.startDTPicker.Value = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
+            this.startDTPicker.ValueChanged += new System.EventHandler(this.startDTPicker_ValueChanged);
             // 
             // label12
             // 
@@ -465,7 +458,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Changebtn);
             this.Controls.Add(this.IDlbl);
-            this.Controls.Add(this.deletebtn);
             this.Controls.Add(this.cancelbtn);
             this.Controls.Add(this.okbtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -483,7 +475,6 @@
         #endregion
         private System.Windows.Forms.Button okbtn;
         private System.Windows.Forms.Button cancelbtn;
-        private System.Windows.Forms.Button deletebtn;
         private System.Windows.Forms.Label IDlbl;
         private System.Windows.Forms.Button Changebtn;
         private System.Windows.Forms.ComboBox specializationCBox;

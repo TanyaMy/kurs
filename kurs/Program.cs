@@ -1,4 +1,5 @@
-﻿using kurs.View;
+﻿using kurs.Model;
+using kurs.View;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,7 +16,8 @@ namespace kurs
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());           
+            Application.Run(new MainForm());
+            
         }
     }
 }

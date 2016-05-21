@@ -4,19 +4,25 @@ using System.Windows.Forms;
 
 namespace kurs.View
 {
-    public partial class CompanyForm : Form// Форма для удаления и изменения компании с заполненными полями
+    // Форма для просмотра и изменения компании с заполненными полями.
+    public partial class CompanyForm : Form
     {
-        public CompanyForm()// Конструктор без параметров
+        // Конструктор без параметров.
+        public CompanyForm()
         {
             InitializeComponent();
         }
-        public CompanyForm(Company comp)// Конструктор с параметром. Принимает компанию и заполняет поля формы информацией об этой компании
+
+        //Конструктор с параметром. Принимает компанию и заполняет поля
+        //формы информацией об этой компании.
+        public CompanyForm(Company comp)
         {
             InitializeComponent();
             fillFields(comp);
         }      
        
-        private Company createCompanyFromForm()//Создание новой компании и запись в нее информации, введенной в форме.
+        //Создание новой компании и запись в нее информации, введенной в форме.
+        private Company createCompanyFromForm()
         {
             Company comp = new Company();
             comp.Id = Convert.ToInt32(IDlbl.Text);
@@ -24,8 +30,10 @@ namespace kurs.View
             comp.Address = addressTBox.Text;
             comp.PhoneNumber = phoneNumberTBox.Text;
             comp.Kind = (Kind)Enum.Parse(typeof(Kind), kindCBox.Text, true);
-            comp.Specialization = (Specialization)Enum.Parse(typeof(Specialization), specializationCBox.Text, true);
-            comp.Ownership = (Ownership)Enum.Parse(typeof(Ownership), ownershipCBox.Text, true);
+            comp.Specialization = (Specialization)Enum.Parse(typeof(Specialization),
+                specializationCBox.Text, true);
+            comp.Ownership = (Ownership)Enum.Parse(typeof(Ownership),
+                ownershipCBox.Text, true);
             comp.StartWork = startDTPicker.Value;
             comp.EndWork = endDTPicker.Value;
 
@@ -44,7 +52,9 @@ namespace kurs.View
             comp.Services = serv.Trim().Split(' ');
             return comp;
         }
-        private void fillFields(Company comp)//Принимает компанию и заполняет поля формы информацией об этой компании
+
+        //Принимает компанию и заполняет поля формы информацией об этой компании.
+        private void fillFields(Company comp)
         {
             IDlbl.Text = "" + comp.Id;
             nameTBox.Text = comp.Name;
@@ -55,7 +65,6 @@ namespace kurs.View
             specializationCBox.Text = comp.Specialization.ToString();
             endDTPicker.Value = comp.EndWork;
             startDTPicker.Value = comp.StartWork;
-
 
             foreach (var s in comp.WorkDays)
                 foreach (var el in workdaysGB.Controls)
@@ -68,30 +77,35 @@ namespace kurs.View
             var arr = servicesChLB.Items;
             foreach (var s in comp.Services)
                 for (int i = 0; i < servicesChLB.Items.Count; i++)
-                    if (arr[i].ToString().Equals(s, StringComparison.OrdinalIgnoreCase))
+                    if (arr[i].ToString().Equals(s, 
+                        StringComparison.OrdinalIgnoreCase))
                         servicesChLB.SetItemChecked(i, true);
         }
-        private void cancelbtn_Click(object sender, EventArgs e)// Закрытие окна по нажатию кнопки "Отмена"
+
+        // Закрытие окна по нажатию кнопки "Отмена".
+        private void cancelbtn_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void okbtn_Click(object sender, EventArgs e)// Изменение компании по нажатию кнопки "ОК"
+        // Закрытие окна по нажатию кнопки "Отмена".
+        private void okbtn_Click(object sender, EventArgs e)
         {
             var comp = createCompanyFromForm();
             CompanyCollection.ChangeCompany(comp.Id, comp);
         }
 
-        private void deletebtn_Click(object sender, EventArgs e)// Удаление информации по нажатию кнопки "Удалить"
-        {
-            CompanyCollection.DeleteCompany(Convert.ToInt32(IDlbl.Text));
-            Close();
-        }
-
-        private void changebtn_Click(object sender, EventArgs e)// Делает поля доступными для записи
+        // Делает поля доступными для записи по нажатию кнопки "Изменить".
+        private void changebtn_Click(object sender, EventArgs e)
         {
             Writable(true);
         }
+
+        /// <summary>
+        /// Делает поля формы доступными только для чтения и для записи
+        /// в зависимости от введенного параметра - булевого значения.
+        /// </summary>
+        /// <param name="verif"></param>
         public void Writable(bool verif)
         {
             foreach (var element in Controls)
@@ -131,6 +145,26 @@ namespace kurs.View
                     }
                 }
             }
+        }
+
+        //Проверка на правильность введенной даты 
+        //(дата начала рабочего дня не должна опережать дату завершения рабочего дня) 
+        //по событию "Изменение даты начала рабочего дня".
+        private void startDTPicker_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime startValue = endDTPicker.Value;
+            startDTPicker.MaxDate = startValue.AddMinutes(-1); ;
+            if (startDTPicker.MaxDate >= endDTPicker.Value)
+            {
+                if (startValue.Minute > 0)
+                    startValue.AddMinutes(-1);
+                else {
+                    startValue.AddMinutes(59);
+                    startValue.AddHours(-1);
+                }
+            }
+            else
+                startValue.AddMinutes(-1);
         }
     }
 }

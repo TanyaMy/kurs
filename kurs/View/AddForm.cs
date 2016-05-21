@@ -11,17 +11,23 @@ using System.Windows.Forms;
 
 namespace kurs.View
 {
-    public partial class AddForm : Form// Форма для добавления компании
+    // Форма для добавления компании.
+    public partial class AddForm : Form
     {
-        public AddForm()//Конструктор без параметров
+        //Конструктор без параметров.
+        public AddForm()
         {
             InitializeComponent();
         }
-        private void cancelbtn_Click(object sender, EventArgs e)// Закрытие окна по нажатию кнопки "Отмена"
+
+        // Закрытие окна по нажатию кнопки "Отмена".
+        private void cancelbtn_Click(object sender, EventArgs e)
         {
             Close();
         }
-        private Company createCompanyFromForm()//Создание новой компании и запись в нее информации, введенной в форме.
+
+        //Создание новой компании и запись в нее информации, введенной в форме.
+        private Company createCompanyFromForm()
         {
             Company comp = new Company();
             comp.Id = -1;
@@ -29,8 +35,10 @@ namespace kurs.View
             comp.Address = addressTBox.Text;
             comp.PhoneNumber = phoneNumberTBox.Text;
             comp.Kind = (Kind)Enum.Parse(typeof(Kind), kindCBox.Text, true);
-            comp.Specialization = (Specialization)Enum.Parse(typeof(Specialization), specializationCBox.Text, true);
-            comp.Ownership = (Ownership)Enum.Parse(typeof(Ownership), ownershipCBox.Text, true);
+            comp.Specialization = (Specialization)Enum.Parse(typeof(Specialization),
+                specializationCBox.Text, true);
+            comp.Ownership = (Ownership)Enum.Parse(typeof(Ownership),
+                ownershipCBox.Text, true);
             comp.StartWork = startDTPicker.Value;
             comp.EndWork = endDTPicker.Value;
 
@@ -49,22 +57,20 @@ namespace kurs.View
             return comp;
         }
 
-        private void okbtn_Click(object sender, EventArgs e)// Добавление компаниии по нажатию кнопки "ОК"
+        // Добавление компаниии по нажатию кнопки "ОК".
+        private void okbtn_Click(object sender, EventArgs e)
         {
             CompanyCollection.AddCompany(createCompanyFromForm());
         }
 
-        private void resetbtn_Click(object sender, EventArgs e)//Сброс введенной информации
-        {
-            ResetFields();
-        }
-        public void ResetFields()//сбрасывает значение всех полей формы
+        //Сброс введенной в форме информации.
+        private void resetbtn_Click(object sender, EventArgs e)
         {
             foreach (Control c in Controls)
                 if (c is TextBox)
-                    ((TextBox)c).Text = null;
+                    ((TextBox)c).Text = "";
                 else if (c is ComboBox)
-                    ((ComboBox)c).Text = null;
+                    ((ComboBox)c).SelectedIndex = 0;
                 else if (c is GroupBox)
                 {
                     GroupBox gb = (GroupBox)c;
@@ -74,7 +80,13 @@ namespace kurs.View
                 else if (c is DateTimePicker)
                 {
                     DateTimePicker dtp = (DateTimePicker)c;
-                    dtp.Value = Convert.ToDateTime("01/01/1800 " + "00:00" + ":00.00");
+                    if (dtp.Name == "startDTPicker")
+                        dtp.Value = 
+                            Convert.ToDateTime("01/01/1800 " + "00:00" + ":00.00");
+                    else if (dtp.Name == "endDTPicker")
+                        dtp.Value = 
+                            Convert.ToDateTime("01/01/1800 " + "23:59" + ":00.00");
+
                 }
                 else if (c is CheckedListBox)
                 {
@@ -82,6 +94,40 @@ namespace kurs.View
                     for (int i = 0; i < clb.Items.Count; i++)
                         clb.SetItemChecked(i, false);
                 }
+        }
+
+        //Заполнение элементов управления ComboBox значениями
+        //по умолчанию при загрузке формы.
+        private void AddForm_Load(object sender, EventArgs e)
+        {
+            foreach (Control c in this.Controls)
+            {
+                if (c is ComboBox)
+                {
+                    ComboBox combo = (ComboBox)c;
+                    combo.SelectedIndex = 0;
+                }
+            }
+        }
+
+        //Проверка на правильность введенной даты 
+        //(дата начала рабочего дня не должна опережать дату завершения рабочего дня)
+        //по событию "Изменение даты начала рабочего дня".
+        private void startDTPicker_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime startValue = endDTPicker.Value;
+            startDTPicker.MaxDate = startValue.AddMinutes(-1); ;
+            if (startDTPicker.MaxDate >= endDTPicker.Value)
+            {
+                if (startValue.Minute > 0)
+                    startValue.AddMinutes(-1);
+                else {
+                    startValue.AddMinutes(59);
+                    startValue.AddHours(-1);
+                }
+            }
+            else
+                startValue.AddMinutes(-1);
         }
     }
 }
