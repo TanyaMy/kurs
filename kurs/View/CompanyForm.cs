@@ -166,5 +166,16 @@ namespace kurs.View
             else
                 startValue.AddMinutes(-1);
         }
+
+        //Проверка на правильность введенной даты 
+        //(дата начала рабочего дня не должна опережать дату завершения рабочего дня)
+        //по событию "Изменение даты конца рабочего дня".
+        private void endDTPicker_ValueChanged(object sender, EventArgs e)
+        {
+            if (startDTPicker.Value >= endDTPicker.Value)
+            {
+                endDTPicker.Value = startDTPicker.Value.AddMinutes(1);
+            }
+        }
     }
 }

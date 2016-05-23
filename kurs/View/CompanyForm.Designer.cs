@@ -110,13 +110,10 @@
             this.specializationCBox.FormattingEnabled = true;
             this.specializationCBox.Items.AddRange(new object[] {
             "любая",
-            "отопление",
-            "вода",
-            "канализация",
-            "строительство",
-            "электроэнергия",
-            "ремонт",
-            "связь",
+            "коммунальное",
+            "промышленное",
+            "производственное",
+            "коммерческое",
             "другое"});
             this.specializationCBox.Location = new System.Drawing.Point(446, 53);
             this.specializationCBox.Name = "specializationCBox";
@@ -213,22 +210,22 @@
             this.servicesChLB.FormattingEnabled = true;
             this.servicesChLB.Items.AddRange(new object[] {
             "водоснабжение",
-            "ремонт",
+            "газ",
+            "гостинницы",
+            "обувь",
+            "одежда",
             "отопление",
-            "строительство",
-            "ритуальные",
+            "парикмахерские",
+            "перевозка",
+            "питание",
             "почтовые",
             "прачечные",
-            "парикмахерские",
-            "питание",
-            "прокат",
-            "перевозка",
-            "гостинницы",
-            "одежда",
-            "обувь",
-            "другое",
-            "лифты"});
-            this.servicesChLB.Location = new System.Drawing.Point(446, 123);
+            "ремонт",
+            "ритуальные",
+            "строительство",
+            "электроэнергия",
+            "другое"});
+            this.servicesChLB.Location = new System.Drawing.Point(446, 139);
             this.servicesChLB.Name = "servicesChLB";
             this.servicesChLB.Size = new System.Drawing.Size(165, 154);
             this.servicesChLB.TabIndex = 163;
@@ -239,10 +236,9 @@
             this.kindCBox.FormattingEnabled = true;
             this.kindCBox.Items.AddRange(new object[] {
             "любой",
-            "коммунальное",
-            "промышленное",
-            "производственное",
-            "коммерческое"});
+            "высший",
+            "первый",
+            "второй"});
             this.kindCBox.Location = new System.Drawing.Point(111, 123);
             this.kindCBox.Name = "kindCBox";
             this.kindCBox.Size = new System.Drawing.Size(143, 21);
@@ -257,7 +253,7 @@
             "государственная",
             "муниципальная",
             "частная"});
-            this.ownershipCBox.Location = new System.Drawing.Point(446, 87);
+            this.ownershipCBox.Location = new System.Drawing.Point(446, 90);
             this.ownershipCBox.Name = "ownershipCBox";
             this.ownershipCBox.Size = new System.Drawing.Size(165, 21);
             this.ownershipCBox.TabIndex = 161;
@@ -273,6 +269,7 @@
             this.endDTPicker.Size = new System.Drawing.Size(58, 20);
             this.endDTPicker.TabIndex = 158;
             this.endDTPicker.Value = new System.DateTime(1800, 1, 1, 23, 59, 0, 0);
+            this.endDTPicker.ValueChanged += new System.EventHandler(this.endDTPicker_ValueChanged);
             // 
             // startDTPicker
             // 
@@ -375,7 +372,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(326, 88);
+            this.label4.Location = new System.Drawing.Point(328, 94);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 17);
             this.label4.TabIndex = 149;
@@ -433,6 +430,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(634, 381);
             this.Controls.Add(this.specializationCBox);
             this.Controls.Add(this.workdaysGB);
@@ -464,7 +462,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "CompanyForm";
-            this.Text = "Удалить/Изменить";
+            this.Text = "Просмотреть/Изменить";
             this.workdaysGB.ResumeLayout(false);
             this.workdaysGB.PerformLayout();
             this.ResumeLayout(false);

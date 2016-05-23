@@ -17,7 +17,7 @@ namespace kurs.Model
         //Путь к Xml-документу.
         private static string _filePath = @"db.xml";
 
-        //Коневой элемент Xml-документа.
+        //Корневой элемент Xml-документа.
         private static XElement Root;
 
         /// <summary>
@@ -35,7 +35,6 @@ namespace kurs.Model
             Root = doc.Element("companies");
         }
 
-
         /// <summary>
         /// Метод сохранения коллекции компаний в файл.
         /// </summary>
@@ -48,7 +47,6 @@ namespace kurs.Model
             }
             doc.Save(_filePath);
         }
-
 
         /// <summary>
         ///  Метод создания коллекции компаний
@@ -113,13 +111,13 @@ namespace kurs.Model
                     Id = Convert.ToInt32(xCompany.FirstAttribute?.Value ?? "-1"),
                     Name = xCompany.Element("name")?.Value ?? "emptyName",
                     Kind = (Kind)Enum.Parse(typeof(Kind), xCompany.Element("kind")?
-                        .Value ?? "empty", true),
+                        .Value ?? "любой", true),
                     Address = xCompany.Element("address")?.Value ?? "empty",
                     Ownership = (Ownership)Enum.Parse(typeof(Ownership),
-                        xCompany.Element("ownership")?.Value ?? "empty", true),
+                        xCompany.Element("ownership")?.Value ?? "любая", true),
                     PhoneNumber = xCompany.Element("phoneNumber")?.Value ?? "empty",
                     Specialization = (Specialization)Enum.Parse(typeof(Specialization),
-                        xCompany.Element("specialization")?.Value ?? "empty", true),
+                        xCompany.Element("specialization")?.Value ?? "любая", true),
                     Services = services.Trim().Split(' '),
                     WorkDays = days.Trim().Split(' '),
                     StartWork = ToDateTime(xCompany.Element("workTime")

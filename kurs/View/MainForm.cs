@@ -19,7 +19,7 @@ namespace kurs.View
         //Заполнение элементов управления ComboBox значениями
         //по умолчанию при загрузке формы.
         private void MainForm_Load(object sender, EventArgs e)
-        {            
+        {
             foreach (Control c in this.Controls)
             {
                 if (c is ComboBox)
@@ -52,7 +52,9 @@ namespace kurs.View
         private void addTStrMenu_Click(object sender, EventArgs e)
         {
             AddForm form = new AddForm();
-            form.ShowDialog();            
+            form.ShowDialog();
+            var collection = CompanyCollection.Search(getCompanyForSearch());
+            bindListToDataGridView(collection); 
         }
 
         /// <summary>
@@ -67,7 +69,14 @@ namespace kurs.View
         {
             var comp = getCompanyForSearch();
             var collection = CompanyCollection.Search(comp);
-            bindListToDataGridView(collection);            
+            bindListToDataGridView(collection);
+            if (collection.Count == 0)
+            {
+                DialogResult dialogRes =
+                   MessageBox.Show("Предприятий по заданным параметрам не найдено.",
+                   "Поиск", MessageBoxButtons.OK);
+                return;
+            }
         }        
 
         // Вызов формы с информацией по выбранной компании
@@ -82,12 +91,6 @@ namespace kurs.View
                 GetCompanyById(Convert.ToInt32(dataGV[0, e.RowIndex].Value)));
             form.Writable(false);
             form.ShowDialog();            
-        }
-
-        // Обновление DataGridView по нажатию кнопки.
-        private void updatepBox_Click(object sender, EventArgs e)
-        {
-            bindListToDataGridView(CompanyCollection.CompaniesList);
         }
 
         //Сохранение изменений в документе при выборе в меню "Файл -> Сохранить".
@@ -116,40 +119,85 @@ namespace kurs.View
         //в контекстном меню "Удалить".
         private void deleteTSM_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Вы уверены?" , 
-                "Удаление компании", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            try
             {
-                CompanyCollection.DeleteCompany
-                    (Convert.ToInt32(dataGV[0, dataGV.SelectedRows[0].Index].Value));
+                int ID = Convert.ToInt32(dataGV[0, 
+                    dataGV.SelectedRows[0].Index].Value);
+                DialogResult dialogResult = MessageBox.Show("Вы уверены?",
+               "Удаление предприятия", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    CompanyCollection.DeleteCompany
+                       (Convert.ToInt32(dataGV[0, 
+                       dataGV.SelectedRows[0].Index].Value));                    
+                    var collection = CompanyCollection.
+                        Search(getCompanyForSearch());
+                    bindListToDataGridView(collection);
+                }               
             }
+            catch (ArgumentOutOfRangeException)
+            {
+                DialogResult dialogRes =
+                    MessageBox.Show("Выберите предприятие для удаления.",
+                    "Удаление предприятия", MessageBoxButtons.OK);
+                return;
+            }
+             catch (KeyNotFoundException)
+            {
+                DialogResult dialogRes =
+                    MessageBox.Show("Выберите предприятие для удаления.",
+                    "Удаление предприятия", MessageBoxButtons.OK);
+                return;
+            }
+           
         }
 
-        //Изменение выбранной компании в DataGridView по выбору в контекстном
-        //меню "Изменить". Вызов формы для внесения изменений в выбранную компанию.
+        //Изменение выбранной компании в DataGridView по выбору в контекстном меню
+        //"Изменить". Вызов формы для внесения изменений в выбранную компанию.
         private void changeTSM_Click(object sender, EventArgs e)
         {
-            int ID = Convert.ToInt32(dataGV[0, dataGV.SelectedRows[0].Index].Value);
+            try {
+                int ID = Convert.ToInt32(dataGV[0, 
+                    dataGV.SelectedRows[0].Index].Value);
+               CompanyForm form = new CompanyForm
+               (CompanyCollection.GetCompanyById(ID));
 
-            CompanyForm form = new CompanyForm
-                (CompanyCollection.GetCompanyById
-                    (Convert.ToInt32
-                    (dataGV[0, dataGV.SelectedCells[0].ColumnIndex].Value)));
+                form.Writable(false);
+                form.ShowDialog();
+                var collection = CompanyCollection.Search(getCompanyForSearch());
+                bindListToDataGridView(collection);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                DialogResult dialogResult =
+                    MessageBox.Show("Выберите предприятие для изменения.",
+                    "Изменение предприятия", MessageBoxButtons.OK);
+                return;
+            }
+            catch (KeyNotFoundException)
+            {
+                DialogResult dialogResult =
+                   MessageBox.Show("Выберите предприятие для изменения.",
+                   "Изменение предприятия", MessageBoxButtons.OK);
+                return;
+            }
 
-            form.Writable(false);
-            form.ShowDialog();
         }
 
         //Показ информации о выбранной компании в DataGridView по
         //выбору в контекстном меню "Просмотреть".
         private void showTSM_Click(object sender, EventArgs e)
         {
-            int ID = Convert.ToInt32(dataGV[0, dataGV.SelectedRows[0].Index].Value);
+            int ID = Convert.ToInt32(dataGV[0,
+                dataGV.SelectedRows[0].Index].Value);
             CompanyForm form = new CompanyForm
                 (CompanyCollection.GetCompanyById
-                    (Convert.ToInt32(dataGV[0, dataGV.SelectedRows[0].Index].Value)));
+                    (Convert.ToInt32(dataGV[0,
+                    dataGV.SelectedRows[0].Index].Value)));
             form.Writable(false);
             form.ShowDialog();
+            var collection = CompanyCollection.Search(getCompanyForSearch());
+            bindListToDataGridView(collection);
         }
 
         //Создание объекта Company с информацией, введенной в форме для поиска.
@@ -243,6 +291,17 @@ namespace kurs.View
             }
             else
                 startValue.AddMinutes(-1);
+        }
+
+        //Проверка на правильность введенной даты 
+        //(дата начала рабочего дня не должна опережать дату завершения рабочего дня)
+        //по событию "Изменение даты конца рабочего дня".
+        private void endDTPicker_ValueChanged(object sender, EventArgs e)
+        {
+            if(startDTPicker.Value >= endDTPicker.Value)
+            {
+                endDTPicker.Value = startDTPicker.Value.AddMinutes(1);
+            }
         }
     }
 }

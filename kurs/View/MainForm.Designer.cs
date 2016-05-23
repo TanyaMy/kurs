@@ -31,13 +31,13 @@ namespace kurs.View
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.dataGV = new System.Windows.Forms.DataGridView();
             this.cellDataGridViewCMS = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showTSM = new System.Windows.Forms.ToolStripMenuItem();
             this.changeTSM = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteTSM = new System.Windows.Forms.ToolStripMenuItem();
-            this.updatepBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.nameTBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -79,17 +79,19 @@ namespace kurs.View
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.resetbtn = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.updatepBox = new System.Windows.Forms.PictureBox();
+            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kindDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.specializationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGV)).BeginInit();
             this.cellDataGridViewCMS.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.updatepBox)).BeginInit();
             this.workdaysGB.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.updatepBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,8 +101,16 @@ namespace kurs.View
             this.dataGV.AllowUserToDeleteRows = false;
             this.dataGV.AutoGenerateColumns = false;
             this.dataGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGV.ColumnHeadersHeight = 24;
-            this.dataGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
@@ -110,12 +120,13 @@ namespace kurs.View
             this.dataGV.ContextMenuStrip = this.cellDataGridViewCMS;
             this.dataGV.DataSource = this.companyBindingSource;
             this.dataGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGV.Location = new System.Drawing.Point(16, 310);
+            this.dataGV.Location = new System.Drawing.Point(16, 322);
             this.dataGV.MultiSelect = false;
             this.dataGV.Name = "dataGV";
             this.dataGV.ReadOnly = true;
+            this.dataGV.RowHeadersVisible = false;
             this.dataGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGV.Size = new System.Drawing.Size(638, 255);
+            this.dataGV.Size = new System.Drawing.Size(638, 243);
             this.dataGV.TabIndex = 50;
             this.dataGV.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dataGV_CellContextMenuStripNeeded);
             this.dataGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGV_CellDoubleClick);
@@ -150,21 +161,11 @@ namespace kurs.View
             this.deleteTSM.Text = "Удалить";
             this.deleteTSM.Click += new System.EventHandler(this.deleteTSM_Click);
             // 
-            // updatepBox
-            // 
-            this.updatepBox.Image = global::kurs.Properties.Resources.refresh_converted;
-            this.updatepBox.Location = new System.Drawing.Point(475, 274);
-            this.updatepBox.Name = "updatepBox";
-            this.updatepBox.Size = new System.Drawing.Size(30, 30);
-            this.updatepBox.TabIndex = 143;
-            this.updatepBox.TabStop = false;
-            this.updatepBox.Click += new System.EventHandler(this.updatepBox_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(37, 70);
+            this.label1.Location = new System.Drawing.Point(15, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 17);
             this.label1.TabIndex = 27;
@@ -173,7 +174,7 @@ namespace kurs.View
             // nameTBox
             // 
             this.nameTBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.nameTBox.Location = new System.Drawing.Point(119, 71);
+            this.nameTBox.Location = new System.Drawing.Point(97, 82);
             this.nameTBox.Name = "nameTBox";
             this.nameTBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.nameTBox.Size = new System.Drawing.Size(143, 20);
@@ -184,7 +185,7 @@ namespace kurs.View
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(53, 128);
+            this.label2.Location = new System.Drawing.Point(19, 142);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 17);
             this.label2.TabIndex = 29;
@@ -194,7 +195,7 @@ namespace kurs.View
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(412, 138);
+            this.label3.Location = new System.Drawing.Point(415, 154);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 17);
             this.label3.TabIndex = 32;
@@ -204,7 +205,7 @@ namespace kurs.View
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(357, 100);
+            this.label4.Location = new System.Drawing.Point(357, 112);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 17);
             this.label4.TabIndex = 34;
@@ -234,7 +235,7 @@ namespace kurs.View
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label7.Location = new System.Drawing.Point(53, 101);
+            this.label7.Location = new System.Drawing.Point(31, 112);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 17);
             this.label7.TabIndex = 39;
@@ -244,7 +245,7 @@ namespace kurs.View
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label8.Location = new System.Drawing.Point(36, 236);
+            this.label8.Location = new System.Drawing.Point(23, 261);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 17);
             this.label8.TabIndex = 40;
@@ -254,7 +255,7 @@ namespace kurs.View
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label9.Location = new System.Drawing.Point(34, 198);
+            this.label9.Location = new System.Drawing.Point(21, 223);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(88, 17);
             this.label9.TabIndex = 41;
@@ -264,7 +265,7 @@ namespace kurs.View
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label10.Location = new System.Drawing.Point(41, 154);
+            this.label10.Location = new System.Drawing.Point(19, 179);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(68, 17);
             this.label10.TabIndex = 42;
@@ -272,7 +273,7 @@ namespace kurs.View
             // 
             // addressTBox
             // 
-            this.addressTBox.Location = new System.Drawing.Point(119, 100);
+            this.addressTBox.Location = new System.Drawing.Point(97, 111);
             this.addressTBox.Name = "addressTBox";
             this.addressTBox.Size = new System.Drawing.Size(143, 20);
             this.addressTBox.TabIndex = 43;
@@ -280,7 +281,7 @@ namespace kurs.View
             // 
             // phoneNumberTBox
             // 
-            this.phoneNumberTBox.Location = new System.Drawing.Point(119, 154);
+            this.phoneNumberTBox.Location = new System.Drawing.Point(97, 179);
             this.phoneNumberTBox.Name = "phoneNumberTBox";
             this.phoneNumberTBox.Size = new System.Drawing.Size(143, 20);
             this.phoneNumberTBox.TabIndex = 44;
@@ -289,7 +290,7 @@ namespace kurs.View
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(149, 238);
+            this.label11.Location = new System.Drawing.Point(136, 263);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(44, 13);
             this.label11.TabIndex = 97;
@@ -298,7 +299,7 @@ namespace kurs.View
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(294, 238);
+            this.label12.Location = new System.Drawing.Point(277, 265);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(38, 13);
             this.label12.TabIndex = 98;
@@ -308,7 +309,7 @@ namespace kurs.View
             // 
             this.startDTPicker.CustomFormat = "HH:mm";
             this.startDTPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.startDTPicker.Location = new System.Drawing.Point(199, 234);
+            this.startDTPicker.Location = new System.Drawing.Point(186, 259);
             this.startDTPicker.MinDate = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
             this.startDTPicker.Name = "startDTPicker";
             this.startDTPicker.ShowUpDown = true;
@@ -321,13 +322,14 @@ namespace kurs.View
             // 
             this.endDTPicker.CustomFormat = "HH:mm";
             this.endDTPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.endDTPicker.Location = new System.Drawing.Point(338, 234);
+            this.endDTPicker.Location = new System.Drawing.Point(321, 261);
             this.endDTPicker.MinDate = new System.DateTime(1800, 1, 1, 0, 1, 0, 0);
             this.endDTPicker.Name = "endDTPicker";
             this.endDTPicker.ShowUpDown = true;
             this.endDTPicker.Size = new System.Drawing.Size(50, 20);
             this.endDTPicker.TabIndex = 102;
             this.endDTPicker.Value = new System.DateTime(1800, 1, 1, 23, 59, 0, 0);
+            this.endDTPicker.ValueChanged += new System.EventHandler(this.endDTPicker_ValueChanged);
             // 
             // ownershipCBox
             // 
@@ -337,7 +339,7 @@ namespace kurs.View
             "государственная",
             "частная",
             "муниципальная"});
-            this.ownershipCBox.Location = new System.Drawing.Point(475, 99);
+            this.ownershipCBox.Location = new System.Drawing.Point(475, 110);
             this.ownershipCBox.Name = "ownershipCBox";
             this.ownershipCBox.Size = new System.Drawing.Size(179, 21);
             this.ownershipCBox.TabIndex = 111;
@@ -349,13 +351,10 @@ namespace kurs.View
             this.specializationCBox.FormattingEnabled = true;
             this.specializationCBox.Items.AddRange(new object[] {
             "любая",
-            "отопление",
-            "вода",
-            "канализация",
-            "строительство",
-            "электроэнергия",
-            "ремонт",
-            "связь",
+            "коммунальное",
+            "промышленное",
+            "производственное",
+            "коммерческое",
             "другое"});
             this.specializationCBox.Location = new System.Drawing.Point(475, 70);
             this.specializationCBox.Name = "specializationCBox";
@@ -395,7 +394,7 @@ namespace kurs.View
             // thicb
             // 
             this.thicb.AutoSize = true;
-            this.thicb.Location = new System.Drawing.Point(145, 19);
+            this.thicb.Location = new System.Drawing.Point(144, 19);
             this.thicb.Name = "thicb";
             this.thicb.Size = new System.Drawing.Size(39, 17);
             this.thicb.TabIndex = 141;
@@ -441,7 +440,7 @@ namespace kurs.View
             this.workdaysGB.Controls.Add(this.wedcb);
             this.workdaysGB.Controls.Add(this.tuecb);
             this.workdaysGB.Controls.Add(this.moncb);
-            this.workdaysGB.Location = new System.Drawing.Point(128, 180);
+            this.workdaysGB.Location = new System.Drawing.Point(115, 205);
             this.workdaysGB.Name = "workdaysGB";
             this.workdaysGB.Size = new System.Drawing.Size(336, 46);
             this.workdaysGB.TabIndex = 141;
@@ -452,22 +451,22 @@ namespace kurs.View
             this.servicesChLB.FormattingEnabled = true;
             this.servicesChLB.Items.AddRange(new object[] {
             "водоснабжение",
-            "ремонт",
+            "газ",
+            "гостинницы",
+            "обувь",
+            "одежда",
             "отопление",
-            "строительство",
-            "ритуальные",
+            "парикмахерские",
+            "перевозка",
+            "питание",
             "почтовые",
             "прачечные",
-            "парикмахерские",
-            "питание",
-            "прокат",
-            "перевозка",
-            "гостинницы",
-            "одежда",
-            "обувь",
-            "лифты",
+            "ремонт",
+            "ритуальные",
+            "строительство",
+            "электроэнергия",
             "другое"});
-            this.servicesChLB.Location = new System.Drawing.Point(475, 127);
+            this.servicesChLB.Location = new System.Drawing.Point(475, 141);
             this.servicesChLB.Name = "servicesChLB";
             this.servicesChLB.Size = new System.Drawing.Size(179, 124);
             this.servicesChLB.TabIndex = 144;
@@ -478,11 +477,10 @@ namespace kurs.View
             this.kindCBox.FormattingEnabled = true;
             this.kindCBox.Items.AddRange(new object[] {
             "любой",
-            "коммунальное",
-            "промышленное",
-            "производственное",
-            "коммерческое"});
-            this.kindCBox.Location = new System.Drawing.Point(119, 127);
+            "высший",
+            "первый",
+            "второй"});
+            this.kindCBox.Location = new System.Drawing.Point(97, 141);
             this.kindCBox.Name = "kindCBox";
             this.kindCBox.Size = new System.Drawing.Size(143, 21);
             this.kindCBox.TabIndex = 145;
@@ -490,7 +488,7 @@ namespace kurs.View
             // findbtn
             // 
             this.findbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.findbtn.Location = new System.Drawing.Point(529, 274);
+            this.findbtn.Location = new System.Drawing.Point(529, 286);
             this.findbtn.Name = "findbtn";
             this.findbtn.Size = new System.Drawing.Size(125, 30);
             this.findbtn.TabIndex = 146;
@@ -582,17 +580,37 @@ namespace kurs.View
             // 
             // resetbtn
             // 
-            this.resetbtn.Location = new System.Drawing.Point(40, 280);
+            this.resetbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.resetbtn.Location = new System.Drawing.Point(40, 286);
             this.resetbtn.Name = "resetbtn";
-            this.resetbtn.Size = new System.Drawing.Size(82, 23);
+            this.resetbtn.Size = new System.Drawing.Size(92, 30);
             this.resetbtn.TabIndex = 147;
             this.resetbtn.Text = "Сброс";
             this.resetbtn.UseVisualStyleBackColor = true;
             this.resetbtn.Click += new System.EventHandler(this.resetbtn_Click);
             // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // updatepBox
+            // 
+            this.updatepBox.Location = new System.Drawing.Point(0, 0);
+            this.updatepBox.Name = "updatepBox";
+            this.updatepBox.Size = new System.Drawing.Size(100, 50);
+            this.updatepBox.TabIndex = 0;
+            this.updatepBox.TabStop = false;
+            // 
+            // companyBindingSource
+            // 
+            this.companyBindingSource.DataSource = typeof(kurs.Model.Company);
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.FillWeight = 54.57534F;
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
@@ -600,6 +618,7 @@ namespace kurs.View
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.FillWeight = 105.1363F;
             this.nameDataGridViewTextBoxColumn.HeaderText = "Название";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
@@ -607,6 +626,7 @@ namespace kurs.View
             // kindDataGridViewTextBoxColumn
             // 
             this.kindDataGridViewTextBoxColumn.DataPropertyName = "Kind";
+            this.kindDataGridViewTextBoxColumn.FillWeight = 88.47778F;
             this.kindDataGridViewTextBoxColumn.HeaderText = "Разряд";
             this.kindDataGridViewTextBoxColumn.Name = "kindDataGridViewTextBoxColumn";
             this.kindDataGridViewTextBoxColumn.ReadOnly = true;
@@ -614,6 +634,7 @@ namespace kurs.View
             // phoneNumberDataGridViewTextBoxColumn
             // 
             this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
+            this.phoneNumberDataGridViewTextBoxColumn.FillWeight = 124.907F;
             this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "Номер телефона";
             this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
             this.phoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
@@ -621,13 +642,10 @@ namespace kurs.View
             // specializationDataGridViewTextBoxColumn
             // 
             this.specializationDataGridViewTextBoxColumn.DataPropertyName = "Specialization";
+            this.specializationDataGridViewTextBoxColumn.FillWeight = 126.9036F;
             this.specializationDataGridViewTextBoxColumn.HeaderText = "Специализация";
             this.specializationDataGridViewTextBoxColumn.Name = "specializationDataGridViewTextBoxColumn";
             this.specializationDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // companyBindingSource
-            // 
-            this.companyBindingSource.DataSource = typeof(kurs.Model.Company);
             // 
             // MainForm
             // 
@@ -638,7 +656,6 @@ namespace kurs.View
             this.Controls.Add(this.findbtn);
             this.Controls.Add(this.kindCBox);
             this.Controls.Add(this.servicesChLB);
-            this.Controls.Add(this.updatepBox);
             this.Controls.Add(this.workdaysGB);
             this.Controls.Add(this.specializationCBox);
             this.Controls.Add(this.ownershipCBox);
@@ -667,15 +684,16 @@ namespace kurs.View
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Предприятия";
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGV)).EndInit();
             this.cellDataGridViewCMS.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.updatepBox)).EndInit();
             this.workdaysGB.ResumeLayout(false);
             this.workdaysGB.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.updatepBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -683,7 +701,6 @@ namespace kurs.View
         }
 
         #endregion
-        private PictureBox updatepBox;
         private Label label1;
         private TextBox nameTBox;
         private Label label2;
@@ -716,11 +733,6 @@ namespace kurs.View
         private Button findbtn;
         private BindingSource companyBindingSource;
         public DataGridView dataGV;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn kindDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn specializationDataGridViewTextBoxColumn;
         private ToolStripMenuItem fileTStrMenu;
         private ToolStripMenuItem saveTStrMenu;
         private ToolStripMenuItem exitTStrMenu;
@@ -736,5 +748,12 @@ namespace kurs.View
         private ToolStripMenuItem changeTSM;
         private ToolStripMenuItem deleteTSM;
         private Button resetbtn;
+        private ImageList imageList1;
+        private PictureBox updatepBox;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn kindDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn specializationDataGridViewTextBoxColumn;
     }
 }
