@@ -53,8 +53,7 @@ namespace kurs.View
         {
             AddForm form = new AddForm();
             form.ShowDialog();
-            var collection = CompanyCollection.Search(getCompanyForSearch());
-            bindListToDataGridView(collection); 
+            bindListToDataGridView(CompanyCollection.CompaniesList);
         }
 
         /// <summary>
@@ -91,8 +90,7 @@ namespace kurs.View
                 GetCompanyById(Convert.ToInt32(dataGV[0, e.RowIndex].Value)));
             form.Writable(false);
             form.ShowDialog();
-            var collection = CompanyCollection.Search(getCompanyForSearch());
-            bindListToDataGridView(collection);
+            bindListToDataGridView(CompanyCollection.CompaniesList);
         }
 
         //Сохранение изменений в документе при выборе в меню "Файл -> Сохранить".
@@ -133,10 +131,8 @@ namespace kurs.View
                 {
                     CompanyCollection.DeleteCompany
                        (Convert.ToInt32(dataGV[0, 
-                       dataGV.SelectedRows[0].Index].Value));                    
-                    var collection = CompanyCollection.
-                        Search(getCompanyForSearch());
-                    bindListToDataGridView(collection);
+                       dataGV.SelectedRows[0].Index].Value));
+                    bindListToDataGridView(CompanyCollection.CompaniesList);
                 }               
             }
             catch (ArgumentOutOfRangeException)
@@ -167,10 +163,8 @@ namespace kurs.View
                (CompanyCollection.GetCompanyById(ID));
 
                 form.Writable(false);
-                form.ShowDialog();
-                var comp = getCompanyForSearch();
-                var collection = CompanyCollection.Search(comp);
-                bindListToDataGridView(collection);
+                form.ShowDialog();             
+                bindListToDataGridView(CompanyCollection.CompaniesList);
             }
             catch (ArgumentOutOfRangeException)
             {
@@ -202,8 +196,7 @@ namespace kurs.View
                         dataGV.SelectedRows[0].Index].Value)));
                 form.Writable(false);
                 form.ShowDialog();
-                var collection = CompanyCollection.Search(getCompanyForSearch());
-                bindListToDataGridView(collection);
+                bindListToDataGridView(CompanyCollection.CompaniesList);
             }
             catch (ArgumentOutOfRangeException)
             {
