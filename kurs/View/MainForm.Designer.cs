@@ -74,6 +74,7 @@ namespace kurs.View
             this.helpTStrMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutTStrMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.servTStrMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.просмотретьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addTStrMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.изменитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,12 +82,12 @@ namespace kurs.View
             this.resetbtn = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.updatepBox = new System.Windows.Forms.PictureBox();
-            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kindDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.specializationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGV)).BeginInit();
             this.cellDataGridViewCMS.SuspendLayout();
             this.workdaysGB.SuspendLayout();
@@ -119,14 +120,16 @@ namespace kurs.View
             this.specializationDataGridViewTextBoxColumn});
             this.dataGV.ContextMenuStrip = this.cellDataGridViewCMS;
             this.dataGV.DataSource = this.companyBindingSource;
+            this.dataGV.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGV.Location = new System.Drawing.Point(16, 322);
+            this.dataGV.Location = new System.Drawing.Point(0, 346);
+            this.dataGV.MaximumSize = new System.Drawing.Size(0, 500);
             this.dataGV.MultiSelect = false;
             this.dataGV.Name = "dataGV";
             this.dataGV.ReadOnly = true;
             this.dataGV.RowHeadersVisible = false;
             this.dataGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGV.Size = new System.Drawing.Size(638, 243);
+            this.dataGV.Size = new System.Drawing.Size(666, 231);
             this.dataGV.TabIndex = 50;
             this.dataGV.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dataGV_CellContextMenuStripNeeded);
             this.dataGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGV_CellDoubleClick);
@@ -163,9 +166,10 @@ namespace kurs.View
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(15, 81);
+            this.label1.Location = new System.Drawing.Point(19, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 17);
             this.label1.TabIndex = 27;
@@ -173,19 +177,22 @@ namespace kurs.View
             // 
             // nameTBox
             // 
+            this.nameTBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nameTBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.nameTBox.Location = new System.Drawing.Point(97, 82);
+            this.nameTBox.Location = new System.Drawing.Point(97, 71);
+            this.nameTBox.MaximumSize = new System.Drawing.Size(200, 100);
             this.nameTBox.Name = "nameTBox";
             this.nameTBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.nameTBox.Size = new System.Drawing.Size(143, 20);
+            this.nameTBox.Size = new System.Drawing.Size(156, 20);
             this.nameTBox.TabIndex = 28;
             this.nameTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(19, 142);
+            this.label2.Location = new System.Drawing.Point(19, 137);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 17);
             this.label2.TabIndex = 29;
@@ -193,9 +200,10 @@ namespace kurs.View
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(415, 154);
+            this.label3.Location = new System.Drawing.Point(412, 167);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 17);
             this.label3.TabIndex = 32;
@@ -203,9 +211,10 @@ namespace kurs.View
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(357, 112);
+            this.label4.Location = new System.Drawing.Point(357, 111);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 17);
             this.label4.TabIndex = 34;
@@ -213,6 +222,7 @@ namespace kurs.View
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label5.Location = new System.Drawing.Point(136, 36);
@@ -223,6 +233,7 @@ namespace kurs.View
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label6.Location = new System.Drawing.Point(357, 71);
@@ -233,9 +244,10 @@ namespace kurs.View
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label7.Location = new System.Drawing.Point(31, 112);
+            this.label7.Location = new System.Drawing.Point(19, 106);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 17);
             this.label7.TabIndex = 39;
@@ -243,9 +255,10 @@ namespace kurs.View
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label8.Location = new System.Drawing.Point(23, 261);
+            this.label8.Location = new System.Drawing.Point(19, 255);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 17);
             this.label8.TabIndex = 40;
@@ -253,9 +266,10 @@ namespace kurs.View
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label9.Location = new System.Drawing.Point(21, 223);
+            this.label9.Location = new System.Drawing.Point(19, 215);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(88, 17);
             this.label9.TabIndex = 41;
@@ -263,9 +277,10 @@ namespace kurs.View
             // 
             // label10
             // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label10.Location = new System.Drawing.Point(19, 179);
+            this.label10.Location = new System.Drawing.Point(19, 173);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(68, 17);
             this.label10.TabIndex = 42;
@@ -273,24 +288,29 @@ namespace kurs.View
             // 
             // addressTBox
             // 
-            this.addressTBox.Location = new System.Drawing.Point(97, 111);
+            this.addressTBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.addressTBox.Location = new System.Drawing.Point(97, 105);
+            this.addressTBox.MaximumSize = new System.Drawing.Size(200, 100);
             this.addressTBox.Name = "addressTBox";
-            this.addressTBox.Size = new System.Drawing.Size(143, 20);
+            this.addressTBox.Size = new System.Drawing.Size(156, 20);
             this.addressTBox.TabIndex = 43;
             this.addressTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // phoneNumberTBox
             // 
-            this.phoneNumberTBox.Location = new System.Drawing.Point(97, 179);
+            this.phoneNumberTBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.phoneNumberTBox.Location = new System.Drawing.Point(97, 172);
+            this.phoneNumberTBox.MaximumSize = new System.Drawing.Size(200, 100);
             this.phoneNumberTBox.Name = "phoneNumberTBox";
-            this.phoneNumberTBox.Size = new System.Drawing.Size(143, 20);
+            this.phoneNumberTBox.Size = new System.Drawing.Size(156, 20);
             this.phoneNumberTBox.TabIndex = 44;
             this.phoneNumberTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label11
             // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(136, 263);
+            this.label11.Location = new System.Drawing.Point(136, 259);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(44, 13);
             this.label11.TabIndex = 97;
@@ -298,8 +318,10 @@ namespace kurs.View
             // 
             // label12
             // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(277, 265);
+            this.label12.Location = new System.Drawing.Point(264, 259);
+            this.label12.MaximumSize = new System.Drawing.Size(500, 100);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(38, 13);
             this.label12.TabIndex = 98;
@@ -307,9 +329,11 @@ namespace kurs.View
             // 
             // startDTPicker
             // 
+            this.startDTPicker.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.startDTPicker.CustomFormat = "HH:mm";
             this.startDTPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.startDTPicker.Location = new System.Drawing.Point(186, 259);
+            this.startDTPicker.Location = new System.Drawing.Point(186, 255);
+            this.startDTPicker.MaximumSize = new System.Drawing.Size(500, 100);
             this.startDTPicker.MinDate = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
             this.startDTPicker.Name = "startDTPicker";
             this.startDTPicker.ShowUpDown = true;
@@ -320,9 +344,11 @@ namespace kurs.View
             // 
             // endDTPicker
             // 
+            this.endDTPicker.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.endDTPicker.CustomFormat = "HH:mm";
             this.endDTPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.endDTPicker.Location = new System.Drawing.Point(321, 261);
+            this.endDTPicker.Location = new System.Drawing.Point(308, 255);
+            this.endDTPicker.MaximumSize = new System.Drawing.Size(500, 100);
             this.endDTPicker.MinDate = new System.DateTime(1800, 1, 1, 0, 1, 0, 0);
             this.endDTPicker.Name = "endDTPicker";
             this.endDTPicker.ShowUpDown = true;
@@ -333,6 +359,7 @@ namespace kurs.View
             // 
             // ownershipCBox
             // 
+            this.ownershipCBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ownershipCBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ownershipCBox.Items.AddRange(new object[] {
             "любая",
@@ -340,12 +367,14 @@ namespace kurs.View
             "частная",
             "муниципальная"});
             this.ownershipCBox.Location = new System.Drawing.Point(475, 110);
+            this.ownershipCBox.MaximumSize = new System.Drawing.Size(300, 0);
             this.ownershipCBox.Name = "ownershipCBox";
             this.ownershipCBox.Size = new System.Drawing.Size(179, 21);
             this.ownershipCBox.TabIndex = 111;
             // 
             // specializationCBox
             // 
+            this.specializationCBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.specializationCBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.specializationCBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.specializationCBox.FormattingEnabled = true;
@@ -357,6 +386,7 @@ namespace kurs.View
             "коммерческое",
             "другое"});
             this.specializationCBox.Location = new System.Drawing.Point(475, 70);
+            this.specializationCBox.MaximumSize = new System.Drawing.Size(300, 0);
             this.specializationCBox.Name = "specializationCBox";
             this.specializationCBox.Size = new System.Drawing.Size(179, 21);
             this.specializationCBox.TabIndex = 112;
@@ -384,7 +414,7 @@ namespace kurs.View
             // wedcb
             // 
             this.wedcb.AutoSize = true;
-            this.wedcb.Location = new System.Drawing.Point(99, 19);
+            this.wedcb.Location = new System.Drawing.Point(97, 19);
             this.wedcb.Name = "wedcb";
             this.wedcb.Size = new System.Drawing.Size(39, 17);
             this.wedcb.TabIndex = 140;
@@ -433,6 +463,7 @@ namespace kurs.View
             // 
             // workdaysGB
             // 
+            this.workdaysGB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.workdaysGB.Controls.Add(this.suncb);
             this.workdaysGB.Controls.Add(this.satcb);
             this.workdaysGB.Controls.Add(this.fricb);
@@ -440,14 +471,16 @@ namespace kurs.View
             this.workdaysGB.Controls.Add(this.wedcb);
             this.workdaysGB.Controls.Add(this.tuecb);
             this.workdaysGB.Controls.Add(this.moncb);
-            this.workdaysGB.Location = new System.Drawing.Point(115, 205);
+            this.workdaysGB.Location = new System.Drawing.Point(117, 198);
+            this.workdaysGB.MaximumSize = new System.Drawing.Size(500, 100);
             this.workdaysGB.Name = "workdaysGB";
-            this.workdaysGB.Size = new System.Drawing.Size(336, 46);
+            this.workdaysGB.Size = new System.Drawing.Size(325, 46);
             this.workdaysGB.TabIndex = 141;
             this.workdaysGB.TabStop = false;
             // 
             // servicesChLB
             // 
+            this.servicesChLB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.servicesChLB.FormattingEnabled = true;
             this.servicesChLB.Items.AddRange(new object[] {
             "водоснабжение",
@@ -466,13 +499,15 @@ namespace kurs.View
             "строительство",
             "электроэнергия",
             "другое"});
-            this.servicesChLB.Location = new System.Drawing.Point(475, 141);
+            this.servicesChLB.Location = new System.Drawing.Point(475, 149);
+            this.servicesChLB.MaximumSize = new System.Drawing.Size(300, 500);
             this.servicesChLB.Name = "servicesChLB";
-            this.servicesChLB.Size = new System.Drawing.Size(179, 124);
+            this.servicesChLB.Size = new System.Drawing.Size(179, 94);
             this.servicesChLB.TabIndex = 144;
             // 
             // kindCBox
             // 
+            this.kindCBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.kindCBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.kindCBox.FormattingEnabled = true;
             this.kindCBox.Items.AddRange(new object[] {
@@ -480,15 +515,17 @@ namespace kurs.View
             "высший",
             "первый",
             "второй"});
-            this.kindCBox.Location = new System.Drawing.Point(97, 141);
+            this.kindCBox.Location = new System.Drawing.Point(97, 136);
+            this.kindCBox.MaximumSize = new System.Drawing.Size(200, 0);
             this.kindCBox.Name = "kindCBox";
-            this.kindCBox.Size = new System.Drawing.Size(143, 21);
+            this.kindCBox.Size = new System.Drawing.Size(156, 21);
             this.kindCBox.TabIndex = 145;
             // 
             // findbtn
             // 
+            this.findbtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.findbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.findbtn.Location = new System.Drawing.Point(529, 286);
+            this.findbtn.Location = new System.Drawing.Point(529, 295);
             this.findbtn.Name = "findbtn";
             this.findbtn.Size = new System.Drawing.Size(125, 30);
             this.findbtn.TabIndex = 146;
@@ -537,6 +574,7 @@ namespace kurs.View
             // servTStrMenu
             // 
             this.servTStrMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.просмотретьToolStripMenuItem,
             this.addTStrMenu,
             this.изменитьToolStripMenuItem,
             this.удалитьToolStripMenuItem});
@@ -544,24 +582,31 @@ namespace kurs.View
             this.servTStrMenu.Size = new System.Drawing.Size(59, 20);
             this.servTStrMenu.Text = "Правка";
             // 
+            // просмотретьToolStripMenuItem
+            // 
+            this.просмотретьToolStripMenuItem.Name = "просмотретьToolStripMenuItem";
+            this.просмотретьToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.просмотретьToolStripMenuItem.Text = "Просмотреть";
+            this.просмотретьToolStripMenuItem.Click += new System.EventHandler(this.showTSM_Click);
+            // 
             // addTStrMenu
             // 
             this.addTStrMenu.Name = "addTStrMenu";
-            this.addTStrMenu.Size = new System.Drawing.Size(128, 22);
+            this.addTStrMenu.Size = new System.Drawing.Size(148, 22);
             this.addTStrMenu.Text = "Добавить";
             this.addTStrMenu.Click += new System.EventHandler(this.addTStrMenu_Click);
             // 
             // изменитьToolStripMenuItem
             // 
             this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
-            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.изменитьToolStripMenuItem.Text = "Изменить";
             this.изменитьToolStripMenuItem.Click += new System.EventHandler(this.changeTSM_Click);
             // 
             // удалитьToolStripMenuItem
             // 
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.удалитьToolStripMenuItem.Text = "Удалить";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.deleteTSM_Click);
             // 
@@ -580,8 +625,9 @@ namespace kurs.View
             // 
             // resetbtn
             // 
+            this.resetbtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.resetbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.resetbtn.Location = new System.Drawing.Point(40, 286);
+            this.resetbtn.Location = new System.Drawing.Point(40, 295);
             this.resetbtn.Name = "resetbtn";
             this.resetbtn.Size = new System.Drawing.Size(92, 30);
             this.resetbtn.TabIndex = 147;
@@ -602,10 +648,6 @@ namespace kurs.View
             this.updatepBox.Size = new System.Drawing.Size(100, 50);
             this.updatepBox.TabIndex = 0;
             this.updatepBox.TabStop = false;
-            // 
-            // companyBindingSource
-            // 
-            this.companyBindingSource.DataSource = typeof(kurs.Model.Company);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -647,6 +689,10 @@ namespace kurs.View
             this.specializationDataGridViewTextBoxColumn.Name = "specializationDataGridViewTextBoxColumn";
             this.specializationDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // companyBindingSource
+            // 
+            this.companyBindingSource.DataSource = typeof(kurs.Model.Company);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -681,8 +727,8 @@ namespace kurs.View
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximizeBox = false;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Предприятия";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
@@ -755,5 +801,6 @@ namespace kurs.View
         private DataGridViewTextBoxColumn kindDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn specializationDataGridViewTextBoxColumn;
+        private ToolStripMenuItem просмотретьToolStripMenuItem;
     }
 }

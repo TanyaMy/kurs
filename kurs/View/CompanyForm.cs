@@ -19,24 +19,25 @@ namespace kurs.View
         {
             InitializeComponent();
             fillFields(comp);
-        }      
-       
+        }
+
         //Создание новой компании и запись в нее информации, введенной в форме.
         private Company createCompanyFromForm()
         {
-            Company comp = new Company();
-            comp.Id = Convert.ToInt32(IDlbl.Text);
-            comp.Name = nameTBox.Text;
-            comp.Address = addressTBox.Text;
-            comp.PhoneNumber = phoneNumberTBox.Text;
-            comp.Kind = (Kind)Enum.Parse(typeof(Kind), kindCBox.Text, true);
-            comp.Specialization = (Specialization)Enum.Parse(typeof(Specialization),
-                specializationCBox.Text, true);
-            comp.Ownership = (Ownership)Enum.Parse(typeof(Ownership),
-                ownershipCBox.Text, true);
-            comp.StartWork = startDTPicker.Value;
-            comp.EndWork = endDTPicker.Value;
-
+            Company comp = new Company()
+            {
+                Id = Convert.ToInt32(IDlbl.Text),
+                Name = nameTBox.Text,
+                Address = addressTBox.Text,
+                PhoneNumber = phoneNumberTBox.Text,
+                Kind = (Kind)Enum.Parse(typeof(Kind), kindCBox.Text, true),
+                Specialization = (Specialization)Enum.Parse(typeof(Specialization),
+                specializationCBox.Text, true),
+                Ownership = (Ownership)Enum.Parse(typeof(Ownership),
+                ownershipCBox.Text, true),
+                StartWork = startDTPicker.Value,
+                EndWork = endDTPicker.Value
+            };
             string days = "";
             foreach (var ch in workdaysGB.Controls)
             {
@@ -88,17 +89,11 @@ namespace kurs.View
             Close();
         }
 
-        // Закрытие окна по нажатию кнопки "Отмена".
+        // Сохранение изменений по нажатию кнопки "ОК".
         private void okbtn_Click(object sender, EventArgs e)
         {
             var comp = createCompanyFromForm();
             CompanyCollection.ChangeCompany(comp.Id, comp);
-        }
-
-        // Делает поля доступными для записи по нажатию кнопки "Изменить".
-        private void changebtn_Click(object sender, EventArgs e)
-        {
-            Writable(true);
         }
 
         /// <summary>
@@ -177,5 +172,12 @@ namespace kurs.View
                 endDTPicker.Value = startDTPicker.Value.AddMinutes(1);
             }
         }
+
+        // Делает поля доступными для записи по нажатию кнопки "Изменить".
+        private void Changebtn_Click(object sender, EventArgs e)
+        { 
+            Writable(true);        
+        }
+      
     }
 }

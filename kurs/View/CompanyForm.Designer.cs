@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompanyForm));
-            this.okbtn = new System.Windows.Forms.Button();
-            this.cancelbtn = new System.Windows.Forms.Button();
-            this.IDlbl = new System.Windows.Forms.Label();
             this.Changebtn = new System.Windows.Forms.Button();
+            this.cancelbtn = new System.Windows.Forms.Button();
+            this.okbtn = new System.Windows.Forms.Button();
             this.specializationCBox = new System.Windows.Forms.ComboBox();
             this.workdaysGB = new System.Windows.Forms.GroupBox();
             this.suncb = new System.Windows.Forms.CheckBox();
@@ -62,47 +61,40 @@
             this.nameTBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.IDlbl = new System.Windows.Forms.Label();
             this.workdaysGB.SuspendLayout();
             this.SuspendLayout();
             // 
-            // okbtn
+            // Changebtn
             // 
-            this.okbtn.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.okbtn.Location = new System.Drawing.Point(418, 336);
-            this.okbtn.Name = "okbtn";
-            this.okbtn.Size = new System.Drawing.Size(75, 23);
-            this.okbtn.TabIndex = 47;
-            this.okbtn.Text = "OK";
-            this.okbtn.UseVisualStyleBackColor = true;
-            this.okbtn.Click += new System.EventHandler(this.okbtn_Click);
+            this.Changebtn.Location = new System.Drawing.Point(37, 319);
+            this.Changebtn.Name = "Changebtn";
+            this.Changebtn.Size = new System.Drawing.Size(75, 23);
+            this.Changebtn.TabIndex = 172;
+            this.Changebtn.Text = "Изменить";
+            this.Changebtn.UseVisualStyleBackColor = true;
+            this.Changebtn.Click += new System.EventHandler(this.Changebtn_Click);
             // 
             // cancelbtn
             // 
-            this.cancelbtn.Location = new System.Drawing.Point(531, 336);
+            this.cancelbtn.Location = new System.Drawing.Point(541, 319);
             this.cancelbtn.Name = "cancelbtn";
             this.cancelbtn.Size = new System.Drawing.Size(75, 23);
-            this.cancelbtn.TabIndex = 49;
+            this.cancelbtn.TabIndex = 171;
             this.cancelbtn.Text = "Отмена";
             this.cancelbtn.UseVisualStyleBackColor = true;
             this.cancelbtn.Click += new System.EventHandler(this.cancelbtn_Click);
             // 
-            // IDlbl
+            // okbtn
             // 
-            this.IDlbl.AutoSize = true;
-            this.IDlbl.Location = new System.Drawing.Point(20, 24);
-            this.IDlbl.Name = "IDlbl";
-            this.IDlbl.Size = new System.Drawing.Size(0, 13);
-            this.IDlbl.TabIndex = 51;
-            // 
-            // Changebtn
-            // 
-            this.Changebtn.Location = new System.Drawing.Point(27, 336);
-            this.Changebtn.Name = "Changebtn";
-            this.Changebtn.Size = new System.Drawing.Size(75, 23);
-            this.Changebtn.TabIndex = 52;
-            this.Changebtn.Text = "Изменить";
-            this.Changebtn.UseVisualStyleBackColor = true;
-            this.Changebtn.Click += new System.EventHandler(this.changebtn_Click);
+            this.okbtn.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.okbtn.Location = new System.Drawing.Point(428, 319);
+            this.okbtn.Name = "okbtn";
+            this.okbtn.Size = new System.Drawing.Size(75, 23);
+            this.okbtn.TabIndex = 170;
+            this.okbtn.Text = "OK";
+            this.okbtn.UseVisualStyleBackColor = true;
+            this.okbtn.Click += new System.EventHandler(this.okbtn_Click);
             // 
             // specializationCBox
             // 
@@ -115,10 +107,10 @@
             "производственное",
             "коммерческое",
             "другое"});
-            this.specializationCBox.Location = new System.Drawing.Point(446, 53);
+            this.specializationCBox.Location = new System.Drawing.Point(450, 54);
             this.specializationCBox.Name = "specializationCBox";
             this.specializationCBox.Size = new System.Drawing.Size(165, 21);
-            this.specializationCBox.TabIndex = 165;
+            this.specializationCBox.TabIndex = 213;
             // 
             // workdaysGB
             // 
@@ -129,10 +121,10 @@
             this.workdaysGB.Controls.Add(this.wedcb);
             this.workdaysGB.Controls.Add(this.tuecb);
             this.workdaysGB.Controls.Add(this.moncb);
-            this.workdaysGB.Location = new System.Drawing.Point(111, 204);
+            this.workdaysGB.Location = new System.Drawing.Point(115, 205);
             this.workdaysGB.Name = "workdaysGB";
             this.workdaysGB.Size = new System.Drawing.Size(324, 47);
-            this.workdaysGB.TabIndex = 164;
+            this.workdaysGB.TabIndex = 212;
             this.workdaysGB.TabStop = false;
             // 
             // suncb
@@ -225,10 +217,10 @@
             "строительство",
             "электроэнергия",
             "другое"});
-            this.servicesChLB.Location = new System.Drawing.Point(446, 139);
+            this.servicesChLB.Location = new System.Drawing.Point(450, 140);
             this.servicesChLB.Name = "servicesChLB";
             this.servicesChLB.Size = new System.Drawing.Size(165, 154);
-            this.servicesChLB.TabIndex = 163;
+            this.servicesChLB.TabIndex = 211;
             // 
             // kindCBox
             // 
@@ -239,10 +231,10 @@
             "высший",
             "первый",
             "второй"});
-            this.kindCBox.Location = new System.Drawing.Point(111, 123);
+            this.kindCBox.Location = new System.Drawing.Point(115, 124);
             this.kindCBox.Name = "kindCBox";
             this.kindCBox.Size = new System.Drawing.Size(143, 21);
-            this.kindCBox.TabIndex = 162;
+            this.kindCBox.TabIndex = 210;
             // 
             // ownershipCBox
             // 
@@ -253,185 +245,192 @@
             "государственная",
             "муниципальная",
             "частная"});
-            this.ownershipCBox.Location = new System.Drawing.Point(446, 90);
+            this.ownershipCBox.Location = new System.Drawing.Point(450, 91);
             this.ownershipCBox.Name = "ownershipCBox";
             this.ownershipCBox.Size = new System.Drawing.Size(165, 21);
-            this.ownershipCBox.TabIndex = 161;
+            this.ownershipCBox.TabIndex = 209;
             // 
             // endDTPicker
             // 
             this.endDTPicker.CustomFormat = "HH:mm";
             this.endDTPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.endDTPicker.Location = new System.Drawing.Point(339, 273);
+            this.endDTPicker.Location = new System.Drawing.Point(343, 274);
             this.endDTPicker.MinDate = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
             this.endDTPicker.Name = "endDTPicker";
             this.endDTPicker.ShowUpDown = true;
             this.endDTPicker.Size = new System.Drawing.Size(58, 20);
-            this.endDTPicker.TabIndex = 158;
+            this.endDTPicker.TabIndex = 206;
             this.endDTPicker.Value = new System.DateTime(1800, 1, 1, 23, 59, 0, 0);
-            this.endDTPicker.ValueChanged += new System.EventHandler(this.endDTPicker_ValueChanged);
             // 
             // startDTPicker
             // 
             this.startDTPicker.CustomFormat = "HH:mm";
             this.startDTPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.startDTPicker.Location = new System.Drawing.Point(192, 273);
+            this.startDTPicker.Location = new System.Drawing.Point(196, 274);
             this.startDTPicker.MinDate = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
             this.startDTPicker.Name = "startDTPicker";
             this.startDTPicker.ShowUpDown = true;
             this.startDTPicker.Size = new System.Drawing.Size(62, 20);
-            this.startDTPicker.TabIndex = 157;
+            this.startDTPicker.TabIndex = 205;
             this.startDTPicker.Value = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
-            this.startDTPicker.ValueChanged += new System.EventHandler(this.startDTPicker_ValueChanged);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(295, 275);
+            this.label12.Location = new System.Drawing.Point(299, 276);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(38, 13);
-            this.label12.TabIndex = 160;
+            this.label12.TabIndex = 208;
             this.label12.Text = "Конец";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(142, 277);
+            this.label11.Location = new System.Drawing.Point(146, 278);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(44, 13);
-            this.label11.TabIndex = 159;
+            this.label11.TabIndex = 207;
             this.label11.Text = "Начало";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label7.Location = new System.Drawing.Point(24, 90);
+            this.label7.Location = new System.Drawing.Point(28, 91);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 17);
-            this.label7.TabIndex = 156;
+            this.label7.TabIndex = 204;
             this.label7.Text = "Адрес";
             // 
             // phoneNumberTBox
             // 
-            this.phoneNumberTBox.Location = new System.Drawing.Point(111, 162);
+            this.phoneNumberTBox.Location = new System.Drawing.Point(115, 163);
             this.phoneNumberTBox.Name = "phoneNumberTBox";
             this.phoneNumberTBox.Size = new System.Drawing.Size(143, 20);
-            this.phoneNumberTBox.TabIndex = 155;
+            this.phoneNumberTBox.TabIndex = 203;
             this.phoneNumberTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // addressTBox
             // 
-            this.addressTBox.Location = new System.Drawing.Point(111, 87);
+            this.addressTBox.Location = new System.Drawing.Point(115, 88);
             this.addressTBox.Name = "addressTBox";
             this.addressTBox.Size = new System.Drawing.Size(143, 20);
-            this.addressTBox.TabIndex = 154;
+            this.addressTBox.TabIndex = 202;
             this.addressTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label10.Location = new System.Drawing.Point(24, 163);
+            this.label10.Location = new System.Drawing.Point(28, 164);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(68, 17);
-            this.label10.TabIndex = 153;
+            this.label10.TabIndex = 201;
             this.label10.Text = "Телефон";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label9.Location = new System.Drawing.Point(24, 220);
+            this.label9.Location = new System.Drawing.Point(28, 221);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(88, 17);
-            this.label9.TabIndex = 152;
+            this.label9.TabIndex = 200;
             this.label9.Text = "Дни работы";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label8.Location = new System.Drawing.Point(24, 273);
+            this.label8.Location = new System.Drawing.Point(28, 274);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 17);
-            this.label8.TabIndex = 151;
+            this.label8.TabIndex = 199;
             this.label8.Text = "Часы работы";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label6.Location = new System.Drawing.Point(321, 55);
+            this.label6.Location = new System.Drawing.Point(325, 56);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(112, 17);
-            this.label6.TabIndex = 150;
+            this.label6.TabIndex = 198;
             this.label6.Text = "Специализация";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(328, 94);
+            this.label4.Location = new System.Drawing.Point(332, 95);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 17);
-            this.label4.TabIndex = 149;
+            this.label4.TabIndex = 197;
             this.label4.Text = "Собственность";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(372, 127);
+            this.label3.Location = new System.Drawing.Point(376, 128);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 17);
-            this.label3.TabIndex = 148;
+            this.label3.TabIndex = 196;
             this.label3.Text = "Услуги";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(24, 127);
+            this.label2.Location = new System.Drawing.Point(28, 128);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 17);
-            this.label2.TabIndex = 147;
+            this.label2.TabIndex = 195;
             this.label2.Text = "Разряд";
             // 
             // nameTBox
             // 
-            this.nameTBox.Location = new System.Drawing.Point(111, 54);
+            this.nameTBox.Location = new System.Drawing.Point(115, 55);
             this.nameTBox.Name = "nameTBox";
             this.nameTBox.Size = new System.Drawing.Size(143, 20);
-            this.nameTBox.TabIndex = 146;
+            this.nameTBox.TabIndex = 194;
             this.nameTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(24, 54);
+            this.label1.Location = new System.Drawing.Point(28, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 17);
-            this.label1.TabIndex = 145;
+            this.label1.TabIndex = 193;
             this.label1.Text = "Название";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label5.Location = new System.Drawing.Point(141, 8);
+            this.label5.Location = new System.Drawing.Point(145, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(305, 20);
-            this.label5.TabIndex = 144;
+            this.label5.TabIndex = 192;
             this.label5.Text = "Предприятия бытового обслуживания.";
+            // 
+            // IDlbl
+            // 
+            this.IDlbl.AutoSize = true;
+            this.IDlbl.Location = new System.Drawing.Point(31, 24);
+            this.IDlbl.Name = "IDlbl";
+            this.IDlbl.Size = new System.Drawing.Size(0, 13);
+            this.IDlbl.TabIndex = 214;
             // 
             // CompanyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(634, 381);
+            this.ClientSize = new System.Drawing.Size(642, 367);
+            this.Controls.Add(this.IDlbl);
             this.Controls.Add(this.specializationCBox);
             this.Controls.Add(this.workdaysGB);
             this.Controls.Add(this.servicesChLB);
@@ -455,7 +454,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Changebtn);
-            this.Controls.Add(this.IDlbl);
             this.Controls.Add(this.cancelbtn);
             this.Controls.Add(this.okbtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -471,10 +469,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button okbtn;
-        private System.Windows.Forms.Button cancelbtn;
-        private System.Windows.Forms.Label IDlbl;
         private System.Windows.Forms.Button Changebtn;
+        private System.Windows.Forms.Button cancelbtn;
+        private System.Windows.Forms.Button okbtn;
         private System.Windows.Forms.ComboBox specializationCBox;
         private System.Windows.Forms.GroupBox workdaysGB;
         private System.Windows.Forms.CheckBox suncb;
@@ -504,5 +501,6 @@
         private System.Windows.Forms.TextBox nameTBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label IDlbl;
     }
 }

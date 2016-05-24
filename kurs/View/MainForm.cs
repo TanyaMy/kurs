@@ -90,7 +90,9 @@ namespace kurs.View
                 new CompanyForm(CompanyCollection.
                 GetCompanyById(Convert.ToInt32(dataGV[0, e.RowIndex].Value)));
             form.Writable(false);
-            form.ShowDialog();            
+            form.ShowDialog();
+            var collection = CompanyCollection.Search(getCompanyForSearch());
+            bindListToDataGridView(collection);
         }
 
         //Сохранение изменений в документе при выборе в меню "Файл -> Сохранить".
@@ -123,7 +125,9 @@ namespace kurs.View
             {
                 int ID = Convert.ToInt32(dataGV[0, 
                     dataGV.SelectedRows[0].Index].Value);
-                DialogResult dialogResult = MessageBox.Show("Вы уверены?",
+                DialogResult dialogResult = MessageBox.Show("Вы уверены, " +
+                    "что хотите удалить " + dataGV[1,
+                    dataGV.SelectedRows[0].Index].Value + " ? ",
                "Удаление предприятия", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
@@ -164,7 +168,8 @@ namespace kurs.View
 
                 form.Writable(false);
                 form.ShowDialog();
-                var collection = CompanyCollection.Search(getCompanyForSearch());
+                var comp = getCompanyForSearch();
+                var collection = CompanyCollection.Search(comp);
                 bindListToDataGridView(collection);
             }
             catch (ArgumentOutOfRangeException)
@@ -188,16 +193,25 @@ namespace kurs.View
         //выбору в контекстном меню "Просмотреть".
         private void showTSM_Click(object sender, EventArgs e)
         {
-            int ID = Convert.ToInt32(dataGV[0,
-                dataGV.SelectedRows[0].Index].Value);
-            CompanyForm form = new CompanyForm
-                (CompanyCollection.GetCompanyById
-                    (Convert.ToInt32(dataGV[0,
-                    dataGV.SelectedRows[0].Index].Value)));
-            form.Writable(false);
-            form.ShowDialog();
-            var collection = CompanyCollection.Search(getCompanyForSearch());
-            bindListToDataGridView(collection);
+            try {
+                int ID = Convert.ToInt32(dataGV[0,
+                    dataGV.SelectedRows[0].Index].Value);
+                CompanyForm form = new CompanyForm
+                    (CompanyCollection.GetCompanyById
+                        (Convert.ToInt32(dataGV[0,
+                        dataGV.SelectedRows[0].Index].Value)));
+                form.Writable(false);
+                form.ShowDialog();
+                var collection = CompanyCollection.Search(getCompanyForSearch());
+                bindListToDataGridView(collection);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                DialogResult dialogResult =
+                    MessageBox.Show("Выберите предприятие для просмотра.",
+                    "Просмотр предприятия", MessageBoxButtons.OK);
+                return;
+            }
         }
 
         //Создание объекта Company с информацией, введенной в форме для поиска.

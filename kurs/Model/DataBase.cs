@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Xml.Linq;
-using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace kurs.Model
@@ -129,16 +128,11 @@ namespace kurs.Model
             }
             return null;
         }
-
-        /// <summary>
-        /// Метод перевода строки формата "hh:mm" в формат DateTime
-        /// </summary>
-        /// <param name="time">string "hh:mm"</param>
-        /// <returns></returns>
+       
+        // Метод перевода строки формата "hh:mm" в формат DateTime      
         public static DateTime ToDateTime(string time)
         {
             return Convert.ToDateTime("01/01/1800 " + time + ":00.00");
-        }
-       
+        }       
     }
 }

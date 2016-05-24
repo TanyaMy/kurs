@@ -1,12 +1,5 @@
 ﻿using kurs.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace kurs.View
@@ -29,18 +22,20 @@ namespace kurs.View
         //Создание новой компании и запись в нее информации, введенной в форме.
         private Company createCompanyFromForm()
         {
-            Company comp = new Company();
-            comp.Id = -1;
-            comp.Name = nameTBox.Text;
-            comp.Address = addressTBox.Text;
-            comp.PhoneNumber = phoneNumberTBox.Text;
-            comp.Kind = (Kind)Enum.Parse(typeof(Kind), kindCBox.Text, true);
-            comp.Specialization = (Specialization)Enum.Parse(typeof(Specialization),
-                specializationCBox.Text, true);
-            comp.Ownership = (Ownership)Enum.Parse(typeof(Ownership),
-                ownershipCBox.Text, true);
-            comp.StartWork = startDTPicker.Value;
-            comp.EndWork = endDTPicker.Value;
+            Company comp = new Company()
+            {
+                Id = -1,
+                Name = nameTBox.Text,
+                Address = addressTBox.Text,
+                PhoneNumber = phoneNumberTBox.Text,
+                Kind = (Kind)Enum.Parse(typeof(Kind), kindCBox.Text, true),
+                Specialization = (Specialization)Enum.Parse(typeof(Specialization),
+                specializationCBox.Text, true),
+                Ownership = (Ownership)Enum.Parse(typeof(Ownership),
+                ownershipCBox.Text, true),
+                StartWork = startDTPicker.Value,
+                EndWork = endDTPicker.Value
+            };
 
             string days = "";
             foreach (var ch in workdaysGB.Controls)
