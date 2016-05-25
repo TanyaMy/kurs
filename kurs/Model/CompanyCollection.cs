@@ -69,7 +69,8 @@ namespace kurs.Model
             if (company.WorkDays.Count() == 1 && company.WorkDays[0] == "")
                 company.WorkDays = new string[0];
 
-            collection.RemoveAll(x => !(x.Address.Contains(company.Address) && 
+            collection.RemoveAll(x => !(x.Address.ToLower().
+            Contains(company.Address.ToLower()) && 
             ((company.Kind.ToString() != "любой") ? 
                 x.Kind.Equals(company.Kind) : true) &&            
             ((company.Ownership.ToString() != "любая") ? 
@@ -83,8 +84,7 @@ namespace kurs.Model
                 company.EndWork.ToString().Substring(11, 5) == "23:59") ? 
                     true : (x.EndWork.TimeOfDay >= company.EndWork.TimeOfDay)) &&
             x.PhoneNumber.Contains(company.PhoneNumber) &&
-            x.Name.Contains(company.Name) &&
-            x.Address.Contains(company.Address) &&
+            x.Name.ToLower().Contains(company.Name.ToLower()) &&
             x.Services.Except(company.Services).Count() ==
                 (x.Services.Count() - company.Services.Count()) &&
             x.WorkDays.Except(company.WorkDays).Count() == 

@@ -34,10 +34,16 @@ namespace kurs.View
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.dataGV = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kindDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.specializationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cellDataGridViewCMS = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showTSM = new System.Windows.Forms.ToolStripMenuItem();
             this.changeTSM = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteTSM = new System.Windows.Forms.ToolStripMenuItem();
+            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.nameTBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -82,18 +88,12 @@ namespace kurs.View
             this.resetbtn = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.updatepBox = new System.Windows.Forms.PictureBox();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kindDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.specializationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGV)).BeginInit();
             this.cellDataGridViewCMS.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
             this.workdaysGB.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.updatepBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGV
@@ -103,9 +103,10 @@ namespace kurs.View
             this.dataGV.AutoGenerateColumns = false;
             this.dataGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -122,17 +123,56 @@ namespace kurs.View
             this.dataGV.DataSource = this.companyBindingSource;
             this.dataGV.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGV.Location = new System.Drawing.Point(0, 346);
+            this.dataGV.Location = new System.Drawing.Point(0, 359);
             this.dataGV.MaximumSize = new System.Drawing.Size(0, 500);
             this.dataGV.MultiSelect = false;
             this.dataGV.Name = "dataGV";
             this.dataGV.ReadOnly = true;
-            this.dataGV.RowHeadersVisible = false;
             this.dataGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGV.Size = new System.Drawing.Size(666, 231);
+            this.dataGV.Size = new System.Drawing.Size(666, 218);
             this.dataGV.TabIndex = 50;
             this.dataGV.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dataGV_CellContextMenuStripNeeded);
             this.dataGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGV_CellDoubleClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.FillWeight = 54.57534F;
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.FillWeight = 105.1363F;
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Название";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kindDataGridViewTextBoxColumn
+            // 
+            this.kindDataGridViewTextBoxColumn.DataPropertyName = "Kind";
+            this.kindDataGridViewTextBoxColumn.FillWeight = 88.47778F;
+            this.kindDataGridViewTextBoxColumn.HeaderText = "Разряд";
+            this.kindDataGridViewTextBoxColumn.Name = "kindDataGridViewTextBoxColumn";
+            this.kindDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // phoneNumberDataGridViewTextBoxColumn
+            // 
+            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
+            this.phoneNumberDataGridViewTextBoxColumn.FillWeight = 124.907F;
+            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "Номер телефона";
+            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
+            this.phoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // specializationDataGridViewTextBoxColumn
+            // 
+            this.specializationDataGridViewTextBoxColumn.DataPropertyName = "Specialization";
+            this.specializationDataGridViewTextBoxColumn.FillWeight = 126.9036F;
+            this.specializationDataGridViewTextBoxColumn.HeaderText = "Специализация";
+            this.specializationDataGridViewTextBoxColumn.Name = "specializationDataGridViewTextBoxColumn";
+            this.specializationDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cellDataGridViewCMS
             // 
@@ -163,6 +203,10 @@ namespace kurs.View
             this.deleteTSM.Size = new System.Drawing.Size(148, 22);
             this.deleteTSM.Text = "Удалить";
             this.deleteTSM.Click += new System.EventHandler(this.deleteTSM_Click);
+            // 
+            // companyBindingSource
+            // 
+            this.companyBindingSource.DataSource = typeof(kurs.Model.Company);
             // 
             // label1
             // 
@@ -502,7 +546,7 @@ namespace kurs.View
             this.servicesChLB.Location = new System.Drawing.Point(475, 149);
             this.servicesChLB.MaximumSize = new System.Drawing.Size(300, 500);
             this.servicesChLB.Name = "servicesChLB";
-            this.servicesChLB.Size = new System.Drawing.Size(179, 94);
+            this.servicesChLB.Size = new System.Drawing.Size(179, 124);
             this.servicesChLB.TabIndex = 144;
             // 
             // kindCBox
@@ -649,50 +693,6 @@ namespace kurs.View
             this.updatepBox.TabIndex = 0;
             this.updatepBox.TabStop = false;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.FillWeight = 54.57534F;
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.FillWeight = 105.1363F;
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Название";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // kindDataGridViewTextBoxColumn
-            // 
-            this.kindDataGridViewTextBoxColumn.DataPropertyName = "Kind";
-            this.kindDataGridViewTextBoxColumn.FillWeight = 88.47778F;
-            this.kindDataGridViewTextBoxColumn.HeaderText = "Разряд";
-            this.kindDataGridViewTextBoxColumn.Name = "kindDataGridViewTextBoxColumn";
-            this.kindDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // phoneNumberDataGridViewTextBoxColumn
-            // 
-            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
-            this.phoneNumberDataGridViewTextBoxColumn.FillWeight = 124.907F;
-            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "Номер телефона";
-            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
-            this.phoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // specializationDataGridViewTextBoxColumn
-            // 
-            this.specializationDataGridViewTextBoxColumn.DataPropertyName = "Specialization";
-            this.specializationDataGridViewTextBoxColumn.FillWeight = 126.9036F;
-            this.specializationDataGridViewTextBoxColumn.HeaderText = "Специализация";
-            this.specializationDataGridViewTextBoxColumn.Name = "specializationDataGridViewTextBoxColumn";
-            this.specializationDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // companyBindingSource
-            // 
-            this.companyBindingSource.DataSource = typeof(kurs.Model.Company);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -735,12 +735,12 @@ namespace kurs.View
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGV)).EndInit();
             this.cellDataGridViewCMS.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
             this.workdaysGB.ResumeLayout(false);
             this.workdaysGB.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.updatepBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
